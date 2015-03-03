@@ -22,12 +22,13 @@ public class SongDbHelper extends SQLiteOpenHelper {
             SongEntry.COLUMN_IMG_PATH + " TEXT," +
             SongEntry.COLUMN_SONG_PATH + " TEXT)";
 
+    //insert values here, one by one
     private String SQL_INSERT_INITIAL_ROW = "INSERT INTO " + SongEntry.TABLE_NAME +
             " VALUES (1, 'Home Sweet Home', 'My Hotspot', 'ThisIsASampleRecord')";
 
     //create table and insert default value for others table
     //lesson table
-    /*
+    /*SQL_CREATE_ENTRIES cant be used again
     private String SQL_CREATE_ENTRIES = "CREATE TABLE " + SongEntry.TABLE_NAME + "(" +
             SongEntry.COLUMN_HOTSPOT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             SongEntry.COLUMN_LOCATION + " TEXT," +

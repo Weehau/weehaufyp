@@ -60,6 +60,8 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         //songName.setText(String.valueOf(songNameAtPlayer));
         //Song title ? song lyrics ? Singers ?
 
+        repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
+
         //Song path
         int [] songResource = {R.raw.sam_smith_stay_with_me, R.raw.beyonce_haunted, R.raw.justin_timberlake_mirrors, R.raw.taylor_swift_blank_space, R.raw.lana_del_rey_summertime_sadness, R.raw.bruno_mars_locked_out_of_heaven, R.raw.lorde_royals, R.raw.maroon_5_maps, R.raw.pharrell_williams_happy, R.raw.sia_chandelier};
         //int [] songReousrce2 = {...song...};
@@ -157,19 +159,19 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     }
     public void repeat(View view){
         //repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
-        repeatButton.setBackgroundColor(Color.argb(204, 204, 204, 204));
-        if(!mediaPlayer.isLooping()){
-            mediaPlayer.setLooping(true);
+        //repeatButton.setBackgroundColor(Color.argb(204, 204, 204, 204));
+        if(mediaPlayer.isLooping()){
+            mediaPlayer.setLooping(false);
+            repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
             Toast.makeText(getApplicationContext(),
-                    "Repeat mode: ON",
+                    "Repeat mode: OFF",
                     Toast.LENGTH_SHORT).show();
         }
         else{
-            mediaPlayer.setLooping(false);
-            //repeatButton.clearColorFilter();
-            repeatButton.setBackgroundColor(Color.TRANSPARENT);
+            mediaPlayer.setLooping(true);
+            repeatButton.clearColorFilter();
             Toast.makeText(getApplicationContext(),
-                    "Repeat mode: OFF",
+                    "Repeat mode: ON",
                     Toast.LENGTH_SHORT).show();
         }
     }

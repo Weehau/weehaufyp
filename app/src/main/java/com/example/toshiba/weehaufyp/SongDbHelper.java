@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SongDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "WeehauFyp.db";
-
+// Some changes (turns blue)
     private String SQL_CREATE_ENTRIES = "CREATE TABLE " + SongEntry.TABLE_NAME + "(" +
             SongEntry.COLUMN_SONG_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             SongEntry.COLUMN_SONG_NAME + " TEXT," +

@@ -90,5 +90,7 @@
     <string name="title_activity_test_fragment">TestFragment</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_lyrics_fragment">LyricsFragment</string>
+    <string name="title_activity_lesson_content_fragment">LessonContentFragment</string>
 
 </resources>

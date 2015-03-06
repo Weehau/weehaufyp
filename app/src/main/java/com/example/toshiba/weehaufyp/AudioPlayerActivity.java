@@ -25,7 +25,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener{
+public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener {
 
     public TextView songName,startTimeField,endTimeField;
     private MediaPlayer mediaPlayer;
@@ -67,7 +67,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
 
         // Initialize fragments
         LyricsFragment f_lyrics = new LyricsFragment();
-        f_lyrics.setArguments(bundle);
+      //  f_lyrics.setArguments(bundle);
         f_manager = getFragmentManager();
         f_transaction = f_manager.beginTransaction();
         f_transaction.add(R.id.fragment_place, f_lyrics);
@@ -104,7 +104,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     }
 
     public void replaceFragmentView(int viewToBeReplaced , Fragment fragmentToReplace, String fragment_tag) {
-        fragmentToReplace.setArguments(bundle);
+       // fragmentToReplace.setArguments(bundle);
         f_manager = getFragmentManager();
         f_transaction = f_manager.beginTransaction();
         f_transaction.replace(viewToBeReplaced, fragmentToReplace, fragment_tag);

@@ -10,15 +10,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-private static Activity activity;
-private static Bundle bundle;
-
 public class LessonContentFragment extends Fragment {
+
+    private static Activity activity;
+    private static Bundle bundle;
 
     /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson_content_fragment);
+        setContentView(R.layout.activity_lyrics_fragment);
     }*/
 
     @Override
@@ -33,15 +33,18 @@ public class LessonContentFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_lesson_content, container, false);
     }
 
-
     @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_lesson_content, menu);
+        getMenuInflater().inflate(R.menu.menu_lyrics, menu);
         return true;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -54,5 +57,5 @@ public class LessonContentFragment extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

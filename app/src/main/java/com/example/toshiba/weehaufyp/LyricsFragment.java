@@ -10,10 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-private static Activity activity;
-private static Bundle bundle;
-
 public class LyricsFragment extends Fragment {
+
+    private static Activity activity;
+    private static Bundle bundle;
 
     /*@Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -49,7 +49,12 @@
             android:label="@string/title_activity_audio_player" >
         </activity>
 
-        <service android:name="com.example.toshiba.weehaufyp.MusicService" />
+        <service android:name=".MusicService" />
+
+        <activity
+            android:name=".TestFragment"
+            android:label="@string/title_activity_test_fragment" >
+        </activity>
     </application>
 
 </manifest>

@@ -45,13 +45,13 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
 
+        <!-- switch fragment views between 2 buttons-->
         <Button
             android:id="@+id/lyrics_tab_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lyrics_tab_button"
-            android:layout_weight="1"
-            android:onClick="lyricsTabOnClick"/>
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/lesson_tab_button"
@@ -59,15 +59,17 @@
             android:layout_height="wrap_content"
             android:text="@string/lesson_tab_button"
             android:layout_weight="1"
-            android:layout_marginLeft="30dp"
-            android:onClick="lessonTabOnClick"/>
+            android:layout_marginLeft="30dp"/>
 
     </LinearLayout>
 
+    <!-- Fragment holder -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="5"></LinearLayout>
+        android:id="@+id/fragment_place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="vertical"/>
 
     <LinearLayout
         android:layout_width="fill_parent"

@@ -1,5 +1,8 @@
 package com.example.toshiba.weehaufyp;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
@@ -22,20 +25,24 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarChangeListener{
+public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarChangeListener, View.OnClickListener{
 
     public TextView songName,startTimeField,endTimeField;
     private MediaPlayer mediaPlayer;
     private double startTime = 0;
     private double finalTime = 0;
-    private Handler myHandler = new Handler();;
+    private Handler myHandler = new Handler();
     private int forwardTime = 5000;
     private int backwardTime = 5000;
     private SeekBar seekbar;
     private ImageButton playButton, repeatButton;
-    private Button lyricsTab, lessonTab;
-    //private ImageButton pauseButton;
+    private Button lyricsTabButton, lessonTabButton;
+    private static Bundle bundle;
     public static int oneTimeOnly = 0;
+
+    //for fragments
+    private static FragmentManager f_manager;
+    private static FragmentTransaction f_transaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +53,25 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         //int songNameAtPlayer = songIntent.getInt("song_position");
 
         songName = (TextView)findViewById(R.id.current_song_name);
-
         startTimeField =(TextView)findViewById(R.id.current_time);
         endTimeField =(TextView)findViewById(R.id.time_duration);
         seekbar = (SeekBar)findViewById(R.id.seekBar1);
         playButton = (ImageButton)findViewById(R.id.play_button);
         repeatButton = (ImageButton)findViewById(R.id.repeat_button);
-        lyricsTab = (Button)findViewById(R.id.lyrics_tab_button);
-        lessonTab = (Button)findViewById(R.id.lesson_tab_button);
-        //pauseButton = (ImageButton)findViewById(R.id.pause_button);
+        lyricsTabButton = (Button)findViewById(R.id.lyrics_tab_button);
+        lessonTabButton = (Button)findViewById(R.id.lesson_tab_button);
+
+        //Add on click listeners to tab buttons
+        lyricsTabButton.setOnClickListener(this);
+        lessonTabButton.setOnClickListener(this);
+
+        // Initialize fragments
+        LyricsFragment f_lyrics = new LyricsFragment();
+        f_lyrics.setArguments(bundle);
+        f_manager = getFragmentManager();
+        f_transaction = f_manager.beginTransaction();
+        f_transaction.add(R.id.fragment_place, f_lyrics);
+        f_transaction.commit();
 
         songName.setText("Summertime Sadness what if the song name is way way longer than normal song names??");
         //songName.setText(String.valueOf(songNameAtPlayer));
@@ -70,6 +87,28 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         mediaPlayer = MediaPlayer.create(this, R.raw.lana_del_rey_summertime_sadness);
         seekbar.setClickable(true);
         //pauseButton.setEnabled(false);
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId()) {
+            case R.id.lyrics_tab_button :
+                LyricsFragment f_lyrics = new LyricsFragment();
+                replaceFragmentView(R.id.fragment_place, f_lyrics, "");
+                break;
+
+            case R.id.lesson_tab_button :
+                replaceFragmentView(R.id.fragment_place, new LessonContentFragment(), "");
+                break;
+        }
+    }
+
+    public void replaceFragmentView(int viewToBeReplaced , Fragment fragmentToReplace, String fragment_tag) {
+        fragmentToReplace.setArguments(bundle);
+        f_manager = getFragmentManager();
+        f_transaction = f_manager.beginTransaction();
+        f_transaction.replace(viewToBeReplaced, fragmentToReplace, fragment_tag);
+        f_transaction.commit();
     }
 
     public void play(View view){
@@ -205,7 +244,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
 
     }
 
-    public void lyricsTabOnClick(View view){
+    /*public void lyricsTabOnClick(View view){
         Toast.makeText(getApplicationContext(),
                 "Lyrics tab shows by default",
                 Toast.LENGTH_SHORT).show();
@@ -214,5 +253,5 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         Toast.makeText(getApplicationContext(),
                 "Lesson tab shows when clicked",
                 Toast.LENGTH_SHORT).show();
-    }
+    }*/
 }

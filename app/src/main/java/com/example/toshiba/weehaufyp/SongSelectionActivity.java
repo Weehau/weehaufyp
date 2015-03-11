@@ -28,6 +28,7 @@ public class SongSelectionActivity extends Activity {
     String[] titles;
     String[] artists;
     String[] albums;
+    String[] IDs;
     int[] images = {R.drawable.sam_smith_in_the_lonely_hour, R.drawable.beyonce_beyonce, R.drawable.justin_timberlake_the_20_20_experience_2_of_2, R.drawable.taylor_swift_1989,
             R.drawable.lana_del_rey_born_to_die, R.drawable.bruno_mars_unorthodox_jukebox, R.drawable.lorde_royals, R.drawable.maroon_5_v, R.drawable.pharrell_williams_girl, R.drawable.sia_1000_forms_of_fear};
 
@@ -41,6 +42,21 @@ public class SongSelectionActivity extends Activity {
         titles = res.getStringArray(R.array.main1_sub1_songs);
         artists = res.getStringArray(R.array.main1_sub1_artists);
         albums = res.getStringArray(R.array.main1_sub1_albums);
+
+        // get db data
+        /*SongDBClass songDB;
+        songDB.open();
+        Cursor c = songDB.getAllHotspot();
+        if (c.moveToFirst())
+        {
+            do {
+                titles.add(c.getString(0));
+                artists.add(c.getString(1));
+                albums.add(c.getString(2));
+                imgPath.add(c.getString(3));
+            } while (c.moveToNext());
+        }
+        songDB.close();*/
 
         list = (ListView) findViewById(R.id.songListView);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,7 +81,7 @@ public class SongSelectionActivity extends Activity {
             }
         });
 
-        SongSelectionAdapter adapter = new SongSelectionAdapter(this, titles, images, artists, albums);
+        SongSelectionAdapter adapter = new SongSelectionAdapter(this, IDs,titles, images, artists, albums);
         list.setAdapter(adapter);
     }
 }
@@ -76,8 +92,9 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
     int[] images;
     String[] artists;
     String[] albums;
+    String[] IDs;
 
-    SongSelectionAdapter(Context c, String[] titles, int images[], String[] artists, String[] albums)
+    SongSelectionAdapter(Context c, String[] IDs,String[] titles, int images[], String[] artists, String[] albums)
     {
         super(c, R.layout.song_single_row, R.id.songTitleTextView, titles);
         this.context = c;
@@ -85,6 +102,7 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
         this.titles = titles;
         this.artists = artists;
         this.albums = albums;
+        this.IDs = IDs;
     }
 
     @Override
@@ -96,6 +114,8 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
         TextView myArtist = (TextView) row.findViewById(R.id.artistTextView);
         TextView myAlbum = (TextView) row.findViewById(R.id.albumTextView);
 
+        final String mySongID = IDs[position];
+
         myCoverArt.setImageResource(images[position]);
         myTitle.setText((position + 1) + ". " + titles[position]);
         myArtist.setText(artists[position]);
@@ -105,7 +125,7 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, AudioPlayerActivity.class);
-                intent.putExtra("song_name", myTitle);
+                intent.putExtra("songID", mySongID);
                 startActivity(intent);
             }
         });*/

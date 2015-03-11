@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/songListView"
-        android:layout_below="@+id/song_selection_text"/>
+        android:layout_below="@+id/song_selection_text"
+        android:scrollbarStyle="insideInset"/>
 
 </RelativeLayout>

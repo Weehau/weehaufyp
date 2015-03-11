@@ -85,12 +85,25 @@
     <string name="lyrics_tab_button">Lyrics</string>
     <string name="lesson_tab_button">Lesson</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_test_fragment">TestFragment</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_lyrics_fragment">LyricsFragment</string>
     <string name="title_activity_lesson_content_fragment">LessonContentFragment</string>
+    <string name="title_activity_exercise">ExerciseActivity</string>
+
+    <!-- Exercise activity -->
+    <string name="lesson_name_label">Lesson Name</string>
+    <string name="question_text_view">Question</string>
+    <string name="choice_1">Choice 1</string>
+    <string name="choice_2">Choice 2</string>
+    <string name="choice_3">Choice 3</string>
+    <string name="choice_4">Choice 4</string>
+    <string name="check_answer">Check my answer</string>
+    <string name="answer_response">Here shows correct or wrong</string>
+    <string name="check_result">Check my result</string>
+    <string name="question_no">00</string>
 
 </resources>

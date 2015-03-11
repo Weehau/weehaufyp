@@ -35,7 +35,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     private int forwardTime = 5000;
     private int backwardTime = 5000;
     private SeekBar seekbar;
-    private ImageButton playButton, repeatButton;
+    private ImageButton playButton, repeatButton, forwardButton, rewindButton, nextButton, previousButton;
     private Button lyricsTabButton, lessonTabButton;
     private static Bundle bundle;
     public static int oneTimeOnly = 0;
@@ -57,6 +57,11 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         endTimeField =(TextView)findViewById(R.id.time_duration);
         seekbar = (SeekBar)findViewById(R.id.seekBar1);
         playButton = (ImageButton)findViewById(R.id.play_button);
+        forwardButton = (ImageButton)findViewById(R.id.fast_forward_button);
+        rewindButton  = (ImageButton)findViewById(R.id.rewind_button);
+        nextButton = (ImageButton)findViewById(R.id.next_button);
+        previousButton = (ImageButton)findViewById(R.id.previous_button);
+
         repeatButton = (ImageButton)findViewById(R.id.repeat_button);
         lyricsTabButton = (Button)findViewById(R.id.lyrics_tab_button);
         lessonTabButton = (Button)findViewById(R.id.lesson_tab_button);
@@ -77,7 +82,17 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         //songName.setText(String.valueOf(songNameAtPlayer));
         //Song title ? song lyrics ? Singers ?
 
+        //Set colors of buttons
         repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
+        lyricsTabButton.setTextColor(Color.WHITE);
+        lyricsTabButton.setBackgroundColor(Color.parseColor("#B20000"));
+        lessonTabButton.setTextColor(Color.BLACK);
+        lessonTabButton.setBackgroundResource(android.R.drawable.btn_default);
+        playButton.setColorFilter((Color.rgb(153, 0, 0)));
+        forwardButton.setColorFilter((Color.rgb(153, 0, 0)));
+        rewindButton.setColorFilter((Color.rgb(153, 0, 0)));
+        nextButton.setColorFilter((Color.rgb(153, 0, 0)));
+        previousButton.setColorFilter((Color.rgb(153, 0, 0)));
 
         //Song path
         int [] songResource = {R.raw.sam_smith_stay_with_me, R.raw.beyonce_haunted, R.raw.justin_timberlake_mirrors, R.raw.taylor_swift_blank_space, R.raw.lana_del_rey_summertime_sadness, R.raw.bruno_mars_locked_out_of_heaven, R.raw.lorde_royals, R.raw.maroon_5_maps, R.raw.pharrell_williams_happy, R.raw.sia_chandelier};
@@ -93,14 +108,27 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     public void onClick(View v){
         switch(v.getId()) {
             case R.id.lyrics_tab_button :
+                lyricsTabButton.setTextColor(Color.WHITE);
+                lyricsTabButton.setBackgroundColor(Color.parseColor("#B20000"));
+                lessonTabButton.setTextColor(Color.BLACK);
+                lessonTabButton.setBackgroundResource(android.R.drawable.btn_default);
                 LyricsFragment f_lyrics = new LyricsFragment();
                 replaceFragmentView(R.id.fragment_place, f_lyrics, "");
                 break;
 
             case R.id.lesson_tab_button :
+                lessonTabButton.setTextColor(Color.WHITE);
+                lessonTabButton.setBackgroundColor(Color.parseColor("#B20000"));
+                lyricsTabButton.setTextColor(Color.BLACK);
+                lyricsTabButton.setBackgroundResource(android.R.drawable.btn_default);
                 replaceFragmentView(R.id.fragment_place, new LessonContentFragment(), "");
                 break;
         }
+    }
+
+    public void exercise (View view){
+        Intent exerciseIntent = new Intent(this, ExerciseActivity.class);
+        startActivity(exerciseIntent);
     }
 
     public void replaceFragmentView(int viewToBeReplaced , Fragment fragmentToReplace, String fragment_tag) {
@@ -156,14 +184,6 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
             myHandler.postDelayed(this, 100);
         }
     };
-    /*public void pause(View view){
-        Toast.makeText(getApplicationContext(), "Pausing sound",
-                Toast.LENGTH_SHORT).show();
-
-        mediaPlayer.pause();
-        pauseButton.setEnabled(false);
-        playButton.setEnabled(true);
-    }*/
     public void forward(View view){
         int temp = (int)startTime;
         if((temp+forwardTime)<=finalTime){
@@ -208,7 +228,8 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         }
         else{
             mediaPlayer.setLooping(true);
-            repeatButton.clearColorFilter();
+            //repeatButton.clearColorFilter();
+            repeatButton.setColorFilter((Color.rgb(153, 0, 0)));
             Toast.makeText(getApplicationContext(),
                     "Repeat mode: ON",
                     Toast.LENGTH_SHORT).show();
@@ -243,15 +264,4 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
-
-    /*public void lyricsTabOnClick(View view){
-        Toast.makeText(getApplicationContext(),
-                "Lyrics tab shows by default",
-                Toast.LENGTH_SHORT).show();
-    }
-    public void lessonTabOnClick(View view){
-        Toast.makeText(getApplicationContext(),
-                "Lesson tab shows when clicked",
-                Toast.LENGTH_SHORT).show();
-    }*/
 }

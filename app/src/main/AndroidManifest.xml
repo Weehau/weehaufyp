@@ -63,6 +63,10 @@
             android:name=".LessonContentFragment"
             android:label="@string/title_activity_lesson_content_fragment" >
         </activity>
+        <activity
+            android:name=".ExerciseActivity"
+            android:label="@string/title_activity_exercise" >
+        </activity>
     </application>
 
 </manifest>

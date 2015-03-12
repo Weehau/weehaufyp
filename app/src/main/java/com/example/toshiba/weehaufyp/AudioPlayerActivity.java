@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -52,6 +53,53 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         //Bundle songIntent = getIntent().getExtras();
         //int songNameAtPlayer = songIntent.getInt("song_position");
 
+        Intent songIntent = getIntent();
+        String songID = songIntent.getStringExtra("songID");
+
+        //DB for audio
+        /*final SongDBClass songDB = new SongDBClass(this);
+
+        String titles = null;
+        String songPath = null;
+        String lyrics = null;
+
+        songDB.open();
+        Cursor c = songDB.PlaySongByID();
+        if (c.moveToFirst())
+        {
+            do {
+                titles.add(c.getString(0));
+                songPath.add(c.getString(1));
+                lyrics.add(c.getString(2));
+            } while (c.moveToNext());
+        }
+        else{
+            Toast.makeText(getBaseContext(), "No song found", Toast.LENGTH_SHORT).show();
+        }
+        songDB.close();*/
+
+        //DB for lesson
+        /*final LessonDBClass lessonDB = new LessonDBClass(this);
+
+        String content = null;
+
+        lessonDB.open();
+        Cursor c = lessonDB.getContentByLesson();
+        if (c.moveToFirst())
+        {
+            do {
+                content.add(c.getString(0));
+            } while (c.moveToNext());
+        }
+        else{
+            Toast.makeText(getBaseContext(), "No content found", Toast.LENGTH_SHORT).show();
+        }
+        songDB.close();
+
+        Intent intent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);
+        intent.putExtra("tag", tag);
+        startActivity(intent);*/
+
         songName = (TextView)findViewById(R.id.current_song_name);
         startTimeField =(TextView)findViewById(R.id.current_time);
         endTimeField =(TextView)findViewById(R.id.time_duration);
@@ -72,7 +120,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
 
         // Initialize fragments
         LyricsFragment f_lyrics = new LyricsFragment();
-      //  f_lyrics.setArguments(bundle);
+        //f_lyrics.setArguments(bundle);
         f_manager = getFragmentManager();
         f_transaction = f_manager.beginTransaction();
         f_transaction.add(R.id.fragment_place, f_lyrics);

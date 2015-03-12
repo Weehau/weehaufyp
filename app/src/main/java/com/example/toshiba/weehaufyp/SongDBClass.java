@@ -37,8 +37,8 @@ public final class SongDBClass {
     public Cursor getSongListByLesson(String selected) throws SQLException
     {
         Cursor mCursor =
-                db.query("song", new String[]
-                                {"songTitle", "songArtist","songAlbum", "imgPath"},
+                db.query("SONG", new String[]
+                                {"songTitle", "songArtist","songAlbum", "imgPath", "songID"},
                         "tag=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {
@@ -51,7 +51,7 @@ public final class SongDBClass {
     public Cursor PlaySongByID(String selected) throws SQLException
     {
         Cursor mCursor =
-                db.query("song", new String[]
+                db.query("SONG", new String[]
                                 {"songTitle", "songPath","lyrics"},
                         "songID=?", new String[] {selected}, null, null, null);
 

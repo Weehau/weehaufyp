@@ -26,12 +26,12 @@ public class LessonActivity extends Activity {
         exv.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                //String itemClicked = LessonAdapter.childList[groupPosition][childPosition];
-                //Toast.makeText(LessonActivity.this, itemClicked + " is clicked\n" + "Supposed to show " + (groupPosition + 1) + "." + (childPosition + 1)+ " song list.", Toast.LENGTH_SHORT).show();
-                //return false;
+                String tag = LessonAdapter.childList[groupPosition][childPosition];
+                Toast.makeText(LessonActivity.this, tag + " is clicked", Toast.LENGTH_SHORT).show();
 
-                Intent songSelectionIntent = new Intent(LessonActivity.this, SongSelectionActivity.class);
-                startActivity(songSelectionIntent);
+                Intent intent = new Intent(LessonActivity.this, SongSelectionActivity.class);
+                intent.putExtra("tag", tag);
+                startActivity(intent);
 
                 return false;
             }

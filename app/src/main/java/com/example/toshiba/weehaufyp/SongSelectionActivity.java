@@ -113,8 +113,8 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
 
         myCoverArt.setImageResource(images.get(position));
         myTitle.setText((position + 1) + ". " + titles.get(position));
-        myArtist.setText(artists.get(position));
-        myAlbum.setText(albums.get(position));
+        myArtist.setText("Artist: " + artists.get(position));
+        myAlbum.setText("Album: " + albums.get(position));
 
         return row;
     }

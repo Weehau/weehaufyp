@@ -42,7 +42,7 @@ public class SongSelectionActivity extends Activity {
         Intent intent = getIntent();
         String tag = intent.getStringExtra("tag");
 
-        // get db data
+        //get song db data
         final SongDBClass songDB = new SongDBClass(this);
         songDB.open();
         Cursor c = songDB.getSongListByLesson(tag);
@@ -69,7 +69,7 @@ public class SongSelectionActivity extends Activity {
                 //Toast.makeText(SongSelectionActivity.this, titles[position] + " is clicked", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(SongSelectionActivity.this, AudioPlayerActivity.class);
-                intent.putExtra("songID", songIDs.get(position));
+                intent.putExtra("songIDs", songIDs.get(position));
                 startActivity(intent);
 
                 //int [] songResource = {R.raw.sam_smith_stay_with_me, R.raw.beyonce_haunted, R.raw.justin_timberlake_mirrors, R.raw.taylor_swift_blank_space, R.raw.lana_del_rey_summertime_sadness, R.raw.bruno_mars_locked_out_of_heaven, R.raw.lorde_royals, R.raw.maroon_5_maps, R.raw.pharrell_williams_happy, R.raw.sia_chandelier};

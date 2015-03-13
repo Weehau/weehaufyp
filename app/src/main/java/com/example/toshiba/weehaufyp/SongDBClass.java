@@ -48,11 +48,11 @@ public final class SongDBClass {
     }
 
     //Play songs at audio player
-    public Cursor PlaySongByID(String selected) throws SQLException
+    public Cursor playSongByID(String selected) throws SQLException
     {
         Cursor mCursor =
                 db.query("SONG", new String[]
-                                {"songTitle", "songPath","lyrics"},
+                                {"songTitle", "songArtist", "songPath","lyrics", "tag"},
                         "songID=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {

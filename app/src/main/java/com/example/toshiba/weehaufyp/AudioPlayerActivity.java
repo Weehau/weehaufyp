@@ -45,46 +45,44 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     private static FragmentManager f_manager;
     private static FragmentTransaction f_transaction;
 
+    //variable declaration for db
+    String titles, artists, lyrics, tag;
+    int songPath;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_player);
 
-        //Bundle songIntent = getIntent().getExtras();
-        //int songNameAtPlayer = songIntent.getInt("song_position");
-
         Intent songIntent = getIntent();
-        String songID = songIntent.getStringExtra("songID");
+        String songIDs = songIntent.getStringExtra("songIDs");
 
-        //DB for audio
-        /*final SongDBClass songDB = new SongDBClass(this);
-
-        String titles = null;
-        String songPath = null;
-        String lyrics = null;
-
+        //DB for song=================================================================
+        final SongDBClass songDB = new SongDBClass(this);
         songDB.open();
-        Cursor c = songDB.PlaySongByID();
+        Cursor c = songDB.playSongByID(songIDs);
         if (c.moveToFirst())
         {
             do {
-                titles.add(c.getString(0));
-                songPath.add(c.getString(1));
-                lyrics.add(c.getString(2));
+                titles = c.getString(0);
+                artists = c.getString(1);
+                songPath = c.getInt(2);
+                lyrics = c.getString(3);
+                tag = c.getString(4);
             } while (c.moveToNext());
         }
         else{
             Toast.makeText(getBaseContext(), "No song found", Toast.LENGTH_SHORT).show();
         }
-        songDB.close();*/
+        songDB.close();
 
-        //DB for lesson
-        /*final LessonDBClass lessonDB = new LessonDBClass(this);
+        /*//DB for lesson======================================================
+        final LessonDBClass lessonDB = new LessonDBClass(this);
 
         String content = null;
 
         lessonDB.open();
-        Cursor c = lessonDB.getContentByLesson();
+        Cursor c = lessonDB.getContentByLesson(tag);
         if (c.moveToFirst())
         {
             do {
@@ -94,11 +92,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         else{
             Toast.makeText(getBaseContext(), "No content found", Toast.LENGTH_SHORT).show();
         }
-        songDB.close();
-
-        Intent intent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);
-        intent.putExtra("tag", tag);
-        startActivity(intent);*/
+        lessonDB.close();*/
 
         songName = (TextView)findViewById(R.id.current_song_name);
         startTimeField =(TextView)findViewById(R.id.current_time);
@@ -126,10 +120,6 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         f_transaction.add(R.id.fragment_place, f_lyrics);
         f_transaction.commit();
 
-        songName.setText("Summertime Sadness what if the song name is way way longer than normal song names??");
-        //songName.setText(String.valueOf(songNameAtPlayer));
-        //Song title ? song lyrics ? Singers ?
-
         //Set colors of buttons
         repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
         lyricsTabButton.setTextColor(Color.WHITE);
@@ -142,14 +132,11 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         nextButton.setColorFilter((Color.rgb(153, 0, 0)));
         previousButton.setColorFilter((Color.rgb(153, 0, 0)));
 
-        //Song path
-        int [] songResource = {R.raw.sam_smith_stay_with_me, R.raw.beyonce_haunted, R.raw.justin_timberlake_mirrors, R.raw.taylor_swift_blank_space, R.raw.lana_del_rey_summertime_sadness, R.raw.bruno_mars_locked_out_of_heaven, R.raw.lorde_royals, R.raw.maroon_5_maps, R.raw.pharrell_williams_happy, R.raw.sia_chandelier};
-        //int [] songReousrce2 = {...song...};
+        //set data from db
+        songName.setText(titles + " by " + artists);
+        mediaPlayer = MediaPlayer.create(this, songPath);
 
-        //mediaPlayer = MediaPlayer.create(this, songResource[songNameAtPlayer]);
-        mediaPlayer = MediaPlayer.create(this, R.raw.lana_del_rey_summertime_sadness);
         seekbar.setClickable(true);
-        //pauseButton.setEnabled(false);
     }
 
     @Override
@@ -175,7 +162,8 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     }
 
     public void exercise (View view){
-        Intent exerciseIntent = new Intent(this, ExerciseActivity.class);
+        Intent exerciseIntent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);
+        exerciseIntent.putExtra("tag", tag);
         startActivity(exerciseIntent);
     }
 

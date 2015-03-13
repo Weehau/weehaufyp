@@ -12,6 +12,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "WeehauFyp.db";
 
     //SONG table ===================================================================================================================================
+    //tag identifies the lesson name, songID identifies which song gets played
     private String SQL_CREATE_SONG = "CREATE TABLE SONG (" +
             "songID TEXT," +
             "tag TEXT," +
@@ -51,6 +52,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             " VALUES ('1', 'Abstract Nouns','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"'), ('2', 'Abstract Nouns', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"'), ('3', 'Abstract Nouns', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"'), ('4', 'Abstract Nouns', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_chandelier+"'), ('5', 'Collective Nouns', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"'), ('6', 'Collective Nouns', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"'), ('7', 'Collective Nouns', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"'), ('8', 'Collective Nouns', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"'), ('9', 'Collective Nouns', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"'), ('10', 'Collective Nouns', 'Mirror', 'Justin Timberlake', '2020 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"'), ('11', 'Collective Nouns', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"'), ('12', 'Collective Nouns', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"'), ('13', 'Abstract Nouns', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"')";
 
     //LESSON table ===================================================================================================================================
+    //Name identifies the lesson name
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +
             "LessonID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "Name TEXT," +
@@ -81,9 +83,10 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +
-            "VALUES ('1', 'Present Continuous','"+ lesson_content + "')";
+            "VALUES ('1', 'Abstract Nouns','"+ lesson_content + "')";
 
     //EXERCISE table ===================================================================================================================================
+    //tag identifies the lesson name
     private String SQL_CREATE_EXERCISE = "CREATE TABLE EXERCISE (" +
             "exerciseID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "tag TEXT," +

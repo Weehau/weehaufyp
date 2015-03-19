@@ -13,7 +13,7 @@
     <string name="menu_settings_button">Settings</string>
 
     <!-- Lesson selection page -->
-    <string name="lesson_selection_text">Select a lesson</string>
+    <string name="lesson_selection_text">Lesson List</string>
     <string name="title_activity_main_activity2">MainActivity2</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
@@ -25,47 +25,6 @@
 
     <!-- Song selection page -->
     <string name="song_selection_text">Select a song</string>
-    <!-- 1.1 song list -->
-    <string-array name="main1_sub1_songs">
-        <item>Stay With Me</item>
-        <item>Haunted</item>
-        <item>Mirror</item>
-        <item>Shake It Off</item>
-        <item>Summertime Sadness</item>
-        <item>Locked Out Of Heaven</item>
-        <item>Royals</item>
-        <item>Maps</item>
-        <item>Happy</item>
-        <item>Chandelier</item>
-    </string-array>
-    <string-array name="main1_sub1_artists">
-        <item>Artist: Sam Smith</item>
-        <item>Artist: Beyonce</item>
-        <item>Artist: Justin Timberlake</item>
-        <item>Artist: Taylor Swift</item>
-        <item>Artist: Lana Del Rey</item>
-        <item>Artist: Bruno Mars</item>
-        <item>Artist: Lorde</item>
-        <item>Artist: Maroon 5</item>
-        <item>Artist: Pharrell Williams</item>
-        <item>Artist: Sia</item>
-    </string-array>
-    <string-array name="main1_sub1_albums">
-        <item>Album: In The Lonely Hour</item>
-        <item>Album: Beyonce</item>
-        <item>Album: 20/20 Experience Part 2</item>
-        <item>Album: 1989</item>
-        <item>Album: Born To Die</item>
-        <item>Album: Unorthodox Jukebox</item>
-        <item>Album: Pure Heroine</item>
-        <item>Album: V</item>
-        <item>Album: G I R L</item>
-        <item>Album: 1000 Forms of Fear</item>
-    </string-array>
-
-    <!-- Song playback -->
-    <string name="song_playback_shuffle">Shuffle</string>
-    <string name="song_playback_end">End</string>
 
     <!-- Credits page strings -->
     <string name="title_activity_credits">CreditsActivity</string>
@@ -75,8 +34,6 @@
     <string name="title_activity_song_selection">SongSelectionActivity</string>
     <string name="title_activity_song_playback">SongPlaybackActivity</string>
     <string name="title_activity_song_list">SongListActivity</string>
-    <string name="title_activity_try_song_list">TrySongListActivity</string>
-    <string name="title_activity_audio_player_acitivity">AudioPlayerAcitivity</string>
     <string name="title_activity_audio_player">AudioPlayerActivity</string>
 
     <!-- Audio player -->
@@ -103,7 +60,13 @@
     <string name="choice_4">Choice 4</string>
     <string name="check_answer">Check my answer</string>
     <string name="answer_response">Here shows correct or wrong</string>
-    <string name="check_result">Check my result</string>
-    <string name="question_no">00</string>
+    <string name="check_result">Check overall result</string>
+    <string name="question_no">10</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="title_activity_result">ResultActivity</string>
+
+    <!-- Quiz -->
+    <string name="str_next">Next</string>
+    <string name="title_activity_result_quiz">Results!!!</string>
 
 </resources>

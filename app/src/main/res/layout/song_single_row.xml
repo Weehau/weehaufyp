@@ -17,12 +17,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="16dp"
         android:text="Large Text"
         android:id="@+id/songTitleTextView"
         android:layout_alignTop="@+id/coverArtImageView"
         android:layout_toRightOf="@+id/coverArtImageView"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"

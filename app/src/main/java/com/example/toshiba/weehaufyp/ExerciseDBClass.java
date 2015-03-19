@@ -36,8 +36,8 @@ public final class ExerciseDBClass {
     public Cursor getExerciseByLesson(String selected) throws SQLException
     {
         Cursor mCursor =
-                db.query("LESSON", new String[]
-                                {"questions", "pastResult", "currentResult"},
+                db.query("EXERCISE", new String[]
+                                {"questions"},
                         "tag=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {

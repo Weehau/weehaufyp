@@ -27,6 +27,7 @@ import java.util.List;
 
 public class SongSelectionActivity extends Activity {
     ListView list;
+    TextView songListHeader;
 
     List<String> titles = new ArrayList<String>();
     List<String> artists = new ArrayList<String>();
@@ -41,6 +42,9 @@ public class SongSelectionActivity extends Activity {
 
         Intent intent = getIntent();
         String tag = intent.getStringExtra("tag");
+
+        songListHeader = (TextView)findViewById(R.id.song_selection_text);
+        songListHeader.setText(tag + " Playlist");
 
         //get song db data
         final SongDBClass songDB = new SongDBClass(this);
@@ -71,10 +75,6 @@ public class SongSelectionActivity extends Activity {
                 Intent intent = new Intent(SongSelectionActivity.this, AudioPlayerActivity.class);
                 intent.putExtra("songIDs", songIDs.get(position));
                 startActivity(intent);
-
-                //int [] songResource = {R.raw.sam_smith_stay_with_me, R.raw.beyonce_haunted, R.raw.justin_timberlake_mirrors, R.raw.taylor_swift_blank_space, R.raw.lana_del_rey_summertime_sadness, R.raw.bruno_mars_locked_out_of_heaven, R.raw.lorde_royals, R.raw.maroon_5_maps, R.raw.pharrell_williams_happy, R.raw.sia_chandelier};
-                //MediaPlayer mediaPlayer = MediaPlayer.create(SongSelectionActivity.this, songResource[position]);
-                //mediaPlayer.start();
             }
         });
 
@@ -108,8 +108,6 @@ class SongSelectionAdapter extends ArrayAdapter<String>{
         TextView myTitle = (TextView) row.findViewById(R.id.songTitleTextView);
         TextView myArtist = (TextView) row.findViewById(R.id.artistTextView);
         TextView myAlbum = (TextView) row.findViewById(R.id.albumTextView);
-
-        //final String mySongID = IDs[position];
 
         myCoverArt.setImageResource(images.get(position));
         myTitle.setText((position + 1) + ". " + titles.get(position));

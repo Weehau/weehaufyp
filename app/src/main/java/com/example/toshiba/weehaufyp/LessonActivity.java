@@ -27,7 +27,8 @@ public class LessonActivity extends Activity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 String tag = LessonAdapter.childList[groupPosition][childPosition];
-                Toast.makeText(LessonActivity.this, tag + " is clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LessonActivity.this, tag + " is clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Select a song to play", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(LessonActivity.this, SongSelectionActivity.class);
                 intent.putExtra("tag", tag);

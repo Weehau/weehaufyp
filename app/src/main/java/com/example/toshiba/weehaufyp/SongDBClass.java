@@ -52,7 +52,35 @@ public final class SongDBClass {
     {
         Cursor mCursor =
                 db.query("SONG", new String[]
-                                {"songTitle", "songArtist", "songPath","lyrics", "tag"},
+                                {"songTitle", "songArtist", "songAlbum", "songPath", "tag"},
+                        "songID=?", new String[] {selected}, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    //Show lyrics
+    public Cursor showLyricsByID(String selected) throws SQLException
+    {
+        Cursor mCursor =
+                db.query("SONG", new String[]
+                                {"lyrics"},
+                        "songID=?", new String[] {selected}, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    //Show lesson content
+    public Cursor showLessonContentByID(String selected) throws SQLException
+    {
+        Cursor mCursor =
+                db.query("SONG", new String[]
+                                {"lessonContent"},
                         "songID=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {

@@ -25,7 +25,8 @@
         <!-- define new activities here if added manually -->
         <activity
             android:name=".LessonActivity"
-            android:label="@string/title_activity_lesson" >
+            android:label="@string/title_activity_lesson"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".CreditsActivity"
@@ -46,15 +47,12 @@
         </activity>
         <activity
             android:name=".AudioPlayerActivity"
-            android:label="@string/title_activity_audio_player" >
+            android:label="@string/title_activity_audio_player"
+            android:screenOrientation="portrait">
         </activity>
 
         <service android:name=".MusicService" />
 
-        <activity
-            android:name=".TestFragment"
-            android:label="@string/title_activity_test_fragment" >
-        </activity>
         <activity
             android:name=".LyricsFragment"
             android:label="@string/title_activity_lyrics_fragment" >
@@ -66,6 +64,15 @@
         <activity
             android:name=".ExerciseActivity"
             android:label="@string/title_activity_exercise" >
+        </activity>
+        <activity
+            android:name=".QuizActivity"
+            android:label="@string/title_activity_quiz"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ResultActivity"
+            android:label="@string/title_activity_result" >
         </activity>
     </application>
 

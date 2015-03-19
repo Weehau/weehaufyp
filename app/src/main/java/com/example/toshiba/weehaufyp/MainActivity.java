@@ -15,7 +15,7 @@ import static com.example.toshiba.weehaufyp.R.*;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button menu_help_button, menu_credits_button, menu_start_button, menu_settings_button, menu_feedback_button;
+    Button menu_help_button, menu_credits_button, menu_start_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         menu_start_button = (Button) findViewById(id.menu_start_button);
         menu_help_button = (Button) findViewById(id.menu_help_button);
         menu_credits_button = (Button) findViewById(id.menu_credits_button);
-        menu_settings_button = (Button) findViewById(id.menu_settings_button);
-        menu_feedback_button = (Button) findViewById(id.menu_feedback_button);
 
         menu_start_button.setOnClickListener(this);
         menu_help_button.setOnClickListener(this);
         menu_credits_button.setOnClickListener(this);
-        menu_settings_button.setOnClickListener(this);
-        menu_feedback_button.setOnClickListener(this);
     }
 
     @Override
@@ -41,25 +37,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case id.menu_start_button :
                 Intent lessonIntent = new Intent(this, LessonActivity.class);
                 startActivity(lessonIntent);
+                Toast.makeText(getApplicationContext(), "Select a lesson", Toast.LENGTH_LONG).show();
                 break;
-                //same as
-                //startActivity(new Intent(this, LessonActivity.class));
 
             case id.menu_credits_button :
                 Intent creditsIntent = new Intent(this, CreditsActivity.class);
                 startActivity(creditsIntent);
-                break;
-
-            case id.menu_settings_button :
-                //Toast.makeText(MainActivity.this, "You've just tapped Settings", Toast.LENGTH_SHORT).show();
-                Intent audioPlayerIntent = new Intent(this, AudioPlayerActivity.class);
-                startActivity(audioPlayerIntent);
-                break;
-
-            case id.menu_feedback_button :
-                //Toast.makeText(MainActivity.this, "You've just tapped Feedback", Toast.LENGTH_SHORT).show();
-                Intent songListIntent = new Intent(this, SongListActivity.class);
-                startActivity(songListIntent);
                 break;
 
             case id.menu_help_button :

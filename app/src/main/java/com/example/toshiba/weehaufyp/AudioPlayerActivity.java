@@ -45,9 +45,10 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     private static FragmentManager f_manager;
     private static FragmentTransaction f_transaction;
 
-    //variable declaration for db
-    String titles, artists, lyrics, tag;
+    //variables for db
+    String titles, artists, albums, tag;
     int songPath;
+    public String songIDs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         setContentView(R.layout.activity_audio_player);
 
         Intent songIntent = getIntent();
-        String songIDs = songIntent.getStringExtra("songIDs");
+        songIDs = songIntent.getStringExtra("songIDs");
 
         //DB for song=================================================================
         final SongDBClass songDB = new SongDBClass(this);
@@ -66,8 +67,8 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
             do {
                 titles = c.getString(0);
                 artists = c.getString(1);
-                songPath = c.getInt(2);
-                lyrics = c.getString(3);
+                albums = c.getString(2);
+                songPath = c.getInt(3);
                 tag = c.getString(4);
             } while (c.moveToNext());
         }
@@ -112,7 +113,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         lyricsTabButton.setOnClickListener(this);
         lessonTabButton.setOnClickListener(this);
 
-        // Initialize fragments
+        //Initialize fragments
         LyricsFragment f_lyrics = new LyricsFragment();
         //f_lyrics.setArguments(bundle);
         f_manager = getFragmentManager();
@@ -136,9 +137,33 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         songName.setText(titles + " by " + artists);
         mediaPlayer = MediaPlayer.create(this, songPath);
 
+        //play media
+        mediaPlayer.start();
+        finalTime = mediaPlayer.getDuration();
+        startTime = mediaPlayer.getCurrentPosition();
+        if(oneTimeOnly == 0){
+            seekbar.setMax((int) finalTime);
+            oneTimeOnly = 1;
+        }
+
+        endTimeField.setText(String.format("%d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes((long) finalTime),
+                        TimeUnit.MILLISECONDS.toSeconds((long) finalTime) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.
+                                        toMinutes((long) finalTime)))
+        );
+        startTimeField.setText(String.format("%d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes((long) startTime),
+                        TimeUnit.MILLISECONDS.toSeconds((long) startTime) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.
+                                        toMinutes((long) startTime)))
+        );
+        seekbar.setProgress((int)startTime);
+        myHandler.postDelayed(UpdateSongTime,100);
         seekbar.setClickable(true);
     }
 
+    //switch between lyrics & lesson tabs
     @Override
     public void onClick(View v){
         switch(v.getId()) {
@@ -160,13 +185,15 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
                 break;
         }
     }
-
-    public void exercise (View view){
-        Intent exerciseIntent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);
-        exerciseIntent.putExtra("tag", tag);
-        startActivity(exerciseIntent);
+    public void nowPlayingInfo(View view){
+        Toast.makeText(getApplicationContext(), "Now Playing " + titles + "\nArtist: " + artists + "\nAlbum: " + albums, Toast.LENGTH_LONG).show();
     }
-
+    public void exercise (View view){
+        //Intent exerciseIntent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);
+        Intent quizIntent = new Intent(AudioPlayerActivity.this, QuizActivity.class);
+        quizIntent.putExtra("tag", tag);
+        startActivity(quizIntent);
+    }
     public void replaceFragmentView(int viewToBeReplaced , Fragment fragmentToReplace, String fragment_tag) {
        // fragmentToReplace.setArguments(bundle);
         f_manager = getFragmentManager();
@@ -203,7 +230,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
                                             toMinutes((long) startTime)))
             );
             seekbar.setProgress((int)startTime);
-            myHandler.postDelayed(UpdateSongTime,100);
+            myHandler.postDelayed(UpdateSongTime,100); //update the time seen on screen
         }
     }
 
@@ -258,19 +285,28 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         if(mediaPlayer.isLooping()){
             mediaPlayer.setLooping(false);
             repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
-            Toast.makeText(getApplicationContext(),
-                    "Repeat mode: OFF",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Repeat mode: OFF", Toast.LENGTH_SHORT).show();
         }
         else{
             mediaPlayer.setLooping(true);
             //repeatButton.clearColorFilter();
             repeatButton.setColorFilter((Color.rgb(153, 0, 0)));
-            Toast.makeText(getApplicationContext(),
-                    "Repeat mode: ON",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Repeat mode: ON", Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        // TODO Auto-generated method stub
+        super.onDestroy();
+        if(mediaPlayer!=null){
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+            myHandler.removeCallbacks(UpdateSongTime);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -280,7 +316,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     //Methods for seekbar
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        if(fromUser){
+        /*if(fromUser){
             mediaPlayer.seekTo(progress);
             startTimeField.setText(String.format("%d:%02d",
                             TimeUnit.MILLISECONDS.toMinutes((long) startTime),
@@ -288,16 +324,25 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
                                     TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.
                                             toMinutes((long) startTime)))
             );
-        }
+        }*/
     }
     //When user starts moving the progress handler
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-
+        // remove message Handler from updating progress bar
+        myHandler.removeCallbacks(UpdateSongTime);
     }
     //When user stops moving the progress handler
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
+        myHandler.removeCallbacks(UpdateSongTime);
+        int totalDuration = mediaPlayer.getDuration();
+        int currentPosition = mediaPlayer.getCurrentPosition();
 
+        // forward or backward to certain seconds
+        mediaPlayer.seekTo(currentPosition);
+
+        // update timer progress again
+        myHandler.postDelayed(UpdateSongTime,100);
     }
 }

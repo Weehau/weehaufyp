@@ -13,16 +13,13 @@ import android.widget.TextView;
 public class LessonAdapter extends BaseExpandableListAdapter {
 
     private Context context;
-    static String [] parentList = {"Nouns", "Adjectives", "Verbs", "Adverbs", "Participles", "Prepositions", "Pronouns", "Tenses"};
+    static String [] parentList = {"Tense Consolidation", "Passive", "Conditionals and if-sentences", "Modal Auxiliaries", "Articles"};
     static String [][] childList = {
-            {"Abstract Nouns", "Collective Nouns", "Common Nouns", "Compound Nouns", "Concrete Nouns", "Countable / Uncountable Nouns", "Gerunds", "Plural Nouns", "Predicate Nouns", "Proper Nouns"},
-            {"Comparative", "Order", "Possessive", "Superlative", "Used to", "Common Adjectives", "Personality Adjectives"},
-            {"Actions Verbs", "Auxiliary Verbs", "Finite / Non-finite Verbs", "Irregular Verbs", "Modal Verbs", "Mood", "Phrasal Verbs", "Regular Verbs", "Stative Verbs", "Conjugation & Contraction"},
-            {"Degree", "Duration", "Frequency", "Manner", "Place", "Probability", "Time", "Comparative", "Superlative"},
-            {"Past Participle", "Perfect Participle", "Present Participle"},
-            {"Prepositions of Movement", "Prepositions of Place", "Prepositions of Time"},
-            {"Indefinite Pronouns", "Personal Pronouns", "Possessive Pronouns", "Reflexive Pronouns"},
-            {"Simple", "Past", "Continuous", "Perfect", "Future"}
+            {},
+            {},
+            {},
+            {"Present / Future Modals", "Past Modals"},
+            {}
     };
 
     //A constructor for adapter

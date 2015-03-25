@@ -76,11 +76,11 @@ public final class SongDBClass {
     }
 
     //Show lesson content
-    public Cursor showLessonContentByID(String selected) throws SQLException
+    public Cursor showExplanationByID(String selected) throws SQLException
     {
         Cursor mCursor =
                 db.query("SONG", new String[]
-                                {"lessonContent"},
+                                {"explanation"},
                         "songID=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {

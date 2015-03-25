@@ -12,7 +12,7 @@
             android:id="@+id/lesson_content_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="This is lesson content fragment"
+            android:text="This is explanation fragment"
             android:padding="5dp"
             android:textSize="16dp"/>
 

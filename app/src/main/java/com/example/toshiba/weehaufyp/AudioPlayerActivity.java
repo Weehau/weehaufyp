@@ -36,8 +36,8 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
     private int forwardTime = 5000;
     private int backwardTime = 5000;
     private SeekBar seekbar;
-    private ImageButton playButton, repeatButton, forwardButton, rewindButton, nextButton, previousButton;
-    private Button lyricsTabButton, lessonTabButton;
+    private ImageButton quizButton, playButton, repeatButton, forwardButton, rewindButton;
+    private Button lyricsTabButton, explanationTabButton;
     private static Bundle bundle;
     public static int oneTimeOnly = 0;
 
@@ -55,8 +55,9 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_player);
 
-        Intent songIntent = getIntent();
-        songIDs = songIntent.getStringExtra("songIDs");
+        //Intent songIntent = getIntent();
+        bundle  = getIntent().getExtras();
+        songIDs = bundle.getString("songIDs");
 
         //DB for song=================================================================
         final SongDBClass songDB = new SongDBClass(this);
@@ -77,45 +78,26 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         }
         songDB.close();
 
-        /*//DB for lesson======================================================
-        final LessonDBClass lessonDB = new LessonDBClass(this);
-
-        String content = null;
-
-        lessonDB.open();
-        Cursor c = lessonDB.getContentByLesson(tag);
-        if (c.moveToFirst())
-        {
-            do {
-                content.add(c.getString(0));
-            } while (c.moveToNext());
-        }
-        else{
-            Toast.makeText(getBaseContext(), "No content found", Toast.LENGTH_SHORT).show();
-        }
-        lessonDB.close();*/
-
         songName = (TextView)findViewById(R.id.current_song_name);
         startTimeField =(TextView)findViewById(R.id.current_time);
         endTimeField =(TextView)findViewById(R.id.time_duration);
         seekbar = (SeekBar)findViewById(R.id.seekBar1);
+        quizButton = (ImageButton)findViewById(R.id.quiz_button);
         playButton = (ImageButton)findViewById(R.id.play_button);
         forwardButton = (ImageButton)findViewById(R.id.fast_forward_button);
         rewindButton  = (ImageButton)findViewById(R.id.rewind_button);
-        nextButton = (ImageButton)findViewById(R.id.next_button);
-        previousButton = (ImageButton)findViewById(R.id.previous_button);
 
         repeatButton = (ImageButton)findViewById(R.id.repeat_button);
         lyricsTabButton = (Button)findViewById(R.id.lyrics_tab_button);
-        lessonTabButton = (Button)findViewById(R.id.lesson_tab_button);
+        explanationTabButton = (Button)findViewById(R.id.explanation_tab_button);
 
         //Add on click listeners to tab buttons
         lyricsTabButton.setOnClickListener(this);
-        lessonTabButton.setOnClickListener(this);
+        explanationTabButton.setOnClickListener(this);
 
         //Initialize fragments
         LyricsFragment f_lyrics = new LyricsFragment();
-        //f_lyrics.setArguments(bundle);
+        f_lyrics.setArguments(bundle);
         f_manager = getFragmentManager();
         f_transaction = f_manager.beginTransaction();
         f_transaction.add(R.id.fragment_place, f_lyrics);
@@ -125,13 +107,12 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
         lyricsTabButton.setTextColor(Color.WHITE);
         lyricsTabButton.setBackgroundColor(Color.parseColor("#B20000"));
-        lessonTabButton.setTextColor(Color.BLACK);
-        lessonTabButton.setBackgroundResource(android.R.drawable.btn_default);
+        explanationTabButton.setTextColor(Color.BLACK);
+        explanationTabButton.setBackgroundResource(android.R.drawable.btn_default);
+        //quizButton.setColorFilter((Color.rgb(153, 0, 0)));
         playButton.setColorFilter((Color.rgb(153, 0, 0)));
         forwardButton.setColorFilter((Color.rgb(153, 0, 0)));
         rewindButton.setColorFilter((Color.rgb(153, 0, 0)));
-        nextButton.setColorFilter((Color.rgb(153, 0, 0)));
-        previousButton.setColorFilter((Color.rgb(153, 0, 0)));
 
         //set data from db
         songName.setText(titles + " by " + artists);
@@ -163,25 +144,25 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         seekbar.setClickable(true);
     }
 
-    //switch between lyrics & lesson tabs
+    //switch between lyrics & explanation tabs
     @Override
     public void onClick(View v){
         switch(v.getId()) {
             case R.id.lyrics_tab_button :
                 lyricsTabButton.setTextColor(Color.WHITE);
                 lyricsTabButton.setBackgroundColor(Color.parseColor("#B20000"));
-                lessonTabButton.setTextColor(Color.BLACK);
-                lessonTabButton.setBackgroundResource(android.R.drawable.btn_default);
+                explanationTabButton.setTextColor(Color.BLACK);
+                explanationTabButton.setBackgroundResource(android.R.drawable.btn_default);
                 LyricsFragment f_lyrics = new LyricsFragment();
                 replaceFragmentView(R.id.fragment_place, f_lyrics, "");
                 break;
 
-            case R.id.lesson_tab_button :
-                lessonTabButton.setTextColor(Color.WHITE);
-                lessonTabButton.setBackgroundColor(Color.parseColor("#B20000"));
+            case R.id.explanation_tab_button :
+                explanationTabButton.setTextColor(Color.WHITE);
+                explanationTabButton.setBackgroundColor(Color.parseColor("#B20000"));
                 lyricsTabButton.setTextColor(Color.BLACK);
                 lyricsTabButton.setBackgroundResource(android.R.drawable.btn_default);
-                replaceFragmentView(R.id.fragment_place, new LessonContentFragment(), "");
+                replaceFragmentView(R.id.fragment_place, new ExplanationFragment(), "");
                 break;
         }
     }
@@ -195,7 +176,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         startActivity(quizIntent);
     }
     public void replaceFragmentView(int viewToBeReplaced , Fragment fragmentToReplace, String fragment_tag) {
-       // fragmentToReplace.setArguments(bundle);
+        fragmentToReplace.setArguments(bundle);
         f_manager = getFragmentManager();
         f_transaction = f_manager.beginTransaction();
         f_transaction.replace(viewToBeReplaced, fragmentToReplace, fragment_tag);

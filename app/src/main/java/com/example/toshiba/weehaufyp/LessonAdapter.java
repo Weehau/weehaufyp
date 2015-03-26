@@ -13,12 +13,13 @@ import android.widget.TextView;
 public class LessonAdapter extends BaseExpandableListAdapter {
 
     private Context context;
-    static String [] parentList = {"Tense Consolidation", "Passive", "Conditionals and if-sentences", "Modal Auxiliaries", "Articles"};
+    static String [] parentList = {"Tense Consolidation", "Passive", "Conditionals and if-sentences", "Modal Auxiliaries", "Articles", "Prepositions"};
     static String [][] childList = {
             {},
             {},
             {},
             {"Present / Future Modals", "Past Modals"},
+            {},
             {}
     };
 

@@ -68,31 +68,190 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "tag TEXT," +
             "lessonContent TEXT)";
 
-    private String presentFutureModalsLessonContent = "This is the lesson content for present / future modals";
-    private String pastModalsLessonContent = "This is the lesson content for past modals";
+    private String presentFutureModalsLessonContent = "<b><u>“Don’t have to” and “must not”</u></b><br>" +
+            "1.\t“Don’t have to” refers to an absence of obligation.<br>" +
+            "[You <b>don’t have to</b> work tomorrow.]<br>" +
+            "\t<br>" +
+            "2.\t“Must not” refers to an obligation not to do something.<br>" +
+            "[You <b>must not</b> leave the room before the end of the test.]\t<br><br><hr>" +
+            "<b><u>“Should”</u></b><br>" +
+            "1.\tWhere “*should” appears, “ought to” can also be used.<br>" +
+            "Expectation<br>" +
+            "[This film *<b>should</b> be really good.]<br>" +
+            "<br>" +
+            "2.\tRecommendation<br>" +
+            "[I think you *<b>should</b> talk it over with your parents.]<br>" +
+            "In writing, “should” can be used to express a strong obligation politely.<br>" +
+            "[Guests <b>should</b> vacate their rooms by midday.]<br>" +
+            "<br>" +
+            "3.\tCriticism of an action<br>" +
+            "[You *<b>shouldn’t</b> eat so much late at night.]<br>" +
+            "<br>" +
+            "4.\tUncertainty<br>" +
+            "[<b>Should</b> I leave these papers on your desk?]<br>" +
+            "<br>" +
+            "5.\t“Should” and verbs of thinking<br>" +
+            "“Should” is often used with verbs of thinking, to make an opinion less direct.<br>" +
+            "[I <b>should</b> think that model would sell quite well.]<br>" +
+            "<br>" +
+            "6.\tWith “be” and adjectives describing chance<br>" +
+            "This group of adjectives includes “odd”, “strange”, “funny” (odd), and the expression “what a coincidence”.<br>" +
+            "[It’s strange that you <b>should</b> be staying in the same hotel.]<br>" +
+            "<br>" +
+            "7.\tAfter “in case” to emphasize unlikelihood<br>" +
+            "[I’m taking an umbrella in case it <b>should</b> rain.]<br><br>" +
+            "<b><u>“Could”</u></b><br>" +
+            "1.\t“Could” is used to express possibility or uncertainty.<br>" +
+            "[This <b>could</b> be the house.]<br>" +
+            "<br>" +
+            "2.\t“Could” is used with comparative adjectives to express possibility or impossibility.<br>" +
+            "[The situation <b>couldn’t</b> be worse.]<br>" +
+            "[It <b>could</b> be better.]<br>" +
+            "<br>" +
+            "3.\t“Could” is used to make suggestions.<br>" +
+            "[We <b>could</b> go to that new restaurant opposite the cinema.]<br>" +
+            "<br>" +
+            "4.\t“Could” is used to express unwillingness.<br>" +
+            "[I <b>couldn’t</b> possibly leave Tim here on his own.]<br><br>" +
+            "<b><u>“Can”</u></b><br>" +
+            "1.\t“Can” with “be” is used to make criticisms.<br>" +
+            "[You <b>can be</b> really annoying, you know!]<br>" +
+            "<br>" +
+            "2.\t“Can” is also used with “be” to refer to capability.<br>" +
+            "[Winter here <b>can be</b> really cold.]<br><br>" +
+            "<b><u>“Must” and “can’t”</u></b><br>" +
+            "1.\tThese refer to present time only. In expressing certainty, they are opposites.<br>" +
+            "[This <b>must</b> be our stop.] (I’m sure it is.)<br>" +
+            "[This <b>can’t</b> be our stop.] (I’m sure it isn’t.)<br><br>" +
+            "<b><u>“May” and “might”</u></b><br>" +
+            "1.\t“May” can be used to express “although” clauses.<br>" +
+            "[She <b>may</b> be the boss, <b>but</b> that is no excuse for shouting like that.]<br>" +
+            "<br>" +
+            "2.\t“May/might as well”<br>" +
+            "This describes the only thing left to do, something which the speaker is not enthusiastic about.<br>" +
+            "[Nobody else is going to turn up now for the lesson, so you <b>may/might as well</b> go home.<br>" +
+            "<br>" +
+            "3.\t“May” and “might” both express possibility or uncertainty. “May” is more common in formal language.<br>" +
+            "[The peace conference <b>may</b> find a solution to the problem.]<br>" +
+            "<br>" +
+            "4.\tThere is an idiomatic expression with “try”, using “may” for present reference, and “might” for past reference.<br>" +
+            "[<b>Try</b> as I <b>might</b>, I could not pass my driving test.] (This means although I tried hard, I could not pass my driving test.)<br><br>" +
+            "<b><u>“Shall”</u></b><br>" +
+            "1.\t“Shall” can be used with all persons to emphasize something which the speaker feels is certain to happen or wants to happen.<br>" +
+            "[I <b>shall</b> definitely give up smoking this year.]<br>" +
+            "[We <b>shall</b> win!] (“shall” is stressed in this sentence)<br>" +
+            "<br>" +
+            "2.\tSimilarly, “shall” is used in formal rules and regulations.<br>" +
+            "[No player <b>shall</b> knowingly pick up or move the ball of another player.]<br><br>" +
+            "<b><u>“Will”</u></b><br>" +
+            "1.\t“Will” can be used to express an assumption.<br>" +
+            "[A: The phone is ringing. B: That <b>will</b> be for me.]<br>" +
+            "<br>" +
+            "2.\t“Will”/”won’t” can be used emphatically to tell someone of the speaker’s intention, or to forbid an action, in response to a “will” expression.<br>" +
+            "[I <b>will</b> take the money anyway, so there!]<br>" +
+            "[You <b>won’t</b>!]<br>" +
+            "[I <b>will</b>!]<br>" +
+            "<br>" +
+            "Similarly “I won’t” can mean “I refuse”, and “I will” can mean “I insist”.<br>" +
+            "[A: I <b>won’t</b> do it! B: Yes, you <b>will</b>!]<br><br>" +
+            "<b><u>“Would”</u></b><br>" +
+            "1.\t“Would” is often used in situations where a conditional sense is understood but not stated.<br>" +
+            "[Nobody <b>would</b> agree with that idea.] (if we asked them)<br>" +
+            "[Life <b>wouldn’t</b> be worth living without you.] (if you weren’t there)<br>" +
+            "[I think Jim <b>would</b> be the best candidate.] (if he was under consideration for the job)<br>" +
+            "[Sue <b>wouldn’t</b> do that, surely!] (if you think she’s capable of doing that).<br><br>" +
+            "<b><u>“Need”</u></b><br>" +
+            "1.\t“Need to” is a modal auxiliary, and behaves like a normal verb.<br>" +
+            "[Do you <b>need to</b> use the photocopier?]<br>" +
+            "<br>" +
+            "2.\t“Need” is a modal auxiliary, but mainly in question and negative forms.<br>" +
+            "[<b>Need</b> you make so much noise?]<br>";
 
-    String lesson_content = "The present continuous is used to talk about present situations which we see as short-term or temporary. We use the present simple to talk about present situations which we see as long-term or permanent.<br>" +
+    private String pastModalsLessonContent = "<b><u>“Had to” and “must have”</u></b><br>" +
+            "1.\t“Had to” is the past form of “must” and refers to a past obligation.<br>" +
+            "[Sorry I''m late, I <b>had to</b> post some letters.]<br>" +
             "<br>" +
-            "In these examples, the action is taking place at the time of speaking.<br>" +
+            "The negative form is “didn''t have to” and refers to an absence of obligation.<br>" +
+            "“Must have” refers to past certainty. (see below)<br><br>" +
+            "<b><u>“Should have” and “ought to have”</u></b><br>" +
+            "Where “*should” appears, “ought to” is also possible.<br>" +
+            "1.\tExpectation<br>" +
+            "“Should have” refers to something which was supposed to happen.<br>" +
+            "[The parcel I sent you *<b>should have</b> arrived by now.]<br>" +
             "<br>" +
-            "- Its raining.<br>" +
-            "- Who is Kate talking to on the phone?<br>" +
-            "- Look, somebody is trying to steal that mans wallet.<br>" +
-            "- Im not looking. My eyes are closed tightly.<br>" +
+            "2.\tCriticism of an action<br>" +
+            "[You *<b>shouldn''t have</b> eaten so much last night.]<br>" +
             "<br>" +
-            "In these examples, the action is true at the present time but we dont think it will be true in the long term.<br>" +
+            "3.\t“Should have” and verbs of thinking<br>" +
+            "The past form “knew” in the example is an unreal verb form, and the “should have” form is used according to “sequence of verb forms”.<br>" +
+            "[I <b>should have</b> thought you knew.]<br>" +
             "<br>" +
-            "- Im looking for a new apartment.<br>" +
-            "- Hes thinking about leaving his job.<br>" +
-            "- Theyre considering making an appeal against the judgment.<br>" +
-            "- Are you getting enough sleep?<br>" +
+            "4.\t\"With “be” and adjectives describing chance<br>" +
+            "[It was strange that you <b>should have been</b> staying in the same hotel last year.]<br>" +
             "<br>" +
-            "In these examples, the action is at a definite point in the future and it has already been arranged.<br>" +
+            "5.\tAs a polite expression of thanks on receiving a gift or a favour<br>" +
+            "[I''ve done the washing up for you. - Oh, you really <b>shouldn''t have</b>.]<br>" +
+            "The intonation should be friendly, as this is not a criticism.<br><br>" +
+            "<b><u>“Could have”</u></b><br>" +
+            "1.\t“Could have” refers to past possibility or uncertainty.<br>" +
+            "[David <b>could have</b> won the race if he had tried.] (possibility/ability)<br>" +
+            "[It <b>could have</b> been Sue, I suppose.] (uncertainty)<br>" +
             "<br>" +
-            "- Im meeting her at 6.30.<br>" +
-            "- They arent arriving until Tuesday.<br>" +
-            "- We are having a special dinner at a top restaurant for all the senior managers.<br>" +
-            "- Isnt he coming to the dinner?<br>";
+            "2.\t“Couldn''t have” is also possible for both meanings.<br>" +
+            "<br>" +
+            "3.\t“Couldn''t have” can be used with comparative adjectives.<br>" +
+            "[We <b>couldn''t have</b> been happier in those days.]<br>" +
+            "<br>" +
+            "4.\t“Could have” can also express unwillingness.<br>" +
+            "[She <b>could have</b> gone to the party with her friends.] (but she didn''t)<br>" +
+            "[We couldn''t have left the dog on its own.] (so we didn''t)<br><br>" +
+            "<b><u>“Could”</u></b><br>" +
+            "1.\t“Could” refers to past permission or past ability.<br>" +
+            "[When I was sixteen I <b>could</b> stay out till 11.00.” (I was allowed to)<br>" +
+            "[Mary <b>could</b> swim when she was three.] (she actually did)<br>" +
+            "<br>" +
+            "2.\tCompare:<br>" +
+            "[Mary <b>could have</b> swum when she was three.] (but she didn''t)<br><br>" +
+            "<b><u>“May have” and “might have”</u></b><br>" +
+            "1.\t“Might have” refers to past possibility which did not happen.<br>" +
+            "[You <b>might have</b> drowned!]<br>" +
+            "<br>" +
+            "2.\t“Might have” and “may have” refer to uncertainty.<br>" +
+            "[I suppose I <b>may have</b> been rather critical.]<br>" +
+            "<br>" +
+            "3.\tBoth can be used in the negative to express uncertainty.<br>" +
+            "[They <b>might not have</b> received our letter yet.]<br>" +
+            "<br>" +
+            "4.\t“Might have” is used to express annoyance at someone''s failure to do something. There is strong stress on the words underlined.<br>" +
+            "[You <b>might have</b> <u>told</u> me my trousers were split!]<br>" +
+            "<br>" +
+            "5.\t“I might have known” + “would” is an idiom by which the speaker expresses ironically that an action was typical of someone else.<br>" +
+            "[<b>I might have known</b> that he <b>would</b> be late.]<br>" +
+            "[A: It was Jack who broke the vase. B: <b>I might have known</b>!]<br><br>" +
+            "<b><u>“Must have” and “can’t have”</u></b><br>" +
+            "1.\tThese refer to the speaker''s certainty about a past action.<br>" +
+            "[Someone <b>must have</b> taken it.] (I am sure they did)<br>" +
+            "[You <b>can''t have</b> lost it.] (I am sure you didn''t)<br>" +
+            "<br>" +
+            "2.\tBoth can also be used with surely in exclamations.<br>" +
+            "[Surely you <b>can''t have</b> eaten all of it.]<br>" +
+            "[Surely you <b>must have</b> noticed it.]<br><br>" +
+            "<b><u>“Would not”</u></b><br>" +
+            "1.\tThis expresses an unwillingness in the past.<br>" +
+            "[Everyone was angry because Sam <b>wouldn''t</b> turn off the television.]<br><br>" +
+            "<b><u>“Would have”</u></b><br>" +
+            "1.\t“Would have” can refer to events in the past which did not actually happen.<br>" +
+            "[I <b>would have</b> accepted this job, but I didn''t want to move house.]<br>" +
+            "<br>" +
+            "2.\tAssumptions about the past are also possible with “would have”.<br>" +
+            "[A: Someone called after you left but didn''t leave a message.]<br>" +
+            "[B: That <b>would have</b> been Cathy, probably.]<br><br>" +
+            "<b><u>“Needn’t have and didn’t need to”</u></b><br>" +
+            "1.\t“Needn''t have done” refers to an unnecessary action which was actually done.<br>" +
+            "[You <b>needn''t have paid</b> all at once.] (you did pay)<br>" +
+            "<br>" +
+            "“Didn''t need to” refers to an unnecessary action which was not done.<br>" +
+            "[I <b>didn''t need to</b> go to the dentist again, luckily.]<br>";
 
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +

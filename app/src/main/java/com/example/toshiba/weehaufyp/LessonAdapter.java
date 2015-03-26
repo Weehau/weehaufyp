@@ -1,7 +1,6 @@
 package com.example.toshiba.weehaufyp;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -68,7 +67,7 @@ public class LessonAdapter extends BaseExpandableListAdapter {
         TextView tv = new TextView(context);
         tv.setText(parentList[groupPosition]);
         tv.setPadding(80, 10, 10, 10);
-        tv.setTextSize(30);
+        tv.setTextSize(25);
         //tv.setTextColor(Color.RED);
 
         return tv;

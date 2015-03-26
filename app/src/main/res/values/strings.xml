@@ -70,5 +70,6 @@
     <string name="str_next">Next</string>
     <string name="title_activity_result_quiz">Results!!!</string>
     <string name="title_activity_lesson_content">LessonContentActivity</string>
+    <string name="title_activity_lesson_list">LessonListActivity</string>
 
 </resources>

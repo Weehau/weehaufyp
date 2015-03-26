@@ -1,22 +1,15 @@
 package com.example.toshiba.weehaufyp;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,11 +24,11 @@ public class SongSelectionActivity extends Activity {
     TextView songListHeader, lessonContentButton;
     String tag;
 
-    List<String> titles = new ArrayList<String>();
-    List<String> artists = new ArrayList<String>();
-    List<String> albums = new ArrayList<String>();
-    List<String> songIDs = new ArrayList<String>();
-    List<Integer> images = new ArrayList<Integer>();
+    List<String> titles = new ArrayList<>();
+    List<String> artists = new ArrayList<>();
+    List<String> albums = new ArrayList<>();
+    List<String> songIDs = new ArrayList<>();
+    List<Integer> images = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +44,7 @@ public class SongSelectionActivity extends Activity {
         lessonContentButton = (TextView)findViewById(R.id.lessonContent);
         lessonContentButton.setText("Click here to learn about " + tag);
 
-        //get song db data
+        //DB for song
         final SongDBClass songDB = new SongDBClass(this);
         songDB.open();
         Cursor c = songDB.getSongListByLesson(tag);
@@ -96,10 +89,10 @@ public class SongSelectionActivity extends Activity {
 
 class SongSelectionAdapter extends ArrayAdapter<String>{
     Context context;
-    List<String> titles = new ArrayList<String>();
-    List<String> artists = new ArrayList<String>();
-    List<String> albums = new ArrayList<String>();
-    List<Integer> images = new ArrayList<Integer>();
+    List<String> titles = new ArrayList<>();
+    List<String> artists = new ArrayList<>();
+    List<String> albums = new ArrayList<>();
+    List<Integer> images = new ArrayList<>();
 
     SongSelectionAdapter(Context c, List<String> titles, List<String> artists, List<String> albums, List<Integer> images)
     {

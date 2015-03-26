@@ -3,14 +3,9 @@ package com.example.toshiba.weehaufyp;
 /**
  * Created by Toshiba on 03-Mar-15.
  */
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ProjectDBHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
@@ -60,13 +55,430 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     //Insert song values
     private String SQL_INSERT_SONG = "INSERT INTO SONG" +
-            " VALUES ('1', 'Present / Future Modals','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('2', 'Present / Future Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_abstract_nouns+"'), ('3', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Present / Future Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Present / Future Modals', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Present / Future Modals', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Past Modals', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('9', 'Past Modals', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"', '"+actual_explanation_drunk_in_love+"'), ('10', 'Past Modals', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Past Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Past Modals', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"')";
+            " VALUES ('1', 'Tense Consolidation','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('2', 'Passive', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_abstract_nouns+"'), ('3', 'Conditionals and if-sentences', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Past Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Articles', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Prepositions', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Tense Consolidation', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('9', 'Passive', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"', '"+actual_explanation_drunk_in_love+"'), ('10', 'Conditionals and if-sentences', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Articles', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"')";
 
     //LESSON table ===================================================================================================================================
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +
             "LessonID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "tag TEXT," +
             "lessonContent TEXT)";
+
+    private String tenseConsolidationLessonContent = "This lesson contains 4 sections: present time, future time, past time, and present perfect<br>" +
+            "<h4>(A) Present time</h4>" +
+            "<b><u>Basic contrasts: present simple and present continuous</u></b><br>" +
+            "1.\tPresent simple generally refers to:<br>" +
+            "Facts that are always true: [Water <b>boils</b> at 100 degrees Celsius.]<br>" +
+            "Habits: [British people <b>drink</b> a lot of tea.]<br>" +
+            "States: [I <b>don’t like</b> gangster films.]<br>" +
+            "<br>" +
+            "2.\tPresent continuous (progressive) generally refers to actions which are in progress at the moment. These can be temporary: [I’<b>m staying</b> in a hotel until I find a flat.]<br>" +
+            "They can be actually in progress: [The dog <b>is sleeping</b> on our bed.]<br>" +
+            "Or they can be generally in progress but not actually happening at the moment: [I’<b>m learning</b> to drive.]<br><br>" +
+            "<b><u>State verbs and event (action or dynamic) verbs</u></b><br>" +
+            "1.\tState verbs describe a continuing state, so do not usually have a continuous form. Typical examples are:<br>" +
+            "“believe”, “belong”, “consist”, “contain”, “doubt”, “fit”, “have”, “know”, “like”, “love”, “matter”, “mean”, “own”, “prefer”, “understand”, “seem”, “suppose”, “suspect”, “want”, “wish”<br>" +
+            "<br>" +
+            "2.\tSome verbs have a stative meaning and a different active meaning. Typical examples are:<br>" +
+            "“be”, “depend”, “feel”, “have”, “measure”, “see”, “taste”, “think”, “weigh”<br><br>" +
+            "<b><u>Other uses of present continuous</u></b><br>" +
+            "1.\tTemporary situations<br>" +
+            "[<b>Are</b> you <b>enjoying</b> your stay here?]<br>" +
+            "<br>" +
+            "2.\tRepeated actions<br>" +
+            "[My car has broken down, so I <b>am walking</b> to work these days.]<br>" +
+            "<br>" +
+            "3.\tComplaints about annoying habits<br>" +
+            "[You <b>are</b> always <b>making snide remarks</b> about my cooking.]<br>" +
+            "<br>" +
+            "4.\tWith verbs describing change and development:<br>" +
+            "[The weather <b>is getting</b> worse.]<br>" +
+            "[More and more people <b>are giving up</b> smoking.]<br><br>" +
+            "<b><u>Other uses of present simple</u></b><br>" +
+            "1.\tMaking declarations<br>" +
+            "Verbs describing opinions and feelings tend to be state verbs.<br>" +
+            "[I <b>hope</b> you''ll come to my party.]<br>" +
+            "[I <b>bet</b> you don''t know the answer.]<br>" +
+            "<br>" +
+            "2.\tHeadlines<br>" +
+            "These are written in a ''telegram'' style, and references to the past are usually simplified to present simple.<br>" +
+            "[Ship <b>sinks</b> in midnight collision.]<br>" +
+            "<br>" +
+            "3.\tInstructions and itineraries<br>" +
+            "Instructions and recipes can be written in present simple instead of in imperative forms. This style is more personal.<br>" +
+            "[First you <b>roll out</b> the pastry.]<br>" +
+            "<br>" +
+            "Itineraries are descriptions of travel arrangements.<br>" +
+            "[On day three we <b>visit</b> Stratford-upon-Avon.]<br>" +
+            "<br>" +
+            "4.\tSummaries of events<br>" +
+            "Plots of stories, films etc., and summaries of historical events use present (and present perfect) verb forms.<br>" +
+            "[May 1945: The war in Europe <b>comes</b> to an end.]<br>" +
+            "[At the end of the play both families <b>realize</b> that their hatred caused the deaths of the lovers.]<br>" +
+            "<br>" +
+            "5.\t‘Historic present’ in narrative and funny stories<br>" +
+            "In informal speech, it is possible to use what we call the ''historic present'' to describe past events, especially to make the narration seem more immediate and dramatic.<br>" +
+            "[So then the second man <b>asks</b> the first one why he <b>has</b> a banana in his ear and the first one says ...]<br>" +
+            " <br>" +
+            "<h4>(B) Future time</h4>" +
+            "<b><u>Basic contrasts: will, going to, present continuous</u></b><br>" +
+            "1.\t“Will” is normally known as the predictive future, and describes known facts, or what we suppose is true.<br>" +
+            "[I''<b>ll</b> be late home this evening.]<br>" +
+            "[The company <b>will</b> make a profit next year.]<br>" +
+            "<br>" +
+            "This can also take the form of an assumption.<br>" +
+            "[That''<b>ll</b> be Jim at the door.] (This means that I suppose it is Jim.)<br>" +
+            "<br>" +
+            "2.\t“Will” is also used to express an immediate decision.<br>" +
+            "[I’<b>ll</b> take this one.]<br>" +
+            "<br>" +
+            "3.\t“Be going to” describes intentions or plans. At the moment of speaking the plans have already been made.<br>" +
+            "[I''<b>m going to</b> wait here until Carol gets back.]<br>" +
+            "<br>" +
+            "“Going to” is also used to describe an event whose cause is present or evident.<br>" +
+            "[Look at that tree! It''<b>s going to</b> fall.]<br>" +
+            "<br>" +
+            "Decisions expressed with going to refer to a more distant point in the future.<br>" +
+            "<br>" +
+            "4.\tPresent continuous describes fixed arrangements, especially social and travel arrangements. A time reference is usually included. Note the strong similarity to the “going to” future.<br>" +
+            "[I <b>am having</b> a party next week] and [I <b>am going to have</b> a party next week] are communicating the same message.<br><br>" +
+            "<b><u>Future continuous</u></b><br>" +
+            "1.\tThis describes an event which will be happening at a future point.<br>" +
+            "[Come round in the morning. I''<b>ll be painting</b> in the kitchen.]<br>" +
+            "<br>" +
+            "2.\tIt can also describe events which are going to happen anyway, rather than events which we choose to make happen.<br>" +
+            "[I won''t bother to fix a time to see you, because I''<b>ll be calling</b> into the office anyway several times next week.]<br>" +
+            "<br>" +
+            "3.\tIn some contexts future continuous also sounds more polite than “will”.<br>" +
+            "[<b>Will</b> you <b>be going</b> to the shops later? If you go, could you get me some milk?]<br>" +
+            "<br>" +
+            "4.\tIt can also be used to refer to fixed arrangements and plans.<br>" +
+            "[The band <b>will be performing</b> live in Paris this summer.]<br><br>" +
+            "<b><u>Future perfect</u></b><br>" +
+            "1.\tThis has both simple and continuous forms, and refers to time which we look back at from a future point.<br>" +
+            "[In two years’ time I''<b>ll have finished</b> the book.]<br>" +
+            "[By the end of the month, I''<b>ll have been working</b> for this firm for a year.]<br>" +
+            "<br>" +
+            "2.\tIt can also be used to express an assumption on the part of the speaker.<br>" +
+            "[You <b>won''t have heard</b> the news, of course.] (This means that I assume you have not heard the news.)<br><br>" +
+            "<h4>(C) Past time</h4>" +
+            "<b><u>Basic contrasts: past simple and past continuous</u></b><br>" +
+            "1.\tPast simple generally refers to:<br>" +
+            "Completed actions: [I <b>got</b> up, <b>switched</b> off the radio, and <b>sat</b> down again.]<br>" +
+            "Habits: [Every day I <b>went</b> to the park.]<br>" +
+            "States: [In those days, I <b>didn''t like</b> reading.]<br>" +
+            "<br>" +
+            "2.\tPast continuous (progressive) generally refers to:<br>" +
+            "Actions in progress (often interrupted by events)<br>" +
+            "[I <b>was drinking</b> my coffee at the time.]<br>" +
+            "[While I <b>was opening</b> the letter, the phone rang.]<br>" +
+            "<br>" +
+            "Background description in narrative<br>" +
+            "[[I entered the office and looked around. Most people <b>were working</b> at their desks, but Jane <b>was staring</b> out of the window and <b>pretending</b> to write something at the same time.]<br>" +
+            "<br>" +
+            "Changing states<br>" +
+            "[The car <b>was getting</b> worse all the time. One of the headlights <b>was</b> gradually <b>falling off</b>, and the engine <b>was making</b> more and more funny noises.]<br>" +
+            "<br>" +
+            "Repeated actions - criticism<br>" +
+            "With a frequency adverb, this use is similar to the use of present continuous to express annoyance.<br>" +
+            "[When Jane was at school, she <b>was</b> always <b>losing</b> things.]<br>" +
+            "<br>" +
+            "3.\tPast continuous is not used to describe general habitual actions, without the sense of criticism mentioned above. Past simple is used for this meaning.<br>" +
+            "[When I lived in London, I <b>walked through</b> the park every day.]<br><br>" +
+            "<b><u>Past perfect simple and continuous</u></b><br>" +
+            "1.\tWe use the past perfect when we are already talking about the past, and we want to go back to an earlier past time (''double past'').<br>" +
+            "[By the time I got to the station, the train <b>had left</b>.]<br>" +
+            "<br>" +
+            "2.\tPast perfect continuous (progressive)<br>" +
+            "The same contrasts between past simple and past continuous (see previous section) can be made in past perfect verb forms for events further back in the past.<br>" +
+            "<br>" +
+            "[I <b>had been living</b> in a bed-sitter up to then.]<br>" +
+            "[While I <b>had been talking</b> on the phone, Jimmy <b>had escaped</b>.]<br>" +
+            "[The whole place was deserted, but it was obvious that someone <b>had been living</b> there. They''<b>d been cooking</b> in the kitchen for a start, and they <b>hadn''t bothered</b> to clear up the mess.]<br><br>" +
+            "<b><u>“Used to” and “would”</u></b><br>" +
+            "1.\t“Used to”<br>" +
+            "This often contrasts with the present. The contrast may be stated or understood.<br>" +
+            "[I <b>used to go</b> swimming a lot.] (but I don''t now)<br>" +
+            "<br>" +
+            "2.\t“Would”<br>" +
+            "This is used to describe repeated actions, not states. It describes a habitual activity which was typical of a person.<br>" +
+            "[Every week he''<b>d buy</b> his mother a bunch of flowers.]<br><br>" +
+            "<b><u>Unfulfilled past events</u></b><br>" +
+            "1.\tThese describe events intended to take place, but which did not happen.<br>" +
+            "[I <b>was going to</b> phone you, but I forgot.]<br>" +
+            "[I <b>was thinking of going</b> to Italy this year, but I haven''t decided.]<br>" +
+            "[I <b>was about to</b> do it, but I started doing something else.]<br>" +
+            "[Jack <b>was to have taken</b> part, but he fell ill.]<br>" +
+            "<br>" +
+            "2.\tThe contrasting past event is often understood, but not stated.<br>" +
+            "[How are you? I <b>was going to</b> phone you.] (but I didn''t).<br>" +
+            "<br>" +
+            "3.\tPolite forms<br>" +
+            "These are common with “wonder”.<br>" +
+            "[I <b>was wondering</b> if you wanted to come to the cinema.]<br><br>" +
+            "<h4>(D) Present perfect</h4>" +
+            "<b><u>Present perfect simple</u></b><br>" +
+            "1.\tPresent perfect simple refers to:<br>" +
+            "Recent events, without a definite time given. The recentness may be indicated by “just”.<br>" +
+            "[We''<b>ve missed</b> the turning.]<br>" +
+            "[I''<b>ve just</b> seen a ghost!]<br>" +
+            "<br>" +
+            "Indefinite events, which happened at an unknown time in the past. No definite time is given.<br>" +
+            "[Jim <b>has had</b> three car accidents.] (up to the present)<br>" +
+            "<br>" +
+            "Indefinite events which may have an obvious result in the present: [I''<b>ve twisted</b> my ankle] (that''s why I''m limping)<br>" +
+            "With state verbs, a state which lasts up to the present: [I''<b>ve lived</b> here for the past ten years.]<br>" +
+            "A habitual action in a period of time up to the present: [I''<b>ve been jogging</b> every morning for the last month.]<br>" +
+            "<br>" +
+            "2.\tContrast with past simple<br>" +
+            "Past simple is used with time expressions which refer to definite times. The time may be stated or understood. Compare:<br>" +
+            "[I''<b>ve bought</b> a new car.] (indefinite)<br>" +
+            "[I <b>bought</b> a new car <b>last week</b>.] (definite)<br>" +
+            "[I <b>bought</b> the car after all.] (implied definite: the car we talked about)<br>" +
+            "<br>" +
+            "Choice between past simple and present perfect for recent events may depend on the attitude of the speaker. This in turn may depend on whether the speaker feels distant in time or place from the event.<br>" +
+            "<br>" +
+            "[I''<b>ve left</b> my wallet in the car. I''m going back to get it.]<br>" +
+            "Here the speaker may be about to return, and feels that the event is connected with the present.<br>" +
+            "<br>" +
+            "[I <b>left</b> my wallet in the car. I''m going back to get it.]<br>" +
+            "The speaker may feel separated in time from the event, or be further away.<br><br>" +
+            "<u>Present perfect continuous</u><br>" +
+            "1.\tPresent perfect continuous (progressive) can refer to a range of meanings, depending on the time expression used and the context.<br>" +
+            "<br>" +
+            "A state which lasts up to the present moment: [I''<b>ve been waiting</b> for you for three hours.]<br>" +
+            "An incomplete activity: [I''<b>ve been cleaning</b> the house but I still haven''t finished.]<br>" +
+            "To emphasize duration: [I''<b>ve been writing</b> letters all morning.]<br>" +
+            "A recently finished activity: [I''<b>ve been running</b>. That''s why I look hot.]<br>" +
+            "A repeated activity: [I''<b>ve been taking</b> French lessons this year]<br>" +
+            "<br>" +
+            "2.\tContrasts with present perfect simple<br>" +
+            "There may be little contrast when some state verbs are used.<br>" +
+            "[How long <b>have</b> you <b>lived</b> here?]<br>" +
+            "[How long <b>have</b> you <b>been living</b> here?]<br>" +
+            "<br>" +
+            "Some verbs (especially “sit”, “lie”, “wait” and “stay”) prefer the continuous form.<br>" +
+            "There may be a contrast between completion and incompletion, especially if the number of items completed is mentioned.<br>" +
+            "Completed: emphasis on achievement. [I''<b>ve ironed</b> five shirts this morning.]<br>" +
+            "Incomplete, or recently completed: emphasis on duration. [I''<b>ve been ironing</b> my shirts this morning.]<br>" +
+            "<u>Time expressions with present perfect</u><br>" +
+            "1.\tMeaning with present perfect verb forms is associated with certain time expressions.<br>" +
+            "Contrast with past simple may depend on the choice of time expression.<br>" +
+            "<br>" +
+            "Past simple: referring to a specific finished time: “yesterday”, “last week”, “on Sunday”<br>" +
+            "Present perfect: with ''indefinite'' time expressions meaning ''up to now'': “since 1968”, “already”<br>" +
+            "<br>" +
+            "Many time expressions are not associated with a specific verb form, since they refer both to finished time or time up to the present, depending on the speaker''s perspective.<br>" +
+            "[I <b>haven''t seen</b> Helen <b>recently</b>.]<br>" +
+            "[I <b>saw</b> Jim <b>recently</b>.]<br>";
+
+    private String passiveLessonContent = "<b><u>Basic uses of the passive</u></b><br>" +
+            "1.\tAgent and instrument<br>" +
+            "The person who performs an action in a passive sentence is called the <b>agent</b>, introduced by “by”. The agent may or may not be mentioned.<br>" +
+            "[My purse was found by <b>one of the cleaners</b>.]<br>" +
+            "<br>" +
+            "An object which causes something to happen is called an <b>instrument</b>, introduced by “with”.<br>" +
+            "[He was hit on the head with a <b>hammer</b>.]<br>" +
+            "<br>" +
+            "2.\tVerbs with two objects<br>" +
+            "Verbs which have two objects can be made passive in two ways.<br>" +
+            "[<b>I</b> was handed a <b>note</b>.] [A <b>note</b> was handed to <b>me</b>.]<br>" +
+            "<br>" +
+            "Other common verbs of this type are:<br>" +
+            "“bring”, “give”, “lend”, “pass”, “pay”, “promise”, “sell”, “send”, “show”, “tell”<br>" +
+            "<br>" +
+            "3.\tVerbs with object and complement<br>" +
+            "Some verbs have a noun or adjective which describes their object.<br>" +
+            "[We elected Jim <b>class representative</b>.]<br>" +
+            "[Everyone considered him a <b>failure</b>.]<br>" +
+            "<br>" +
+            "When these are made passive, the complement goes directly after the verb.<br>" +
+            "[Jim was elected class representative.]<br>" +
+            "[He was considered a failure.]<br><br>" +
+            "<b><u>Using and not mentioning the agent</u></b><br>" +
+            "1.\tChange of focus<br>" +
+            "The passive can change the emphasis of a sentence.<br>" +
+            "[<b>Jack</b> won the prize.] (focus on Jack)<br>" +
+            "[The <b>prize</b> was won by Jack.] (focus on the prize)<br>" +
+            "<br>" +
+            "2.\tUnknown agent<br>" +
+            "The agent is not mentioned if unknown.<br>" +
+            "[My wallet <b>has been taken</b>.]<br>" +
+            "In this case, there is no point in adding an agent: ''by somebody''.<br>" +
+            "<br>" +
+            "3.\tGeneralized agent<br>" +
+            "If the subject is ''people in general'' or ''you'' the agent is not mentioned.<br>" +
+            "[Bicycles <b>are</b> widely <b>used</b> in the city instead of public transport.]<br>" +
+            "<br>" +
+            "4.\tObvious agent<br>" +
+            "If the agent is obvious or has already been referred to, it is not mentioned.<br>" +
+            "[Linda <b>has been arrested</b>.] (we assume by the police)<br>" +
+            "[The company agreed to our request and a new car park <b>was opened</b>.]<br>" +
+            "<br>" +
+            "5.\tUnimportant agent<br>" +
+            "If the agent is not important to the meaning of the sentence it is not mentioned.<br>" +
+            "[I <b>was advised</b> to obtain a visa in advance.]<br>" +
+            "<br>" +
+            "6.\tImpersonality<br>" +
+            "Using the passive is a way of avoiding the naming of a specific person who is responsible for an action.<br>" +
+            "[It <b>has been decided</b> to reduce all salaries by 10%.]<br>" +
+            "<br>" +
+            "In descriptions of processes, there is emphasis on the actions performed rather than on the people who perform them.<br>" +
+            "[Then the packets <b>are packed</b> into boxes of twenty-four.]<br><br>" +
+            "<b><u>“Have” and “get something done”, “need doing”</u></b><br>" +
+            "1.\t“Have”/”get something done”<br>" +
+            "This typically describes a service performed for us by someone else.<br>" +
+            "[I''ve just <b>had/got</b> my car <b>serviced</b>. I <b>have/get</b> it <b>done</b> every winter.]<br>" +
+            "<br>" +
+            "It can also describe something unfortunate that happens to someone.<br>" +
+            "[We <b>had/got</b> our car <b>broken</b> into last month.]<br>" +
+            "<br>" +
+            "“Get” is more likely to be used than have when:<br>" +
+            "i) there is a feeling that something must be done.<br>" +
+            "[I really must <b>get/have</b> my hair <b>cut</b>.]<br>" +
+            "<br>" +
+            "ii) there is a feeling of eventually managing to do something.<br>" +
+            "[I eventually <b>got/had</b> the car <b>fixed</b> at the Fast Service garage.]<br>" +
+            "<br>" +
+            "iii) in orders and imperatives.<br>" +
+            "[<b>Get</b> your hair <b>cut</b>!]<br>" +
+            "<br>" +
+            "Note that “get” should not be used in the present perfect passive, where it would be confused with “have got”.<br>" +
+            "<br>" +
+            "2.\tThe need to have a service done can be described with “need doing”.<br>" +
+            "[Your hair <b>needs cutting</b>.]<br><br>" +
+            "<b><u>Passive “get”</u></b><br>" +
+            "1.\t“Get” can be used instead of be to form the passive in spoken language.<br>" +
+            "[Martin <b>got arrested</b> at a football match.]<br><br>" +
+            "<b><u>Reporting verbs</u></b><br>" +
+            "1.\tPresent reference<br>" +
+            "With verbs such as “believe”, “know”, “say”, “think”, which report people''s opinions, a passive construction is often used to avoid a weak subject, and to give a generalized opinion.<br>" +
+            "With present reference, the passive is followed by the present infinitive.<br>" +
+            "[The criminal <b>is thought to be</b> in hiding in the London area.]<br>" +
+            "[Vitamin C <b>is known to be</b> good for treating colds.]<br>" +
+            "<br>" +
+            "2.\tPast reference<br>" +
+            "With past reference, the passive is followed by the past infinitive.<br>" +
+            "[Smith <b>is believed to have left</b> England last week.]<br>" +
+            "<br>" +
+            "3.\tPast reporting verb<br>" +
+            "If the reporting verb is in the past, the past infinitive tends to follow, though not always if the verb “be” is used.<br>" +
+            "[People thought Sue had paid too much.]<br>" +
+            "[Sue <b>was thought to have paid</b> too much.]<br>" +
+            "<br>" +
+            "[The police thought that the thief was still in the house.]<br>" +
+            "[The thief <b>was thought to</b> still <b>be</b> in the house.]<br>" +
+            "<br>" +
+            "4.\tPast reference with two objects<br>" +
+            "In this case there are two ways of making a passive sentence.<br>" +
+            "[Everyone knows the portrait was painted by an Italian.]<br>" +
+            "[The portrait <b>is known to have been painted</b> by an Italian.]<br>" +
+            "<br>" +
+            "5.\tContinuous infinitive<br>" +
+            "Past and present continuous infinitives are also used.<br>" +
+            "[Mary <b>is thought to be</b> living in Scotland.]<br>" +
+            "[The driver <b>is thought to have been</b> doing a U-turn.]<br><br>" +
+            "<b><u>Verbs with prepositions</u></b><br>" +
+            "1.\tEnding a sentence with a preposition<br>" +
+            "It is possible to end a sentence with a preposition in a sentence where a prepositional verb is made passive.<br>" +
+            "[Somebody broke into our house.]<br>" +
+            "[Our house <b>was broken into</b>.]<br>" +
+            "<br>" +
+            "2.\t“By” and “with”<br>" +
+            "“With” is used after participles such as “filled”, “packed”, “crowded”, “crammed”.<br>" +
+            "[The train <b>was packed with</b> commuters.]<br>" +
+            "<br>" +
+            "The difference between “by” and “with” may involve the presence of a person:<br>" +
+            "[Dave <b>was hit by</b> a branch.] (an accident)<br>" +
+            "[Dave <b>was hit with</b> a branch.] (a person hit him with one)<br>" +
+            "<br>" +
+            "3.\t“Make” is followed by “to” when used in the passive.<br>" +
+            "[My boss made me work hard.]<br>" +
+            "[I <b>was made to</b> work hard by my boss.]<br>" +
+            "<br>" +
+            "4.\t“Cover” and verbs which involve similar ideas, such as “surround”, “decorate”, can use “with” or “by”. “Cover” can also be followed by “in”.<br>" +
+            "[The furniture <b>was covered in</b> dust.]<br>" +
+            "[The living room <b>had been decorated with</b> flowery wallpaper.]";
+
+    private String conditionalsLessonContent = "<b><u>Basic contrasts</u></b><br>" +
+            "1.\tWhat is always true: present + present<br>" +
+            "[If I <b>work</b> late, I <b>get</b> tired.]<br>" +
+            "[If the water <b>is</b> boiling, it means the food <b>is</b> nearly ready.]<br>" +
+            "<br>" +
+            "2.\tWhat was always true: past + past<br>" +
+            "[We <b>went</b> home early if it <b>was</b> foggy.]<br>" +
+            "[If it <b>was</b> snowing, we <b>stayed</b> at home.]<br>" +
+            "<br>" +
+            "3.\tReal situations: present + future<br>" +
+            "Here we think that the outcome is really possible.<br>" +
+            "[If you <b>keep</b> driving like that, you <b>are going to have</b> an accident.]<br>" +
+            "[If you <b>see</b> Mark, tell him I <b>will</b> ring him tomorrow.]<br>" +
+            "<br>" +
+            "4.\tHypothetical situations: past + “would”<br>" +
+            "These are unreal or imaginary situations.<br>" +
+            "[If I <b>knew</b> the answer, I''<b>d</b> tell you.]<br>" +
+            "[If I <b>was</b> having a party, I <b>wouldn''t</b> invite Marcia.]<br>" +
+            "<br>" +
+            "The verb “be” usually takes the form were for all persons in these sentences, though “was” is used in everyday speech. Note that in the first person it is possible to use “should” instead of “would”.<br>" +
+            "[If I <b>left</b> home, I think I <b>should</b> be lonely.]<br>" +
+            "<br>" +
+            "5.\tHypothetical past situations: past perfect + “would have”<br>" +
+            "These refer to past events.<br>" +
+            "[If I <b>had</b> known you were coming, I <b>would have</b> met you at the station.]<br>" +
+            "<br>" +
+            "6.\tWith modals<br>" +
+            "Possible situations in the present<br>" +
+            "[If you <b>get</b> wet, you <b>should</b> change your clothes immediately.]<br>" +
+            "[If you <b>come</b> early, we <b>can</b> discuss the problem together.]<br>" +
+            "<br>" +
+            "Hypothetical situations<br>" +
+            "[If I <b>had</b> the money, I <b>could</b> help you.]<br>" +
+            "<br>" +
+            "Hypothetical past situations<br>" +
+            "[If you <b>hadn''t</b> reminded me, I <b>might have</b> forgotten.]<br>" +
+            "<br>" +
+            "<b><u>Variations</u></b><br>" +
+            "1.\t“If only”<br>" +
+            "This adds emphasis to hypothetical situations. With past events it adds a sense of regret. The second part of the sentence is often left out.<br>" +
+            "<b>[If only</b> I <b>had</b> enough time.]<br>" +
+            "[<b>If only<//b> I <b>hadn''t</b> drunk too much, this <b>wouldn''t have</b> happened!]<br>" +
+            "<br>" +
+            "2.\t“Unless” and other alternatives to “if”<br>" +
+            "“Unless” means “only if not”.<br>" +
+            "[I''<b>ll</b> go ahead and get the tickets <b>unless</b> you <b>call</b> me this afternoon.] (This means if you call me this afternoon, I won''t get the tickets.)<br>" +
+            "<br>" +
+            "This means if one situation depends on another, “if” can be replaced by “as/so long as”, “provided” or “only if”.<br>" +
+            "[I''<b>ll</b> do what you say <b>provided</b> the police <b>are not</b> informed.]<br>" +
+            "<br>" +
+            "“Even if” describes how something will happen whatever the condition.<br>" +
+            "[<b>Even if</b> it rains, we''<b>ll</b> still go for a picnic.]<br>" +
+            "<br>" +
+            "3.\tPast events with results in the present: past perfect + “would”<br>" +
+            "[If Jim <b>hadn''t</b> missed the plane, he <b>would be</b> here by now.]<br>" +
+            "<br>" +
+            "4.\t“Should”<br>" +
+            "After “if”, this makes the possibility of an event seem unlikely.<br>" +
+            "[<b>If</b> you <b>should</b> see Ann, <b>could</b> you ask her to call me?] (This implies that I do not expect you to see Ann.)<br>" +
+            "<br>" +
+            "5.\t“Were to”<br>" +
+            "This also makes an event seem more hypothetical.<br>" +
+            "[<b>If</b> I <b>were to</b> ask you to marry me, what <b>would</b> you say?]<br>" +
+            "<br>" +
+            "6.\t“Happen to”<br>" +
+            "This emphasizes chance possibilities. It is often used with “should”.<br>" +
+            "[<b>If</b> you <b>happen to</b> see Helen, <b>could</b> you ask her to call me?]<br>" +
+            "[<b>If</b> you <b>should happen to</b> be passing, <b>drop in</b> for a cup of tea.]<br>" +
+            "<br>" +
+            "7.\t“If it were not for”/”if it hadn ''t been for”<br>" +
+            "This describes how one event depends on another.<br>" +
+            "[<b>If it weren''t for</b> Jim, this company <b>would be</b> in a mess.]<br>" +
+            "[<b>If it hadn''t been for</b> their goalkeeper, United <b>would have</b> lost.]<br>" +
+            "<br>" +
+            "8.\t“Will” and “would”: politeness and emphasis<br>" +
+            "These can be used as polite forms.<br>" +
+            "[<b>If</b> you <b>will/would</b> wait here, I''<b>ll</b> see if Mrs. Green is free.]<br>" +
+            "<br>" +
+            "“Will” can also be used for emphasis, meaning “insist on doing”.<br>" +
+            "[<b>If</b> you <b>will</b> stay out late, no wonder you <b>are</b> tired.] (insist on staying out)";
 
     private String presentFutureModalsLessonContent = "<b><u>“Don’t have to” and “must not”</u></b><br>" +
             "1.\t“Don’t have to” refers to an absence of obligation.<br>" +
@@ -253,9 +665,92 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "“Didn''t need to” refers to an unnecessary action which was not done.<br>" +
             "[I <b>didn''t need to</b> go to the dentist again, luckily.]<br>";
 
+    private String articlesLessonContent = "<b><u>Definite article</u></b><br>" +
+            "1.\tClasses<br>" +
+            "This is one way to refer to classes, and is perhaps more formal than using a plural.<br>" +
+            "[<b>The tiger</b> is threatened with extinction.]<br>" +
+            "<br>" +
+            "2.\tNational groups<br>" +
+            "Groups as a whole.<br>" +
+            "[<b>The French</b> eat in restaurants more than <b>the English</b>.]<br>" +
+            "<br>" +
+            "Single examples are not formed in the same way:<br>" +
+            "[<b>A Frenchman/woman</b>, <b>an Englishman/woman</b>.]<br>" +
+            "<br>" +
+            "3.\tOther groups<br>" +
+            "If these are clearly plural.<br>" +
+            "[<b>the Social Democrats</b>], [<b>The Rolling Stones</b>]<br>" +
+            "<br>" +
+            "Note the difference:<br>" +
+            "[<b>Pink Floyd</b>], [<b>Queen</b>] (no article)<br>" +
+            "<br>" +
+            "4.\tUnique objects<br>" +
+            "[<b>the moon</b>], [<b>the sun</b>]<br>" +
+            "<br>" +
+            "Note that there are other suns and moons in the universe.<br>" +
+            "[This planet has <b>a</b> small <b>moon</b>.]<br>" +
+            "<br>" +
+            "5.\tTitles<br>" +
+            "These tend to be ''unique''.<br>" +
+            "[<b>The director</b> of studies]<br>" +
+            "<br>" +
+            "If the title is post-modified (has a description coming after the noun), the is more likely, but not essential. Compare:<br>" +
+            "[She became President in 1998.] [She became <b>(the) President</b> of the United States in 1998.]<br>" +
+            "<br>" +
+            "6.\tOther titles<br>" +
+            "The may be part of the title, and so is capitalized.<br>" +
+            "[Newspapers: <b>The Independent</b>, <b>The Sunday Times</b>]<br>" +
+            "<br>" +
+            "7.\tMusical instruments<br>" +
+            "[Jane plays <b>the flute</b>.]<br>" +
+            "[<b>The guitar</b> is my favourite instrument.]<br>" +
+            "It is, of course, still possible to use a where it would naturally be used.<br>" +
+            "[There was <b>a</b> small brown <b>flute</b> in the window of <b>the shop</b>.]<br>" +
+            "<br>" +
+            "8.\tEmphatic use<br>" +
+            "This is heavily stressed and emphasises the following noun.<br>" +
+            "[<b>This hotel</b> is <b>the place</b> to stay.]<br>" +
+            "<br>" +
+            "9.\tPlace names<br>" +
+            "Post-modification, especially with “… of ….” plays a role in place names.<br>" +
+            "Compare:<br>" +
+            "[<b>Leeds University/The University of Leeds</b>], [<b>London Bridge/The Tower of London</b>]<br>" +
+            "<br>" +
+            "If the first part of a place-name is another name, then normal rules about zero article apply.<br>" +
+            "[<b>Brown''s Restaurant</b>], [<b>The Garden House Hotel</b>]<br>" +
+            "<br>" +
+            "The same applies in geographical names:<br>" +
+            "[<b>Canvey Island</b>], [<b>The Isle of Man</b>]<br>" +
+            "<br>" +
+            "10.\tMost and the most<br>" +
+            "[<b>Most hotels</b> in England are very expensive.] (making a generalisation)<br>" +
+            "[This is <b>the most expensive hotel</b> in town.] (talking about a specific hotel)<br>" +
+            "<br>" +
+            "11.\tImportance of context<br>" +
+            "The definite article refers to already mentioned items, and so its use depends on context.<br>" +
+            "[<b>The Smiths</b> had <b>a son</b> and <b>a daughter</b>. <b>The son</b> was in <b>the Army</b> and <b>the daughter</b> was training to be <b>a doctor</b>.]<br>" +
+            "<br>" +
+            "[On <b>the Saturday</b>, there was <b>a</b> terrible <b>storm</b>.]<br>" +
+            "Here, “the Saturday” refers to a day in an area of time already mentioned.<br>" +
+            "[On <b>the Saturday</b> of <b>that week</b> ...]<br><br>" +
+            "<b><u>Indefinite article</u></b>" +
+            "1.\tJobs<br>" +
+            "Compare: Tony is <b>a</b> builder. Tony was <b>the builder</b> of that house.<br>" +
+            "<br>" +
+            "2.\tIn measuring<br>" +
+            "Three times <b>a</b> week. Fifty kilometres <b>an</b> hour.<br>" +
+            "£3.50 <b>a</b> kilo. £15,000 <b>a</b> year.<br>" +
+            "Formally, “per” can replace “a/an”.<br>" +
+            "<br>" +
+            "3.\tUnknown people<br>" +
+            "Use of “a/an” emphasises that a person is unknown.<br>" +
+            "<b>A</b> Mr. Jones called while you were out.<br>";
+
+    private String prepositionsLessonContent = "Prepositions lesson content will be displayed here";
+
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +
-            "VALUES ('1', 'Present / Future Modals','"+presentFutureModalsLessonContent+ "'), ('2', 'Past Modals', '"+pastModalsLessonContent+"')";
+            "VALUES ('1', 'Tense Consolidation', '"+tenseConsolidationLessonContent+"'), ('2', 'Passive', '"+passiveLessonContent+"'), ('3', 'Conditionals and if-sentences', '"+conditionalsLessonContent+"'), ('4', 'Present / Future Modals','"+presentFutureModalsLessonContent+ "'), ('5', 'Past Modals', '"+pastModalsLessonContent+"'), ('6', 'Articles', '"+articlesLessonContent+"'), ('7', 'Prepositions', '"+prepositionsLessonContent+"')";
 
     //EXERCISE table ===================================================================================================================================
     //tag identifies the lesson name
@@ -272,27 +767,28 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     //"VALUES ('1', 'Abstract Nouns','1,2','0,1','2')";
 
     //QUESTION table ===================================================================================================================================
-    private String SQL_CREATE_QUESTION = "CREATE TABLE QUESTION (" +
-            "questionID INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "question TEXT," +
-            "answer TEXT," +
-            "choices TEXT)";
-
-    //Insert table values
-    private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
-            "VALUES ('1','question 1','1','A,B,C,D')";
-
-    // tasks table name=============================================================================================================
-    private static final String TABLE_QUEST = "quest";
-    // tasks Table Columns names
-    private static final String KEY_ID = "id";
+    private static final String TABLE_QUEST = "QUESTION";
+    private static final String KEY_ID = "questionID";
+    private static final String KEY_TAG = "tag";
     private static final String KEY_QUES = "question";
     private static final String KEY_ANSWER = "answer"; //correct option
     private static final String KEY_OPTA= "opta"; //option a
     private static final String KEY_OPTB= "optb"; //option b
     private static final String KEY_OPTC= "optc"; //option c
     private static final String KEY_OPTD= "optd"; //option d
-    private SQLiteDatabase dbase;
+
+    private String SQL_CREATE_QUESTION = "CREATE TABLE QUESTION (" +
+            "questionID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "tag TEXT," +
+            "question TEXT," +
+            "answer TEXT," +
+            "opta TEXT," +
+            "optb TEXT," +
+            "optc TEXT," +
+            "optd TEXT)";
+
+    private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
+            "VALUES ('1', 'Present / Future Modals','1 + 1 = how much?','2','1','2','3','4'), ('2', 'Present / Future Modals','1 * 2 = how much?','2','2','4','6','8'), ('3', 'Past Modals','8 / 2 = how much?','4','4','8','12','14'), ('4', 'Past Modals','10 - 1 = how much?','9','3','6','9','12')";
 
     public ProjectDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -308,96 +804,12 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_INSERT_EXERCISE);
         db.execSQL(SQL_CREATE_QUESTION);
         db.execSQL(SQL_INSERT_QUESTION);
-
-        dbase=db;
-        String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_QUEST + " ( "
-                + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_QUES
-                + " TEXT, " + KEY_ANSWER+ " TEXT, "+KEY_OPTA +" TEXT, "
-                +KEY_OPTB +" TEXT, "+KEY_OPTC+" TEXT, "+KEY_OPTD+" TEXT)";
-        db.execSQL(sql);
-        addQuestions();
-        //db.close();
-    }
-
-    //Quiz DB starts here ===========================================================================================
-    private void addQuestions()
-    {
-        //question, a, b, c, d, answer
-        //public Question(String qUESTION, String oPTA, String oPTB, String oPTC, String oPTD, String aNSWER)
-        Question q1=new Question("1 + 1 = " + "how much?","1", "2", "3", "4", "2");
-        this.addQuestion(q1);
-        Question q2=new Question("1 * 2 = " + "how much?", "2", "4", "6", "8", "2");
-        this.addQuestion(q2);
-        Question q3=new Question("8 / 2 = " + "how much?","4", "8","12", "14","4");
-        this.addQuestion(q3);
-        Question q4=new Question("10 - 1 = " + "how much?", "3", "6", "9", "12","9");
-        this.addQuestion(q4);
-        Question q5=new Question("5 + 5 = " + " how much?","5","10","15", "20","10");
-        this.addQuestion(q5);
-        Question q6=new Question("3 * 7 = " + " how much?","7","14","21", "28","21");
-        this.addQuestion(q6);
-        Question q7=new Question("200 - 100 = " + " how much?","50","100","150", "200","100");
-        this.addQuestion(q7);
-        Question q8=new Question("40 / 8 = " + " how much?","5","10","15", "20","5");
-        this.addQuestion(q8);
-        Question q9=new Question("12 + 21 = " + " how much?","11","22","33", "44","33");
-        this.addQuestion(q9);
-        Question q10=new Question("9 * 9 = " + " how much?","18","81","80", "1.8","81");
-        this.addQuestion(q10);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUEST);
         // Create tables again
         onCreate(db);
-    }
-
-    // Adding new question
-    public void addQuestion(Question quest) {
-        //SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_QUES, quest.getQUESTION());
-        values.put(KEY_ANSWER, quest.getANSWER());
-        values.put(KEY_OPTA, quest.getOPTA());
-        values.put(KEY_OPTB, quest.getOPTB());
-        values.put(KEY_OPTC, quest.getOPTC());
-        values.put(KEY_OPTD, quest.getOPTD());
-        // Inserting Row
-        dbase.insert(TABLE_QUEST, null, values);
-    }
-    public List<Question> getAllQuestions() {
-        List<Question> quesList = new ArrayList<Question>();
-        // Select All Query
-        String selectQuery = "SELECT * FROM " + TABLE_QUEST;
-        dbase=this.getReadableDatabase();
-        Cursor cursor = dbase.rawQuery(selectQuery, null);
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                Question quest = new Question();
-                quest.setID(cursor.getInt(0));
-                quest.setQUESTION(cursor.getString(1));
-                quest.setANSWER(cursor.getString(2));
-                quest.setOPTA(cursor.getString(3));
-                quest.setOPTB(cursor.getString(4));
-                quest.setOPTC(cursor.getString(5));
-                quest.setOPTD(cursor.getString(6));
-                quesList.add(quest);
-            } while (cursor.moveToNext());
-        }
-        // return quest list
-        return quesList;
-    }
-    public int rowcount()
-    {
-        int row=0;
-        String selectQuery = "SELECT  * FROM " + TABLE_QUEST;
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-        row=cursor.getCount();
-        return row;
     }
 }
 

@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:text="This is explanation fragment"
             android:padding="5dp"
-            android:textSize="16dp"/>
-
+            android:textSize="16dp"
+            android:lineSpacingExtra="3dp"/>
     </ScrollView>
 </LinearLayout>

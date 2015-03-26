@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +28,8 @@ import java.util.List;
 
 public class SongSelectionActivity extends Activity {
     ListView list;
-    TextView songListHeader;
+    TextView songListHeader, lessonContentButton;
+    String tag;
 
     List<String> titles = new ArrayList<String>();
     List<String> artists = new ArrayList<String>();
@@ -41,10 +43,13 @@ public class SongSelectionActivity extends Activity {
         setContentView(R. layout.activity_song_selection);
 
         Intent intent = getIntent();
-        String tag = intent.getStringExtra("tag");
+        tag = intent.getStringExtra("tag");
 
-        songListHeader = (TextView)findViewById(R.id.song_selection_text);
+        songListHeader = (TextView)findViewById(R.id.song__list_header);
         songListHeader.setText(tag + " Playlist");
+
+        lessonContentButton = (TextView)findViewById(R.id.lessonContent);
+        lessonContentButton.setText("Click here to learn about " + tag);
 
         //get song db data
         final SongDBClass songDB = new SongDBClass(this);
@@ -80,6 +85,12 @@ public class SongSelectionActivity extends Activity {
 
         SongSelectionAdapter adapter = new SongSelectionAdapter(this, titles, artists, albums, images);
         list.setAdapter(adapter);
+    }
+
+    public void lessonContent(View view){
+        Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);
+        lessonContentIntent.putExtra("tag", tag);
+        startActivity(lessonContentIntent);
     }
 }
 

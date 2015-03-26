@@ -16,6 +16,5 @@
             android:padding="5dp"
             android:textSize="16dp"
             android:lineSpacingExtra="3dp"/>
-
     </ScrollView>
 </LinearLayout>

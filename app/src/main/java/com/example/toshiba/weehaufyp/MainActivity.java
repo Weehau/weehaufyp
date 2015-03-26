@@ -15,16 +15,16 @@ import static com.example.toshiba.weehaufyp.R.*;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    Button menu_help_button, menu_credits_button, menu_start_button;
+    TextView menu_help_button, menu_credits_button, menu_start_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
 
-        menu_start_button = (Button) findViewById(id.menu_start_button);
-        menu_help_button = (Button) findViewById(id.menu_help_button);
-        menu_credits_button = (Button) findViewById(id.menu_credits_button);
+        menu_start_button = (TextView) findViewById(id.menu_start_button);
+        menu_help_button = (TextView) findViewById(id.menu_help_button);
+        menu_credits_button = (TextView) findViewById(id.menu_credits_button);
 
         menu_start_button.setOnClickListener(this);
         menu_help_button.setOnClickListener(this);

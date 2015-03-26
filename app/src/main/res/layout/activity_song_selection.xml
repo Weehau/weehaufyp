@@ -10,20 +10,38 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/song_selection_text"
-        android:text="@string/song_selection_text"
+        android:id="@+id/song__list_header"
+        android:text="@string/song_list_header"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/lessonContent"
+        android:text="@string/lesson_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/song__list_header"
+        android:layout_centerHorizontal="true"
+        android:onClick="lessonContent"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginBottom="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:background="#404040"
+        android:textColor="#e5e5e5"
+        android:clickable="true"/>
 
     <!-- android:id="@+id/songListView" -->
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/songListView"
-        android:layout_below="@+id/song_selection_text"
+        android:layout_below="@+id/lessonContent"
         android:scrollbarStyle="insideInset"/>
 
 </RelativeLayout>

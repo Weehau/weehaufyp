@@ -86,7 +86,6 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         playButton = (ImageButton)findViewById(R.id.play_button);
         forwardButton = (ImageButton)findViewById(R.id.fast_forward_button);
         rewindButton  = (ImageButton)findViewById(R.id.rewind_button);
-
         repeatButton = (ImageButton)findViewById(R.id.repeat_button);
         lyricsTabButton = (Button)findViewById(R.id.lyrics_tab_button);
         explanationTabButton = (Button)findViewById(R.id.explanation_tab_button);

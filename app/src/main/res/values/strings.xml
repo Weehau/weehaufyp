@@ -24,7 +24,8 @@
     <string name="title_activity_lesson">LessonActivity</string>
 
     <!-- Song selection page -->
-    <string name="song_selection_text">Select a song</string>
+    <string name="song_list_header">Song list header</string>
+    <string name="lesson_content">Lesson content</string>
 
     <!-- Credits page strings -->
     <string name="title_activity_credits">CreditsActivity</string>
@@ -68,5 +69,6 @@
     <!-- Quiz -->
     <string name="str_next">Next</string>
     <string name="title_activity_result_quiz">Results!!!</string>
+    <string name="title_activity_lesson_content">LessonContentActivity</string>
 
 </resources>

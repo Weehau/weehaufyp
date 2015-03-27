@@ -104,14 +104,16 @@ public class QuizActivity extends Activity {
     public void nextQuestion(View view){
         RadioButton choice = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
         //Log.d("yourans", currentQ.getANSWER()+" "+answer.getText());
-        Log.d("yourans", answer +" "+ choice.getText());
+        Log.d("yourans", answer.get(currentQuestionIndex) +" "+ choice.getText());
         /*if(currentQ.getANSWER().equals(answer.getText()))
         {
             score++;
             Log.d("score", "Your score" + score);
         }*/
+        //if there's more questions
         if(currentQuestionIndex < totalQuestionsCount){
             //currentQ=quesList.get(qid);
+            currentQuestionIndex++;
             setQuestionView();
             currentQuestionCount++;
             currentQuestion.setText(String.valueOf(currentQuestionCount));
@@ -127,6 +129,7 @@ public class QuizActivity extends Activity {
         //else if(qid == totalQuestionsCount){
             //something
         //}
+        //if it's the last question
         else{
             checkResultButton.setEnabled(true);
             Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
@@ -161,15 +164,16 @@ public class QuizActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Click 'Check Overall Result' to see how well you did", Toast.LENGTH_LONG).show();
         }
         RadioButton choice = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
+        Log.d("yourans", answer.get(currentQuestionIndex) +" "+ choice.getText());
         //if(currentQ.getANSWER().equals(answer.getText())){
-        if(answer == choice){
+        if(answer.get(currentQuestionIndex).equals(choice.getText())){
             score++;
             answerResponse.setText("Correct!");
             answerResponse.setTextColor(Color.BLUE);
         }
         else{
             //answerResponse.setText("Oops!\nThe correct answer: " + currentQ.getANSWER().toString());
-            answerResponse.setText("Oops!\nThe correct answer: " + answer);
+            answerResponse.setText("Oops!\nThe correct answer: " + answer.get(currentQuestionIndex));
             answerResponse.setTextColor(Color.RED);
         }
         //disable all radio buttons
@@ -218,6 +222,6 @@ public class QuizActivity extends Activity {
         rdb.setText(optb.get(currentQuestionIndex));
         rdc.setText(optc.get(currentQuestionIndex));
         rdd.setText(optd.get(currentQuestionIndex));
-        currentQuestionIndex++;
+        //currentQuestionIndex++;
     }
 }

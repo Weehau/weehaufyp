@@ -768,7 +768,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     //QUESTION table ===================================================================================================================================
     private String SQL_CREATE_QUESTION = "CREATE TABLE QUESTION (" +
-            "questionID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "questionID TEXT," +
             "tag TEXT," +
             "question TEXT," +
             "answer TEXT," +
@@ -778,7 +778,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "optd TEXT)";
 
     private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
-            "VALUES ('1', 'Present / Future Modals', '1 + 1 = how much?', '2', '1', '2', '3', '4'), ('2', 'Present / Future Modals', '1 * 2 = how much?', '2', '2', '4', '6', '8'), ('3', 'Present / Future Modals', '8 / 2 = how much?', '4', '4', '8', '12', '14'), ('4', 'Past Modals', '10 - 1 = how much?', '9', '3', '6', '9', '12')";
+            "VALUES ('4.1.1', 'Present / Future Modals', '_______ it be weird to see Cristiano Ronaldo dribble the ball wearing cowboy boots?', 'Wouldn''t', 'Wouldn''t', 'Won''t', 'Shouldn''t', 'Can''t'), ('4.1.2', 'Present / Future Modals', 'Only by piecing together fragments of his past with clues he discovers in the maze _______ Thomas hope to uncover his true purpose and a way to escape.', 'can', 'will', 'shall', 'may', 'can'), ('4.1.3', 'Present / Future Modals', 'We _______ help but have these hauntingly beautiful songs stuck in our heads.', 'can''t', 'won''t', 'can''t', 'needn''t', 'mustn''t'), ('4.1.4', 'Present / Future Modals', 'Being able to show that you’ve had work experience _______ gain them the confidence that you’re more prepared than the candidates who haven’t worked a single day in their lives.', 'will', 'could', 'can', 'will', 'might'), ('4.1.5', 'Present / Future Modals', 'I once had the roommate that _______ probably be anyone’s worst nightmare.', 'would', 'would', 'might', 'shall', 'could'), ('4.1.6', 'Present / Future Modals', 'I _______ say the game _______ become rather addictive.', 'must, can', 'should, will', 'must, can', 'need to, should', 'shall, may'), ('4.1.7', 'Present / Future Modals', 'You _______ also like to try soured cream, lemon juice, flaked almonds or ground cloves.', 'might', 'may', 'might', 'ought to', 'would')";
 
     public ProjectDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

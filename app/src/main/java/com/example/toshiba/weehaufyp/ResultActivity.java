@@ -15,13 +15,16 @@ public class ResultActivity extends Activity {
         bar.setNumStars(5);
         bar.setStepSize(0.5f);
         //get text view
-        TextView t=(TextView)findViewById(R.id.textResult);
+        TextView t = (TextView)findViewById(R.id.textResult);
         //get score
         Bundle b = getIntent().getExtras();
         int score= b.getInt("score");
+        int totalQuestionsCount = b.getInt("totalQuestionsCount");
+
         //display score
         bar.setRating((float)(score/2));
-        switch (score)
+        t.setText("Your score: " + score + "/" + totalQuestionsCount);
+        /*switch (score)
         {
             case 0: t.setText("You've got it all wrong.. :(");
                 break;
@@ -47,7 +50,7 @@ public class ResultActivity extends Activity {
                 break;
             default: t.setText("Default. None correct.");
                 break;
-        }
+        }*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

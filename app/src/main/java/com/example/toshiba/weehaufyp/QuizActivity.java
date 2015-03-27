@@ -19,7 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends Activity {
-    //List<Question> quesList
     List<String> question = new ArrayList<>();
     List<String> answer = new ArrayList<>();
     List<String> opta = new ArrayList<>();
@@ -28,10 +27,8 @@ public class QuizActivity extends Activity {
     List<String> optd = new ArrayList<>();
 
     int score = 0;
-    //int qid = 0;
     int currentQuestionCount = 1, totalQuestionsCount;
     public String tag;
-    //Question currentQ;
     int currentQuestionIndex;
 
     TextView lessonName, txtQuestion, answerResponse, currentQuestion, totalQuestions;
@@ -71,11 +68,6 @@ public class QuizActivity extends Activity {
         totalQuestionsCount = question.size();
         currentQuestionIndex = 0;
 
-        /*ProjectDBHelper db=new ProjectDBHelper(this);
-        quesList=db.getAllQuestions();
-        totalQuestionsCount = quesList.size();
-        currentQ=quesList.get(qid);*/
-
         lessonName=(TextView)findViewById(R.id.lesson_name_label);
         lessonName.setText(tag + " Quiz");
         currentQuestion = (TextView) findViewById(R.id.current_question);
@@ -105,13 +97,14 @@ public class QuizActivity extends Activity {
         RadioButton choice = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
         //Log.d("yourans", currentQ.getANSWER()+" "+answer.getText());
         Log.d("yourans", answer.get(currentQuestionIndex) +" "+ choice.getText());
+        Log.d("question count", currentQuestionIndex + " " + totalQuestionsCount);
         /*if(currentQ.getANSWER().equals(answer.getText()))
         {
             score++;
             Log.d("score", "Your score" + score);
         }*/
         //if there's more questions
-        if(currentQuestionIndex < totalQuestionsCount){
+        if(currentQuestionIndex < (totalQuestionsCount - 1)){
             //currentQ=quesList.get(qid);
             currentQuestionIndex++;
             setQuestionView();
@@ -126,15 +119,13 @@ public class QuizActivity extends Activity {
                 grp.getChildAt(i).setEnabled(true);
             }
         }
-        //else if(qid == totalQuestionsCount){
-            //something
-        //}
         //if it's the last question
         else{
             checkResultButton.setEnabled(true);
             Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
             Bundle b = new Bundle();
             b.putInt("score", score); //Your score
+            b.putInt("totalQuestionsCount", totalQuestionsCount);
             intent.putExtras(b); //Put your score to your next Intent
             startActivity(intent);
             finish();
@@ -155,7 +146,7 @@ public class QuizActivity extends Activity {
 
     public void checkAnswer(View view){
         checkAnswerButton.setEnabled(false);
-        if(currentQuestionIndex != totalQuestionsCount){ //if it's not the last question
+        if(currentQuestionIndex != (totalQuestionsCount - 1)){ //if it's not the last question
             nextButton.setEnabled(true);
             nextButton.clearColorFilter();
         }
@@ -176,16 +167,18 @@ public class QuizActivity extends Activity {
             answerResponse.setText("Oops!\nThe correct answer: " + answer.get(currentQuestionIndex));
             answerResponse.setTextColor(Color.RED);
         }
-        //disable all radio buttons
+        //disable all radio buttons after checking answer
         for (int i = 0; i < grp.getChildCount(); i++) {
             grp.getChildAt(i).setEnabled(false);
         }
     }
 
     public void checkResult(View view){
+        checkResultButton.setEnabled(true);
         Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
         Bundle b = new Bundle();
         b.putInt("score", score); //Your score
+        b.putInt("totalQuestionsCount", totalQuestionsCount);
         intent.putExtras(b); //Put your score to your next Intent
         startActivity(intent);
         finish();

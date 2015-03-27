@@ -125,11 +125,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/check_result"
-                android:layout_weight="3"
                 android:onClick="checkResult"
+                android:layout_weight="3"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:gravity="center_horizontal"/>
+                android:layout_centerHorizontal="true"/>
 
             <ImageButton
                 android:id="@+id/next_question_button"
@@ -141,7 +140,8 @@
                 android:onClick="nextQuestion"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"/>
         </RelativeLayout>
     </LinearLayout>
 

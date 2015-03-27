@@ -27,7 +27,7 @@ public class QuizActivity extends Activity {
     List<String> optc = new ArrayList<>();
     List<String> optd = new ArrayList<>();
     int score = 0;
-    int qid = 0;
+    //int qid = 0;
     int currentQuestionCount = 1, totalQuestionsCount;
     public String tag;
     //Question currentQ;
@@ -37,6 +37,7 @@ public class QuizActivity extends Activity {
     RadioButton rda, rdb, rdc, rdd;
     Button checkAnswerButton, checkResultButton;
     ImageButton nextButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +93,7 @@ public class QuizActivity extends Activity {
         nextButton.setEnabled(false);
         nextButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
 
-        //setQuestionView();
+        setQuestionView(currentQuestionIndex);
         //set questions
 
         Toast.makeText(getApplicationContext(), "Choose your answer & check it before you proceed to the next one", Toast.LENGTH_LONG).show();
@@ -107,10 +108,10 @@ public class QuizActivity extends Activity {
             score++;
             Log.d("score", "Your score" + score);
         }*/
-        if(qid < totalQuestionsCount){
+        if(currentQuestionIndex < totalQuestionsCount){
             //currentQ=quesList.get(qid);
-            //setQuestionView();
             currentQuestionIndex++;
+            setQuestionView(currentQuestionIndex);
             currentQuestionCount++;
             currentQuestion.setText(String.valueOf(currentQuestionCount));
             checkAnswerButton.setEnabled(true);
@@ -150,7 +151,7 @@ public class QuizActivity extends Activity {
 
     public void checkAnswer(View view){
         checkAnswerButton.setEnabled(false);
-        if(qid != totalQuestionsCount){ //if it's not the last question
+        if(currentQuestionIndex != totalQuestionsCount){ //if it's not the last question
             nextButton.setEnabled(true);
             nextButton.clearColorFilter();
         }
@@ -208,5 +209,13 @@ public class QuizActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_quiz, menu);
         return true;
+    }
+
+    public void setQuestionView(int currentQuestionIndex){
+        txtQuestion.setText(question.get(currentQuestionIndex));
+        rda.setText(opta.get(currentQuestionIndex));
+        rdb.setText(optb.get(currentQuestionIndex));
+        rdc.setText(optc.get(currentQuestionIndex));
+        rdd.setText(optd.get(currentQuestionIndex));
     }
 }

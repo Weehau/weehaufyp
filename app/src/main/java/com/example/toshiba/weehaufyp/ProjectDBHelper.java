@@ -259,7 +259,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "Some verbs (especially “sit”, “lie”, “wait” and “stay”) prefer the continuous form.<br>" +
             "There may be a contrast between completion and incompletion, especially if the number of items completed is mentioned.<br>" +
             "Completed: emphasis on achievement. [I''<b>ve ironed</b> five shirts this morning.]<br>" +
-            "Incomplete, or recently completed: emphasis on duration. [I''<b>ve been ironing</b> my shirts this morning.]<br>" +
+            "Incomplete, or recently completed: emphasis on duration. [I''<b>ve been ironing</b> my shirts this morning.]<br><br>" +
             "<u>Time expressions with present perfect</u><br>" +
             "1.\tMeaning with present perfect verb forms is associated with certain time expressions.<br>" +
             "Contrast with past simple may depend on the choice of time expression.<br>" +
@@ -733,7 +733,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "[On <b>the Saturday</b>, there was <b>a</b> terrible <b>storm</b>.]<br>" +
             "Here, “the Saturday” refers to a day in an area of time already mentioned.<br>" +
             "[On <b>the Saturday</b> of <b>that week</b> ...]<br><br>" +
-            "<b><u>Indefinite article</u></b>" +
+            "<b><u>Indefinite article</u></b><br>" +
             "1.\tJobs<br>" +
             "Compare: Tony is <b>a</b> builder. Tony was <b>the builder</b> of that house.<br>" +
             "<br>" +
@@ -767,16 +767,6 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     //"VALUES ('1', 'Abstract Nouns','1,2','0,1','2')";
 
     //QUESTION table ===================================================================================================================================
-    private static final String TABLE_QUEST = "QUESTION";
-    private static final String KEY_ID = "questionID";
-    private static final String KEY_TAG = "tag";
-    private static final String KEY_QUES = "question";
-    private static final String KEY_ANSWER = "answer"; //correct option
-    private static final String KEY_OPTA= "opta"; //option a
-    private static final String KEY_OPTB= "optb"; //option b
-    private static final String KEY_OPTC= "optc"; //option c
-    private static final String KEY_OPTD= "optd"; //option d
-
     private String SQL_CREATE_QUESTION = "CREATE TABLE QUESTION (" +
             "questionID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "tag TEXT," +
@@ -788,7 +778,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "optd TEXT)";
 
     private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
-            "VALUES ('1', 'Present / Future Modals','1 + 1 = how much?','2','1','2','3','4'), ('2', 'Present / Future Modals','1 * 2 = how much?','2','2','4','6','8'), ('3', 'Past Modals','8 / 2 = how much?','4','4','8','12','14'), ('4', 'Past Modals','10 - 1 = how much?','9','3','6','9','12')";
+            "VALUES ('1', 'Present / Future Modals', '1 + 1 = how much?', '2', '1', '2', '3', '4'), ('2', 'Present / Future Modals', '1 * 2 = how much?', '2', '2', '4', '6', '8'), ('3', 'Present / Future Modals', '8 / 2 = how much?', '4', '4', '8', '12', '14'), ('4', 'Past Modals', '10 - 1 = how much?', '9', '3', '6', '9', '12')";
 
     public ProjectDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

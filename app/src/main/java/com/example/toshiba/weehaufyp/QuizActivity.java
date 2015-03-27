@@ -26,12 +26,14 @@ public class QuizActivity extends Activity {
     List<String> optb = new ArrayList<>();
     List<String> optc = new ArrayList<>();
     List<String> optd = new ArrayList<>();
+
     int score = 0;
     //int qid = 0;
     int currentQuestionCount = 1, totalQuestionsCount;
     public String tag;
     //Question currentQ;
     int currentQuestionIndex;
+
     TextView lessonName, txtQuestion, answerResponse, currentQuestion, totalQuestions;
     RadioGroup grp;
     RadioButton rda, rdb, rdc, rdd;
@@ -65,6 +67,7 @@ public class QuizActivity extends Activity {
             Toast.makeText(getBaseContext(), "No quiz found", Toast.LENGTH_SHORT).show();
         }
         quizDB.close();
+
         totalQuestionsCount = question.size();
         currentQuestionIndex = 0;
 
@@ -78,6 +81,7 @@ public class QuizActivity extends Activity {
         currentQuestion = (TextView) findViewById(R.id.current_question);
         currentQuestion.setText(String.valueOf(currentQuestionCount));
         totalQuestions = (TextView) findViewById(R.id.total_questions);
+        totalQuestions.setText(String.valueOf(totalQuestionsCount));
         txtQuestion=(TextView)findViewById(R.id.question_text_view);
         grp=(RadioGroup)findViewById(R.id.answer_radio_group);
         rda=(RadioButton)findViewById(R.id.choice_1_button);
@@ -93,9 +97,7 @@ public class QuizActivity extends Activity {
         nextButton.setEnabled(false);
         nextButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
 
-        setQuestionView(currentQuestionIndex);
-        //set questions
-
+        setQuestionView();
         Toast.makeText(getApplicationContext(), "Choose your answer & check it before you proceed to the next one", Toast.LENGTH_LONG).show();
     }
 
@@ -110,8 +112,7 @@ public class QuizActivity extends Activity {
         }*/
         if(currentQuestionIndex < totalQuestionsCount){
             //currentQ=quesList.get(qid);
-            currentQuestionIndex++;
-            setQuestionView(currentQuestionIndex);
+            setQuestionView();
             currentQuestionCount++;
             currentQuestion.setText(String.valueOf(currentQuestionCount));
             checkAnswerButton.setEnabled(true);
@@ -211,11 +212,12 @@ public class QuizActivity extends Activity {
         return true;
     }
 
-    public void setQuestionView(int currentQuestionIndex){
+    public void setQuestionView(){
         txtQuestion.setText(question.get(currentQuestionIndex));
         rda.setText(opta.get(currentQuestionIndex));
         rdb.setText(optb.get(currentQuestionIndex));
         rdc.setText(optc.get(currentQuestionIndex));
         rdd.setText(optd.get(currentQuestionIndex));
+        currentQuestionIndex++;
     }
 }

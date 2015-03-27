@@ -6,21 +6,16 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.concurrent.TimeUnit;
 
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -246,18 +241,6 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         else{
             mediaPlayer.seekTo(0);
         }
-    }
-    public void previous(View view){
-        //To do previous implementation
-        Toast.makeText(getApplicationContext(),
-                "Previous song will play",
-                Toast.LENGTH_SHORT).show();
-    }
-    public void next(View view){
-        //To do next implementation
-        Toast.makeText(getApplicationContext(),
-                "Next song will play",
-                Toast.LENGTH_SHORT).show();
     }
     public void repeat(View view){
         //repeatButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint

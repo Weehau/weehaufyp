@@ -113,7 +113,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         mediaPlayer = MediaPlayer.create(this, songPath);
 
         //play media
-        /*mediaPlayer.start();
+        mediaPlayer.start();
         finalTime = mediaPlayer.getDuration();
         startTime = mediaPlayer.getCurrentPosition();
         if(oneTimeOnly == 0){
@@ -135,7 +135,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         );
         seekbar.setProgress((int)startTime);
         myHandler.postDelayed(UpdateSongTime,100);
-        seekbar.setClickable(true);*/
+        seekbar.setClickable(true);
     }
 
     //switch between lyrics & explanation tabs

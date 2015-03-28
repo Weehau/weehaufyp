@@ -21,56 +21,56 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
 
     //variables for db
     private String presentTimeConsolidationLessonContent = "<b><u>Basic contrasts: present simple and present continuous</u></b><br>" +
-            "1.\tPresent simple generally refers to:<br><br>" +
+            "1.\t<u>Present simple generally refers to:</u><br><br>" +
             "Facts that are always true:<br>[Water <b>boils</b> at 100 degrees Celsius.]<br><br>" +
             "Habits:<br>[British people <b>drink</b> a lot of tea.]<br><br>" +
             "States:<br>[I <b>don’t like</b> gangster films.]<br>" +
             "<br>" +
-            "2.\tPresent continuous (progressive) generally refers to actions which are in progress at the moment.<br>These can be temporary:<br>[I’<b>m staying</b> in a hotel until I find a flat.]<br><br>" +
+            "2.\t<u>Present continuous (progressive)</u> generally refers to actions which are in progress at the moment.<br>These can be temporary:<br>[I’<b>m staying</b> in a hotel until I find a flat.]<br><br>" +
             "They can be actually in progress:<br>[The dog <b>is sleeping</b> on our bed.]<br><br>" +
-            "Or they can be generally in progress but not actually happening at the moment:<br>[I’<b>m learning</b> to drive.]<br><br>" +
+            "Or they can be generally in progress but not actually happening at the moment:<br>[I’<b>m learning</b> to drive.]<br><br><br>" +
             "<b><u>State verbs and event (action or dynamic) verbs</u></b><br>" +
-            "1.\tState verbs describe a continuing state, so do not usually have a continuous form. Typical examples are:<br>" +
+            "1.\t<u>State verbs describe a continuing state</u>, so do not usually have a continuous form. Typical examples are:<br>" +
             "“believe”, “belong”, “consist”, “contain”, “doubt”, “fit”, “have”, “know”, “like”, “love”, “matter”, “mean”, “own”, “prefer”, “understand”, “seem”, “suppose”, “suspect”, “want”, “wish”<br>" +
             "<br>" +
-            "2.\tSome verbs have a stative meaning and a different active meaning. Typical examples are:<br>" +
-            "“be”, “depend”, “feel”, “have”, “measure”, “see”, “taste”, “think”, “weigh”<br><br>" +
+            "2.\t<u>Some verbs have a stative meaning and a different active meaning.</u><br>Typical examples are:<br>" +
+            "“be”, “depend”, “feel”, “have”, “measure”, “see”, “taste”, “think”, “weigh”<br><br><br>" +
             "<b><u>Other uses of present continuous</u></b><br>" +
-            "1.\tTemporary situations<br>" +
+            "1.\t<u>Temporary situations</u><br>" +
             "[<b>Are</b> you <b>enjoying</b> your stay here?]<br>" +
             "<br>" +
-            "2.\tRepeated actions<br>" +
+            "2.\t<u>Repeated actions</u><br>" +
             "[My car has broken down, so I <b>am walking</b> to work these days.]<br>" +
             "<br>" +
-            "3.\tComplaints about annoying habits<br>" +
+            "3.\t<u>Complaints about annoying habits</u><br>" +
             "[You <b>are</b> always <b>making snide remarks</b> about my cooking.]<br>" +
             "<br>" +
-            "4.\tWith verbs describing change and development:<br>" +
+            "4.\t<u>With verbs describing change and development:</u><br>" +
             "[The weather <b>is getting</b> worse.]<br>" +
-            "[More and more people <b>are giving up</b> smoking.]<br><br>" +
+            "[More and more people <b>are giving up</b> smoking.]<br><br><br>" +
             "<b><u>Other uses of present simple</u></b><br>" +
-            "1.\tMaking declarations<br>" +
+            "1.\t<u>Making declarations</u><br>" +
             "Verbs describing opinions and feelings tend to be state verbs.<br>" +
             "[I <b>hope</b> you'll come to my party.]<br>" +
             "[I <b>bet</b> you don't know the answer.]<br>" +
             "<br>" +
-            "2.\tHeadlines<br>" +
+            "2.\t<u>Headlines</u><br>" +
             "These are written in a 'telegram' style, and references to the past are usually simplified to present simple.<br>" +
             "[Ship <b>sinks</b> in midnight collision.]<br>" +
             "<br>" +
-            "3.\tInstructions and itineraries<br>" +
-            "Instructions and recipes can be written in present simple instead of in imperative forms. This style is more personal.<br>" +
+            "3.\t<u>Instructions and itineraries</u><br>" +
+            "Instructions and recipes can be written in present simple instead of in imperative forms. This style is more personal.<br><br>" +
             "[First you <b>roll out</b> the pastry.]<br>" +
             "<br>" +
             "Itineraries are descriptions of travel arrangements.<br>" +
             "[On day three we <b>visit</b> Stratford-upon-Avon.]<br>" +
             "<br>" +
-            "4.\tSummaries of events<br>" +
+            "4.\t<u>Summaries of events</u><br>" +
             "Plots of stories, films etc., and summaries of historical events use present (and present perfect) verb forms.<br><br>" +
             "[May 1945: The war in Europe <b>comes</b> to an end.]<br><br>" +
             "[At the end of the play both families <b>realize</b> that their hatred caused the deaths of the lovers.]<br>" +
             "<br>" +
-            "5.\t‘Historic present’ in narrative and funny stories<br>" +
+            "5.\t<u>‘Historic present’ in narrative and funny stories<br></u>" +
             "In informal speech, it is possible to use what we call the 'historic present' to describe past events, especially to make the narration seem more immediate and dramatic.<br><br>" +
             "[So then the second man <b>asks</b> the first one why he <b>has</b> a banana in his ear and the first one says ...]";
 

@@ -74,5 +74,6 @@
     <string name="title_activity_tense_lesson_content">TenseLessonContentActivity</string>
     <string name="title_activity_two_parts_lesson">TwoPartsLessonActivity</string>
     <string name="title_activity_two_parts_lesson_content">TwoPartsLessonContentActivity</string>
+    <string name="title_activity_passive_lesson_content">PassiveLessonContentActivity</string>
 
 </resources>

@@ -88,6 +88,11 @@ public class SongSelectionActivity extends Activity {
             lessonContentIntentForTwoParts.putExtra("tag", tag);
             startActivity(lessonContentIntentForTwoParts);
         }
+        else if(tag.equals("Passive")){
+            Intent lessonContentIntentForPassive = new Intent(SongSelectionActivity.this, PassiveLessonContentActivity.class);
+            lessonContentIntentForPassive.putExtra("tag", tag);
+            startActivity(lessonContentIntentForPassive);
+        }
         else{
             Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);
             lessonContentIntent.putExtra("tag", tag);

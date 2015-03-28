@@ -92,6 +92,10 @@
             android:name=".TwoPartsLessonContentActivity"
             android:label="@string/title_activity_two_parts_lesson_content" >
         </activity>
+        <activity
+            android:name=".PassiveLessonContentActivity"
+            android:label="@string/title_activity_passive_lesson_content" >
+        </activity>
     </application>
 
 </manifest>

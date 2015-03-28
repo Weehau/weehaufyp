@@ -746,7 +746,97 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "Use of “a/an” emphasises that a person is unknown.<br>" +
             "<b>A</b> Mr. Jones called while you were out.<br>";
 
-    private String prepositionsLessonContent = "Prepositions lesson content will be displayed here";
+    private String prepositionsLessonContent = "<b><u>Prepositions of place</u></b><br>" +
+            "1.\t“In”<br>" +
+            "Use “in” before buildings, towns, cities, regions, provinces, countries, and continents.<br>" +
+            "[Eduardo is <b>in</b> the <b>library</b>.]<br>" +
+            "[Palermo is a city <b>in Italy</b>.]<br>" +
+            "<br>" +
+            "2.\t“On”<br>" +
+            "Use “on” before streets and bodies of water.<br>" +
+            "[I live <b>on</b> a beautiful <b>street</b>.]<br>" +
+            "[The boat is sailing <b>on</b> the <b>river</b>.]<br>" +
+            "<br>" +
+            "3.\t“At”<br>" +
+            "Use “at” with street addresses and many specific locations.<br>" +
+            "[Jen lives <b>at 17 Bow Street</b>.]<br>" +
+            "[I will meet you <b>at</b> the <b>corner</b> of Main Street and Elm Street.]<br>" +
+            "<br>" +
+            "4.\t“Between”<br>" +
+            "“Between” describes a location between two points.<br>" +
+            "[The video store is <b>between</b> the <b>bank</b> and the <b>post office</b>.]<br>" +
+            "[The house is <b>between</b> two big <b>trees</b>.]<br>" +
+            "<br>" +
+            "5.\t“Near”<br>" +
+            "“Near” describes something close in distance.<br>" +
+            "[I hope there is a cash machine <b>near</b> the <b>movie theatre</b>.]<br>" +
+            "[The professor’s office is <b>near</b> the <b>chemistry laboratory</b>.]<br>" +
+            "<br>" +
+            "6.\t“Far from”<br>" +
+            "“Far from” describes something far in distance.<br>" +
+            "[Your house is too <b>far from school</b> to walk.]<br>" +
+            "[The hospital is <b>far from town</b>.]<br>" +
+            "<br>" +
+            "7.\t“Next to”<br>" +
+            "“Next to” describes something beside something else.<br>" +
+            "[Her house is <b>next to yours</b>.]<br>" +
+            "[The restaurant is <b>next to</b> the <b>movie theatre</b>.]<br>" +
+            "<br>" +
+            "8.\t“Across from”<br>" +
+            "“Across from” describes something opposite something else.<br>" +
+            "[The post office is across from the police station.]<br>" +
+            "[Their house is a<b>cross from</b> a <b>bookstore</b>.]<br>" +
+            "<br>" +
+            "9.\t“Under”<br>" +
+            "“Under” describes something that is below something else.<br>" +
+            "[The boats pass <b>under</b> the <b>bridge</b>.]<br>" +
+            "[The ball is rolling <b>under</b> the <b>car</b>.]<br>" +
+            "<br>" +
+            "10.\t“Over”<br>" +
+            "“Over” describes something that is above something else.<br>" +
+            "[The airplane is flying <b>over</b> the <b>ocean</b>.]<br>" +
+            "[Her office is <b>over</b> a <b>café</b>.]<br>" +
+            "<br>" +
+            "<b><u>Prepositions of time</u></b><br>" +
+            "1.\t“In”<br>" +
+            "Use “in” before years, seasons, months, and parts of the day.<br>" +
+            "[The new post office will open <b>in January</b>.]<br>" +
+            "[Paris is beautiful <b>in</b> the <b>springtime</b>.]<br>" +
+            "<br>" +
+            "2.\t“On”<br>" +
+            "Use “on” before days of the week and dates.<br>" +
+            "[Some stores are closed on Sunday.]<br>" +
+            "[We’ll have a St. Patrick’s Day parade on March 17th.]<br>" +
+            "<br>" +
+            "3.\t“At”<br>" +
+            "Use “at” before a specific time of day and with the nouns noon, night, and midnight.<br>" +
+            "[The Laundromat opens <b>at 9:00</b>.]<br>" +
+            "[I love to walk around the city <b>at night</b>.]<br>" +
+            "<br>" +
+            "4.\t“From … to”<br>" +
+            "Use “from … to” with beginning and ending times.<br>" +
+            "[The library is open <b>from 9:30 a.m. to 5:00 p.m.</b>]<br>" +
+            "[The parade will last <b>from late morning to early afternoon</b>.]<br>" +
+            "<br>" +
+            "5.\t“During”<br>" +
+            "Use “during” with periods of time.<br>" +
+            "[The supermarket is open late <b>during</b> the <b>week</b>.]<br>" +
+            "[My town is usually covered in snow <b>during</b> the <b>winter</b>.]<br>" +
+            "<br>" +
+            "6.\t“Until”<br>" +
+            "Use “until” with periods of time.<br>" +
+            "[The coffee shop is open <b>until 9:00 p.m.</b>]<br>" +
+            "[I am going to live here <b>until</b> I <b>graduate</b>.]<br>" +
+            "<br>" +
+            "7.\t“Before”<br>" +
+            "Use “before” to express an earlier event or time.<br>" +
+            "[I want to go to the mountains <b>before</b> summer is <b>over</b>.]<br>" +
+            "[Run to the store <b>before</b> it <b>closes</b>!]<br>" +
+            "<br>" +
+            "8.\t“After”<br>" +
+            "Use ‘after” to express a later event or time.<br>" +
+            "[Let’s get a bite after the movie.]<br>" +
+            "[I like to meet my friends in town after class.]<br>";
 
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +

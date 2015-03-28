@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class TwoPartsLessonContentActivity extends Activity implements View.OnClickListener{
 
     TextView songListHeader, lessonContentScrollableView;
-    Button partOneButton, partTwoButton;
+    TextView partOneButton, partTwoButton;
 
     //variables for db
     String partOneLessonContent, partTwoLessonContent;
@@ -47,8 +47,8 @@ public class TwoPartsLessonContentActivity extends Activity implements View.OnCl
         }
         lessonDB.close();
 
-        partOneButton = (Button)findViewById(R.id.part_one_button);
-        partTwoButton = (Button)findViewById(R.id.part_two_button);
+        partOneButton = (TextView)findViewById(R.id.part_one_button);
+        partTwoButton = (TextView)findViewById(R.id.part_two_button);
 
         partOneButton.setOnClickListener(this);
         partTwoButton.setOnClickListener(this);
@@ -71,33 +71,29 @@ public class TwoPartsLessonContentActivity extends Activity implements View.OnCl
 
         sectionNames = partOneName + "\n2.\t" + partTwoName;
         lessonContentScrollableView = (TextView)findViewById(R.id.lesson_content_view);
-        lessonContentScrollableView.setText("This lesson contains 2 sections:\n1.\t" + sectionNames + "\n\nChoose any one of them to get started");
+        lessonContentScrollableView.setText("This lesson contains 2 sections:\n\n1.\t" + sectionNames + "\n\nChoose any one of them to get started");
 
-        partOneButton.setTextColor(Color.BLACK);
-        partOneButton.setBackgroundResource(android.R.drawable.btn_default);
         partOneButton.setText(partOneName);
-        partTwoButton.setTextColor(Color.BLACK);
-        partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
         partTwoButton.setText(partTwoName);
     }
 
-    //switch between 4 tense buttons
+    //switch between 4 tense tabs
     @Override
     public void onClick(View v){
         switch(v.getId()) {
             case R.id.part_one_button :
                 partOneButton.setTextColor(Color.WHITE);
-                partOneButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partTwoButton.setTextColor(Color.BLACK);
-                partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
+                partOneButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partOneLessonContent));
                 break;
 
             case R.id.part_two_button :
                 partTwoButton.setTextColor(Color.WHITE);
-                partTwoButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partOneButton.setTextColor(Color.BLACK);
-                partOneButton.setBackgroundResource(android.R.drawable.btn_default);
+                partTwoButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partOneButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partTwoLessonContent));
                 break;
         }

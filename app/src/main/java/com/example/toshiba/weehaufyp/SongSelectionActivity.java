@@ -88,10 +88,10 @@ public class SongSelectionActivity extends Activity {
             lessonContentIntentForTwoParts.putExtra("tag", tag);
             startActivity(lessonContentIntentForTwoParts);
         }
-        else if(tag.equals("Passive")){
-            Intent lessonContentIntentForPassive = new Intent(SongSelectionActivity.this, PassiveLessonContentActivity.class);
-            lessonContentIntentForPassive.putExtra("tag", tag);
-            startActivity(lessonContentIntentForPassive);
+        else if(tag.equals("Passive") || tag.equals("Present / Future Modals") || tag.equals("Past Modals")){
+            Intent lessonContentIntentForFiveParts = new Intent(SongSelectionActivity.this, FivePartsLessonContentActivity.class);
+            lessonContentIntentForFiveParts.putExtra("tag", tag);
+            startActivity(lessonContentIntentForFiveParts);
         }
         else{
             Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);

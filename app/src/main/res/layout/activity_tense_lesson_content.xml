@@ -28,34 +28,74 @@
         android:orientation="horizontal"
         android:weightSum="4"
         android:gravity="center">
-        <Button
+        <TextView
             android:id="@+id/present_time_button"
             android:text="Present Time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15dp"/>
-        <Button
+            android:textSize="15dp"
+            android:clickable="true"
+            android:background="#404040"
+            android:textColor="#e5e5e5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:gravity="center"/>
+        <TextView
             android:id="@+id/future_time_button"
             android:text="Future Time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15dp"/>
-        <Button
+            android:textSize="15dp"
+            android:clickable="true"
+            android:background="#404040"
+            android:textColor="#e5e5e5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:gravity="center"/>
+        <TextView
             android:id="@+id/past_time_button"
             android:text="Past Time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15dp"/>
-        <Button
+            android:textSize="15dp"
+            android:clickable="true"
+            android:background="#404040"
+            android:textColor="#e5e5e5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:gravity="center"/>
+        <TextView
             android:id="@+id/present_perfect_button"
             android:text="Present Perfect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:clickable="true"
+            android:background="#404040"
+            android:textColor="#e5e5e5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:gravity="center"/>
     </LinearLayout>
 
     <ScrollView

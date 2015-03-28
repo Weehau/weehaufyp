@@ -85,16 +85,14 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".TwoPartsLessonActivity"
-            android:label="@string/title_activity_two_parts_lesson" >
-        </activity>
-        <activity
             android:name=".TwoPartsLessonContentActivity"
-            android:label="@string/title_activity_two_parts_lesson_content" >
+            android:label="@string/title_activity_two_parts_lesson_content"
+            android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".PassiveLessonContentActivity"
-            android:label="@string/title_activity_passive_lesson_content" >
+            android:name=".FivePartsLessonContentActivity"
+            android:label="@string/title_activity_passive_lesson_content"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

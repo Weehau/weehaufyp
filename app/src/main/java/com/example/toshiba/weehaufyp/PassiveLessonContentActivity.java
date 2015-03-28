@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class PassiveLessonContentActivity extends Activity implements View.OnClickListener{
 
     TextView songListHeader, lessonContentScrollableView;
-    Button partOneButton, partTwoButton, partThreeButton, partFourButton, partFiveButton;
+    TextView partOneButton, partTwoButton, partThreeButton, partFourButton, partFiveButton;
 
     //variables for db
     String partOneLessonContent, partTwoLessonContent, partThreeLessonContent, partFourLessonContent, partFiveLessonContent;
@@ -83,7 +83,7 @@ public class PassiveLessonContentActivity extends Activity implements View.OnCli
                 "Using the passive is a way of avoiding the naming of a specific person who is responsible for an action.<br><br>" +
                 "[It <b>has been decided</b> to reduce all salaries by 10%.]<br>" +
                 "<br>" +
-                "In descriptions of processes, there is emphasis on the actions performed rather than on the people who perform them.<br>" +
+                "In descriptions of processes, there is emphasis on the actions performed rather than on the people who perform them.<br><br>" +
                 "[Then the packets <b>are packed</b> into boxes of twenty-four.]";
 
         partThreeLessonContent = "<b><u>“Have” and “get something done”, “need doing”</u></b><br>" +
@@ -163,11 +163,11 @@ public class PassiveLessonContentActivity extends Activity implements View.OnCli
                 "[The furniture <b>was covered in</b> dust.]<br>" +
                 "[The living room <b>had been decorated with</b> flowery wallpaper.]";
 
-        partOneButton = (Button)findViewById(R.id.part_one_button);
-        partTwoButton = (Button)findViewById(R.id.part_two_button);
-        partThreeButton = (Button)findViewById(R.id.part_three_button);
-        partFourButton = (Button)findViewById(R.id.part_four_button);
-        partFiveButton = (Button)findViewById(R.id.part_five_button);
+        partOneButton = (TextView)findViewById(R.id.part_one_button);
+        partTwoButton = (TextView)findViewById(R.id.part_two_button);
+        partThreeButton = (TextView)findViewById(R.id.part_three_button);
+        partFourButton = (TextView)findViewById(R.id.part_four_button);
+        partFiveButton = (TextView)findViewById(R.id.part_five_button);
 
         partOneButton.setOnClickListener(this);
         partTwoButton.setOnClickListener(this);
@@ -188,20 +188,10 @@ public class PassiveLessonContentActivity extends Activity implements View.OnCli
         lessonContentScrollableView = (TextView)findViewById(R.id.lesson_content_view);
         lessonContentScrollableView.setText("This lesson contains 5 sections:\n1.\t" + sectionNames + "\n\nChoose any one of them to get started");
 
-        partOneButton.setTextColor(Color.BLACK);
-        partOneButton.setBackgroundResource(android.R.drawable.btn_default);
         partOneButton.setText(partOneName);
-        partTwoButton.setTextColor(Color.BLACK);
-        partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
         partTwoButton.setText(partTwoName);
-        partThreeButton.setTextColor(Color.BLACK);
-        partThreeButton.setBackgroundResource(android.R.drawable.btn_default);
         partThreeButton.setText(partThreeName);
-        partFourButton.setTextColor(Color.BLACK);
-        partFourButton.setBackgroundResource(android.R.drawable.btn_default);
         partFourButton.setText(partFourName);
-        partFiveButton.setTextColor(Color.BLACK);
-        partFiveButton.setBackgroundResource(android.R.drawable.btn_default);
         partFiveButton.setText(partFiveName);
     }
 
@@ -211,74 +201,73 @@ public class PassiveLessonContentActivity extends Activity implements View.OnCli
         switch(v.getId()) {
             case R.id.part_one_button :
                 partOneButton.setTextColor(Color.WHITE);
-                partOneButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partTwoButton.setTextColor(Color.BLACK);
-                partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
-                partThreeButton.setTextColor(Color.BLACK);
-                partThreeButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFourButton.setTextColor(Color.BLACK);
-                partFourButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFiveButton.setTextColor(Color.BLACK);
-                partFiveButton.setBackgroundResource(android.R.drawable.btn_default);
+                partOneButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
+                partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partThreeButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFourButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFourButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFiveButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFiveButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partOneLessonContent));
                 break;
 
             case R.id.part_two_button :
                 partTwoButton.setTextColor(Color.WHITE);
-                partTwoButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partOneButton.setTextColor(Color.BLACK);
-                partOneButton.setBackgroundResource(android.R.drawable.btn_default);
-                partThreeButton.setTextColor(Color.BLACK);
-                partThreeButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFourButton.setTextColor(Color.BLACK);
-                partFourButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFiveButton.setTextColor(Color.BLACK);
-                partFiveButton.setBackgroundResource(android.R.drawable.btn_default);
+                partTwoButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partOneButton.setBackgroundColor(Color.parseColor("#404040"));
+                partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partThreeButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFourButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFourButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFiveButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFiveButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partTwoLessonContent));
                 break;
 
             case R.id.part_three_button :
                 partThreeButton.setTextColor(Color.WHITE);
-                partThreeButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partOneButton.setTextColor(Color.BLACK);
-                partOneButton.setBackgroundResource(android.R.drawable.btn_default);
-                partTwoButton.setTextColor(Color.BLACK);
-                partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFourButton.setTextColor(Color.BLACK);
-                partFourButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFiveButton.setTextColor(Color.BLACK);
-                partFiveButton.setBackgroundResource(android.R.drawable.btn_default);
+                partThreeButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
+                partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partOneButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFourButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFourButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFiveButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFiveButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partThreeLessonContent));
                 break;
 
             case R.id.part_four_button :
                 partFourButton.setTextColor(Color.WHITE);
-                partFourButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partOneButton.setTextColor(Color.BLACK);
-                partOneButton.setBackgroundResource(android.R.drawable.btn_default);
-                partTwoButton.setTextColor(Color.BLACK);
-                partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
-                partThreeButton.setTextColor(Color.BLACK);
-                partThreeButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFiveButton.setTextColor(Color.BLACK);
-                partFiveButton.setBackgroundResource(android.R.drawable.btn_default);
+                partFourButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
+                partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partThreeButton.setBackgroundColor(Color.parseColor("#404040"));
+                partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partOneButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFiveButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFiveButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partFourLessonContent));
                 break;
 
             case R.id.part_five_button :
                 partFiveButton.setTextColor(Color.WHITE);
-                partFiveButton.setBackgroundColor(Color.parseColor("#B20000"));
-                partOneButton.setTextColor(Color.BLACK);
-                partOneButton.setBackgroundResource(android.R.drawable.btn_default);
-                partTwoButton.setTextColor(Color.BLACK);
-                partTwoButton.setBackgroundResource(android.R.drawable.btn_default);
-                partThreeButton.setTextColor(Color.BLACK);
-                partThreeButton.setBackgroundResource(android.R.drawable.btn_default);
-                partFourButton.setTextColor(Color.BLACK);
-                partFourButton.setBackgroundResource(android.R.drawable.btn_default);
+                partFiveButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
+                partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partThreeButton.setBackgroundColor(Color.parseColor("#404040"));
+                partFourButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partFourButton.setBackgroundColor(Color.parseColor("#404040"));
+                partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
+                partOneButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partFiveLessonContent));
                 break;
-
         }
     }
 

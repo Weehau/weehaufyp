@@ -1,8 +1,5 @@
 package com.example.toshiba.weehaufyp;
 
-/**
- * Created by Toshiba on 03-Mar-15.
- */
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -784,7 +781,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "<br>" +
             "8.\t“Across from”<br>" +
             "“Across from” describes something opposite something else.<br>" +
-            "[The post office is across from the police station.]<br>" +
+            "[The post office is <b>across from</b> the <b>police station</b>.]<br>" +
             "[Their house is a<b>cross from</b> a <b>bookstore</b>.]<br>" +
             "<br>" +
             "9.\t“Under”<br>" +
@@ -805,8 +802,8 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "<br>" +
             "2.\t“On”<br>" +
             "Use “on” before days of the week and dates.<br>" +
-            "[Some stores are closed on Sunday.]<br>" +
-            "[We’ll have a St. Patrick’s Day parade on March 17th.]<br>" +
+            "[Some stores are closed <b>on Sunday</b>.]<br>" +
+            "[We’ll have a St. Patrick’s Day parade <b>on March 17th</b>.]<br>" +
             "<br>" +
             "3.\t“At”<br>" +
             "Use “at” before a specific time of day and with the nouns noon, night, and midnight.<br>" +
@@ -835,8 +832,8 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "<br>" +
             "8.\t“After”<br>" +
             "Use ‘after” to express a later event or time.<br>" +
-            "[Let’s get a bite after the movie.]<br>" +
-            "[I like to meet my friends in town after class.]<br>";
+            "[Let’s get a bite <b>after</b> the <b>movie</b>.]<br>" +
+            "[I like to meet my friends in town <b>after class</b>.]<br>";
 
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +
@@ -868,7 +865,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "optd TEXT)";
 
     private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
-            "VALUES ('4.1.1', 'Present / Future Modals', '_______ it be weird to see Cristiano Ronaldo dribble the ball wearing cowboy boots?', 'Wouldn''t', 'Wouldn''t', 'Won''t', 'Shouldn''t', 'Can''t'), ('4.1.2', 'Present / Future Modals', 'Only by piecing together fragments of his past with clues he discovers in the maze _______ Thomas hope to uncover his true purpose and a way to escape.', 'can', 'will', 'shall', 'may', 'can'), ('4.1.3', 'Present / Future Modals', 'We _______ help but have these hauntingly beautiful songs stuck in our heads.', 'can''t', 'won''t', 'can''t', 'needn''t', 'mustn''t'), ('4.1.4', 'Present / Future Modals', 'Being able to show that you’ve had work experience _______ gain them the confidence that you’re more prepared than the candidates who haven’t worked a single day in their lives.', 'will', 'could', 'can', 'will', 'might'), ('4.1.5', 'Present / Future Modals', 'I once had the roommate that _______ probably be anyone’s worst nightmare.', 'would', 'would', 'might', 'shall', 'could'), ('4.1.6', 'Present / Future Modals', 'I _______ say the game _______ become rather addictive.', 'must, can', 'should, will', 'must, can', 'need to, should', 'shall, may'), ('4.1.7', 'Present / Future Modals', 'You _______ also like to try soured cream, lemon juice, flaked almonds or ground cloves.', 'might', 'may', 'might', 'ought to', 'would')";
+            "VALUES ('4.1.1', 'Present / Future Modals', '_______ it be weird to see Cristiano Ronaldo dribble the ball wearing cowboy boots?', 'Wouldn''t', 'Wouldn''t', 'Won''t', 'Shouldn''t', 'Can''t'), ('4.1.2', 'Present / Future Modals', 'Only by piecing together fragments of his past with clues he discovers in the maze _______ Thomas hope to uncover his true purpose and a way to escape.', 'can', 'will', 'shall', 'may', 'can'), ('4.1.3', 'Present / Future Modals', 'We _______ help but have these hauntingly beautiful songs stuck in our heads.', 'can''t', 'won''t', 'can''t', 'needn''t', 'mustn''t'), ('4.1.4', 'Present / Future Modals', 'Being able to show that you’ve had work experience _______ gain them the confidence that you’re more prepared than the candidates who haven’t worked a single day in their lives.', 'will', 'could', 'can', 'will', 'might'), ('4.1.5', 'Present / Future Modals', 'I once had the roommate that _______ probably be anyone’s worst nightmare.', 'would', 'would', 'might', 'shall', 'could'), ('4.1.6', 'Present / Future Modals', 'I _______ say the game _______ become rather addictive.', 'must, can', 'should, will', 'must, can', 'need to, should', 'shall, may'), ('4.1.7', 'Present / Future Modals', 'You _______ also like to try soured cream, lemon juice, flaked almonds or ground cloves.', 'might', 'may', 'might', 'ought to', 'would'), ('6.1', 'Prepositions', 'Malaysia was formed _______ the 16th of September.', 'on', 'in', 'at', 'by', 'on'), ('6.2', 'Prepositions','Spinach is rich _______ lutein and zeaxanthin, which are carotenoids that remove unstable molecules called free radicals from your body before they damage it.', 'in', 'with', 'on', 'in', 'at'), ('6.3', 'Prepositions', 'Consistently ranked _______ the top ten for best island resorts _______ Malaysia, Langkawi boasts of unmatched sun, sand, and sea experience for beach lovers.', 'in, in', 'on, at', 'in, in', 'at, at', 'at, on'), ('6.4', 'Prepositions', 'The cassette tape was popular for decades because it was compact, weight little, and small _______ size.', 'in', 'of', 'on', 'at', 'in'), ('6.5', 'Prepositions', 'MP3 is an intangible file that can be transferred _______ the internet without compromising great quality sound.', 'over','over', 'to', 'across from', 'on'), ('6.6', 'Prepositions', 'Since the l940s, plastic has been _______ a full-on, mass production mode because of its wide range of unique properties.', 'on', 'over', 'under', 'on', 'between'), ('6.7', 'Prepositions', 'Two albums _______ one year is something of a rarity _______ modern music, yet Justin Timberlake’s fans have received this treat with “20/20 Experience Part 2 of 2”.', 'in, in', 'with, on', 'in, in', 'with, in', 'in, on'), ('6.8', 'Prepositions', 'Michael Jackson died _______ the age of 50.', 'at', 'on', 'in', 'at', 'with'), ('6.9', 'Prepositions', 'He denied driving _______ 110 miles per hour.', 'at', 'with', 'until', 'after', 'at'), ('6.10', 'Prepositions', 'I dropped my bags _______ the floor.', 'on', 'on', 'to', 'at', 'over')";
 
     public ProjectDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

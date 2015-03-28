@@ -210,15 +210,23 @@ public class QuizActivity extends Activity {
             popupImage.setImageResource((R.drawable.grade_c_2nd_resize));
         }
 
-        Button btnDismiss = (Button) popupView.findViewById(R.id.dismiss);
-        btnDismiss.setTextColor(Color.BLACK);
-        btnDismiss.setBackgroundResource(android.R.drawable.btn_default);
-
+        TextView btnDismiss = (TextView) popupView.findViewById(R.id.dismiss);
         btnDismiss.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 popupWindow.dismiss();
+            }
+        });
+
+        TextView homeButton = (TextView)popupView.findViewById(R.id.home_button);
+        homeButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //clears all previous activities and returns to home
+                Intent homeIntent = new Intent(getApplicationContext(), MainActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
             }
         });
 

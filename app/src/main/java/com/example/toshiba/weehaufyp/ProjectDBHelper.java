@@ -60,7 +60,8 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +
             "LessonID INTEGER PRIMARY KEY AUTOINCREMENT," +
             "tag TEXT," +
-            "lessonContent TEXT)";
+            "lessonContentPartOne TEXT," +
+            "lessonContentPartTwo TEXT)";
 
     private String tenseConsolidationLessonContent = "This lesson contains 4 sections: present time, future time, past time, and present perfect<br>" +
             "<h4>(A) Present time</h4>" +
@@ -271,60 +272,60 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "[I <b>saw</b> Jim <b>recently</b>.]<br>";
 
     private String passiveLessonContent = "<b><u>Basic uses of the passive</u></b><br>" +
-            "1.\tAgent and instrument<br>" +
-            "The person who performs an action in a passive sentence is called the <b>agent</b>, introduced by “by”. The agent may or may not be mentioned.<br>" +
+            "1.\t<u>Agent and instrument</u><br>" +
+            "The person who performs an action in a passive sentence is called the <b>agent</b>, introduced by “by”.<br><br>The agent may or may not be mentioned.<br>" +
             "[My purse was found by <b>one of the cleaners</b>.]<br>" +
             "<br>" +
             "An object which causes something to happen is called an <b>instrument</b>, introduced by “with”.<br>" +
             "[He was hit on the head with a <b>hammer</b>.]<br>" +
             "<br>" +
-            "2.\tVerbs with two objects<br>" +
-            "Verbs which have two objects can be made passive in two ways.<br>" +
-            "[<b>I</b> was handed a <b>note</b>.] [A <b>note</b> was handed to <b>me</b>.]<br>" +
+            "2.\t<u>Verbs with two objects</u><br>" +
+            "Verbs which have two objects can be made passive in two ways.<br><br>" +
+            "[<b>I</b> was handed a <b>note</b>.]<br>[A <b>note</b> was handed to <b>me</b>.]<br>" +
             "<br>" +
             "Other common verbs of this type are:<br>" +
             "“bring”, “give”, “lend”, “pass”, “pay”, “promise”, “sell”, “send”, “show”, “tell”<br>" +
             "<br>" +
-            "3.\tVerbs with object and complement<br>" +
-            "Some verbs have a noun or adjective which describes their object.<br>" +
+            "3.\t<u>Verbs with object and complement</u><br>" +
+            "Some verbs have a noun or adjective which describes their object.<br><br>" +
             "[We elected Jim <b>class representative</b>.]<br>" +
             "[Everyone considered him a <b>failure</b>.]<br>" +
             "<br>" +
-            "When these are made passive, the complement goes directly after the verb.<br>" +
+            "When these are made passive, the complement goes directly after the verb.<br><br>" +
             "[Jim was elected class representative.]<br>" +
-            "[He was considered a failure.]<br><br>" +
+            "[He was considered a failure.]<br><br><br>" +
             "<b><u>Using and not mentioning the agent</u></b><br>" +
-            "1.\tChange of focus<br>" +
-            "The passive can change the emphasis of a sentence.<br>" +
+            "1.\t<u>Change of focus</u><br>" +
+            "The passive can change the emphasis of a sentence.<br><br>" +
             "[<b>Jack</b> won the prize.] (focus on Jack)<br>" +
             "[The <b>prize</b> was won by Jack.] (focus on the prize)<br>" +
             "<br>" +
-            "2.\tUnknown agent<br>" +
-            "The agent is not mentioned if unknown.<br>" +
+            "2.\t<u>Unknown agent</u><br>" +
+            "The agent is not mentioned if unknown.<br><br>" +
             "[My wallet <b>has been taken</b>.]<br>" +
             "In this case, there is no point in adding an agent: ''by somebody''.<br>" +
             "<br>" +
-            "3.\tGeneralized agent<br>" +
-            "If the subject is ''people in general'' or ''you'' the agent is not mentioned.<br>" +
+            "3.\t<u>Generalized agent</u><br>" +
+            "If the subject is ''people in general'' or ''you'' the agent is not mentioned.<br><br>" +
             "[Bicycles <b>are</b> widely <b>used</b> in the city instead of public transport.]<br>" +
             "<br>" +
-            "4.\tObvious agent<br>" +
-            "If the agent is obvious or has already been referred to, it is not mentioned.<br>" +
+            "4.\t<u>Obvious agent</u><br>" +
+            "If the agent is obvious or has already been referred to, it is not mentioned.<br><br>" +
             "[Linda <b>has been arrested</b>.] (we assume by the police)<br>" +
             "[The company agreed to our request and a new car park <b>was opened</b>.]<br>" +
             "<br>" +
-            "5.\tUnimportant agent<br>" +
-            "If the agent is not important to the meaning of the sentence it is not mentioned.<br>" +
+            "5.\t<u>Unimportant agent</u><br>" +
+            "If the agent is not important to the meaning of the sentence it is not mentioned.<br><br>" +
             "[I <b>was advised</b> to obtain a visa in advance.]<br>" +
             "<br>" +
-            "6.\tImpersonality<br>" +
-            "Using the passive is a way of avoiding the naming of a specific person who is responsible for an action.<br>" +
+            "6.\t<u>Impersonality</u><br>" +
+            "Using the passive is a way of avoiding the naming of a specific person who is responsible for an action.<br><br>" +
             "[It <b>has been decided</b> to reduce all salaries by 10%.]<br>" +
             "<br>" +
             "In descriptions of processes, there is emphasis on the actions performed rather than on the people who perform them.<br>" +
-            "[Then the packets <b>are packed</b> into boxes of twenty-four.]<br><br>" +
+            "[Then the packets <b>are packed</b> into boxes of twenty-four.]<br><br><br>" +
             "<b><u>“Have” and “get something done”, “need doing”</u></b><br>" +
-            "1.\t“Have”/”get something done”<br>" +
+            "1.\t<u>“Have”/”get something done”</u><br>" +
             "This typically describes a service performed for us by someone else.<br>" +
             "[I''ve just <b>had/got</b> my car <b>serviced</b>. I <b>have/get</b> it <b>done</b> every winter.]<br>" +
             "<br>" +
@@ -343,88 +344,88 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "<br>" +
             "Note that “get” should not be used in the present perfect passive, where it would be confused with “have got”.<br>" +
             "<br>" +
-            "2.\tThe need to have a service done can be described with “need doing”.<br>" +
-            "[Your hair <b>needs cutting</b>.]<br><br>" +
+            "2.\t<u>The need to have a service done can be described with “need doing”.</u><br>" +
+            "[Your hair <b>needs cutting</b>.]<br><br><br>" +
             "<b><u>Passive “get”</u></b><br>" +
-            "1.\t“Get” can be used instead of be to form the passive in spoken language.<br>" +
-            "[Martin <b>got arrested</b> at a football match.]<br><br>" +
+            "“Get” can be used instead of be to form the passive in spoken language.<br>" +
+            "[Martin <b>got arrested</b> at a football match.]<br><br><br>" +
             "<b><u>Reporting verbs</u></b><br>" +
-            "1.\tPresent reference<br>" +
-            "With verbs such as “believe”, “know”, “say”, “think”, which report people''s opinions, a passive construction is often used to avoid a weak subject, and to give a generalized opinion.<br>" +
-            "With present reference, the passive is followed by the present infinitive.<br>" +
+            "1.\t<u>Present reference</u><br>" +
+            "With verbs such as “believe”, “know”, “say”, “think”, which report people''s opinions, a passive construction is often used to avoid a weak subject, and to give a generalized opinion.<br><br>" +
+            "With present reference, the passive is followed by the present infinitive.<br><br>" +
             "[The criminal <b>is thought to be</b> in hiding in the London area.]<br>" +
             "[Vitamin C <b>is known to be</b> good for treating colds.]<br>" +
             "<br>" +
-            "2.\tPast reference<br>" +
-            "With past reference, the passive is followed by the past infinitive.<br>" +
+            "2.\t<u>Past reference</u><br>" +
+            "With past reference, the passive is followed by the past infinitive.<br><br>" +
             "[Smith <b>is believed to have left</b> England last week.]<br>" +
             "<br>" +
-            "3.\tPast reporting verb<br>" +
-            "If the reporting verb is in the past, the past infinitive tends to follow, though not always if the verb “be” is used.<br>" +
+            "3.\t<u>Past reporting verb</u><br>" +
+            "If the reporting verb is in the past, the past infinitive tends to follow, though not always if the verb “be” is used.<br><br>" +
             "[People thought Sue had paid too much.]<br>" +
             "[Sue <b>was thought to have paid</b> too much.]<br>" +
             "<br>" +
             "[The police thought that the thief was still in the house.]<br>" +
             "[The thief <b>was thought to</b> still <b>be</b> in the house.]<br>" +
             "<br>" +
-            "4.\tPast reference with two objects<br>" +
-            "In this case there are two ways of making a passive sentence.<br>" +
+            "4.\t<u>Past reference with two objects</u><br>" +
+            "In this case there are two ways of making a passive sentence.<br><br>" +
             "[Everyone knows the portrait was painted by an Italian.]<br>" +
             "[The portrait <b>is known to have been painted</b> by an Italian.]<br>" +
             "<br>" +
-            "5.\tContinuous infinitive<br>" +
-            "Past and present continuous infinitives are also used.<br>" +
+            "5.\t<u>Continuous infinitive</u><br>" +
+            "Past and present continuous infinitives are also used.<br><br>" +
             "[Mary <b>is thought to be</b> living in Scotland.]<br>" +
-            "[The driver <b>is thought to have been</b> doing a U-turn.]<br><br>" +
+            "[The driver <b>is thought to have been</b> doing a U-turn.]<br><br><br>" +
             "<b><u>Verbs with prepositions</u></b><br>" +
-            "1.\tEnding a sentence with a preposition<br>" +
-            "It is possible to end a sentence with a preposition in a sentence where a prepositional verb is made passive.<br>" +
+            "1.\t<u>Ending a sentence with a preposition</u><br>" +
+            "It is possible to end a sentence with a preposition in a sentence where a prepositional verb is made passive.<br><br>" +
             "[Somebody broke into our house.]<br>" +
             "[Our house <b>was broken into</b>.]<br>" +
             "<br>" +
-            "2.\t“By” and “with”<br>" +
-            "“With” is used after participles such as “filled”, “packed”, “crowded”, “crammed”.<br>" +
+            "2.\t<u>“By” and “with”</u><br>" +
+            "“With” is used after participles such as “filled”, “packed”, “crowded”, “crammed”.<br><br>" +
             "[The train <b>was packed with</b> commuters.]<br>" +
             "<br>" +
             "The difference between “by” and “with” may involve the presence of a person:<br>" +
             "[Dave <b>was hit by</b> a branch.] (an accident)<br>" +
             "[Dave <b>was hit with</b> a branch.] (a person hit him with one)<br>" +
             "<br>" +
-            "3.\t“Make” is followed by “to” when used in the passive.<br>" +
+            "3.\t<u>“Make” is followed by “to” when used in the passive.</u><br>" +
             "[My boss made me work hard.]<br>" +
             "[I <b>was made to</b> work hard by my boss.]<br>" +
             "<br>" +
-            "4.\t“Cover” and verbs which involve similar ideas, such as “surround”, “decorate”, can use “with” or “by”. “Cover” can also be followed by “in”.<br>" +
+            "4.\t<u>“Cover” and verbs which involve similar ideas</u>, such as “surround”, “decorate”, can use “with” or “by”.<br>“Cover” can also be followed by “in”.<br><br>" +
             "[The furniture <b>was covered in</b> dust.]<br>" +
             "[The living room <b>had been decorated with</b> flowery wallpaper.]";
 
-    private String conditionalsLessonContent = "<b><u>Basic contrasts</u></b><br>" +
-            "1.\tWhat is always true: present + present<br>" +
+    private String conditionalsPartOneLessonContent = "<b><u>Basic contrasts</u></b><br>" +
+            "1.\t<u>What is always true: present + present</u><br>" +
             "[If I <b>work</b> late, I <b>get</b> tired.]<br>" +
             "[If the water <b>is</b> boiling, it means the food <b>is</b> nearly ready.]<br>" +
             "<br>" +
-            "2.\tWhat was always true: past + past<br>" +
+            "2.\t<u>What was always true: past + past</u><br>" +
             "[We <b>went</b> home early if it <b>was</b> foggy.]<br>" +
             "[If it <b>was</b> snowing, we <b>stayed</b> at home.]<br>" +
             "<br>" +
-            "3.\tReal situations: present + future<br>" +
-            "Here we think that the outcome is really possible.<br>" +
+            "3.\t<u>Real situations: present + future</u><br>" +
+            "Here we think that the outcome is really possible.<br><br>" +
             "[If you <b>keep</b> driving like that, you <b>are going to have</b> an accident.]<br>" +
             "[If you <b>see</b> Mark, tell him I <b>will</b> ring him tomorrow.]<br>" +
             "<br>" +
-            "4.\tHypothetical situations: past + “would”<br>" +
+            "4.\t<u>Hypothetical situations: past + “would”</u><br>" +
             "These are unreal or imaginary situations.<br>" +
             "[If I <b>knew</b> the answer, I''<b>d</b> tell you.]<br>" +
             "[If I <b>was</b> having a party, I <b>wouldn''t</b> invite Marcia.]<br>" +
             "<br>" +
-            "The verb “be” usually takes the form were for all persons in these sentences, though “was” is used in everyday speech. Note that in the first person it is possible to use “should” instead of “would”.<br>" +
+            "The verb “be” usually takes the form were for all persons in these sentences, though “was” is used in everyday speech.<br><br>Note that in the first person it is possible to use “should” instead of “would”.<br>" +
             "[If I <b>left</b> home, I think I <b>should</b> be lonely.]<br>" +
             "<br>" +
-            "5.\tHypothetical past situations: past perfect + “would have”<br>" +
+            "5.\t<u>Hypothetical past situations: past perfect + “would have”</u><br>" +
             "These refer to past events.<br>" +
             "[If I <b>had</b> known you were coming, I <b>would have</b> met you at the station.]<br>" +
             "<br>" +
-            "6.\tWith modals<br>" +
+            "6.\t<u>With modals</u><br>" +
             "Possible situations in the present<br>" +
             "[If you <b>get</b> wet, you <b>should</b> change your clothes immediately.]<br>" +
             "[If you <b>come</b> early, we <b>can</b> discuss the problem together.]<br>" +
@@ -433,16 +434,16 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "[If I <b>had</b> the money, I <b>could</b> help you.]<br>" +
             "<br>" +
             "Hypothetical past situations<br>" +
-            "[If you <b>hadn''t</b> reminded me, I <b>might have</b> forgotten.]<br>" +
-            "<br>" +
-            "<b><u>Variations</u></b><br>" +
-            "1.\t“If only”<br>" +
-            "This adds emphasis to hypothetical situations. With past events it adds a sense of regret. The second part of the sentence is often left out.<br>" +
+            "[If you <b>hadn''t</b> reminded me, I <b>might have</b> forgotten.]";
+
+    private String conditionalsPartTwoLessonContent = "<b><u>Variations</u></b><br>" +
+            "1.\t<u>“If only”</u><br>" +
+            "This adds emphasis to hypothetical situations.<br><br>With past events it adds a sense of regret.<br>The second part of the sentence is often left out.<br><br>" +
             "<b>[If only</b> I <b>had</b> enough time.]<br>" +
             "[<b>If only<//b> I <b>hadn''t</b> drunk too much, this <b>wouldn''t have</b> happened!]<br>" +
             "<br>" +
-            "2.\t“Unless” and other alternatives to “if”<br>" +
-            "“Unless” means “only if not”.<br>" +
+            "2.\t<u>“Unless” and other alternatives to “if”</u><br>" +
+            "“Unless” means “only if not”.<br><br>" +
             "[I''<b>ll</b> go ahead and get the tickets <b>unless</b> you <b>call</b> me this afternoon.] (This means if you call me this afternoon, I won''t get the tickets.)<br>" +
             "<br>" +
             "This means if one situation depends on another, “if” can be replaced by “as/so long as”, “provided” or “only if”.<br>" +
@@ -451,269 +452,269 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "“Even if” describes how something will happen whatever the condition.<br>" +
             "[<b>Even if</b> it rains, we''<b>ll</b> still go for a picnic.]<br>" +
             "<br>" +
-            "3.\tPast events with results in the present: past perfect + “would”<br>" +
+            "3.\t<u>Past events with results in the present: past perfect + “would”</u><br>" +
             "[If Jim <b>hadn''t</b> missed the plane, he <b>would be</b> here by now.]<br>" +
             "<br>" +
-            "4.\t“Should”<br>" +
-            "After “if”, this makes the possibility of an event seem unlikely.<br>" +
+            "4.\t<u>“Should”</u><br>" +
+            "After “if”, this makes the possibility of an event seem unlikely.<br><br>" +
             "[<b>If</b> you <b>should</b> see Ann, <b>could</b> you ask her to call me?] (This implies that I do not expect you to see Ann.)<br>" +
             "<br>" +
-            "5.\t“Were to”<br>" +
-            "This also makes an event seem more hypothetical.<br>" +
+            "5.\t<u>“Were to”</u><br>" +
+            "This also makes an event seem more hypothetical.<br><br>" +
             "[<b>If</b> I <b>were to</b> ask you to marry me, what <b>would</b> you say?]<br>" +
             "<br>" +
-            "6.\t“Happen to”<br>" +
-            "This emphasizes chance possibilities. It is often used with “should”.<br>" +
-            "[<b>If</b> you <b>happen to</b> see Helen, <b>could</b> you ask her to call me?]<br>" +
+            "6.\t<u>“Happen to”</u><br>" +
+            "This emphasizes chance possibilities. It is often used with “should”.<br><br>" +
+            "[<b>If</b> you <b>happen to</b> see Helen, <b>could</b> you ask her to call me?]<br><br>" +
             "[<b>If</b> you <b>should happen to</b> be passing, <b>drop in</b> for a cup of tea.]<br>" +
             "<br>" +
-            "7.\t“If it were not for”/”if it hadn ''t been for”<br>" +
-            "This describes how one event depends on another.<br>" +
-            "[<b>If it weren''t for</b> Jim, this company <b>would be</b> in a mess.]<br>" +
+            "7.\t<u>“If it were not for”/”if it hadn ''t been for”</u><br>" +
+            "This describes how one event depends on another.<br><br>" +
+            "[<b>If it weren''t for</b> Jim, this company <b>would be</b> in a mess.]<br><br>" +
             "[<b>If it hadn''t been for</b> their goalkeeper, United <b>would have</b> lost.]<br>" +
             "<br>" +
-            "8.\t“Will” and “would”: politeness and emphasis<br>" +
+            "8.\t<u>“Will” and “would”: politeness and emphasis</u><br>" +
             "These can be used as polite forms.<br>" +
             "[<b>If</b> you <b>will/would</b> wait here, I''<b>ll</b> see if Mrs. Green is free.]<br>" +
             "<br>" +
-            "“Will” can also be used for emphasis, meaning “insist on doing”.<br>" +
+            "“Will” can also be used for emphasis, meaning “insist on doing”.<br><br>" +
             "[<b>If</b> you <b>will</b> stay out late, no wonder you <b>are</b> tired.] (insist on staying out)";
 
     private String presentFutureModalsLessonContent = "<b><u>“Don’t have to” and “must not”</u></b><br>" +
-            "1.\t“Don’t have to” refers to an absence of obligation.<br>" +
+            "1.\t<u>“Don’t have to” refers to an absence of obligation.</u><br>" +
             "[You <b>don’t have to</b> work tomorrow.]<br>" +
             "\t<br>" +
-            "2.\t“Must not” refers to an obligation not to do something.<br>" +
-            "[You <b>must not</b> leave the room before the end of the test.]\t<br><br><hr>" +
+            "2.\t<u>“Must not” refers to an obligation not to do something.</u><br>" +
+            "[You <b>must not</b> leave the room before the end of the test.]\t<br><br><br>" +
             "<b><u>“Should”</u></b><br>" +
-            "1.\tWhere “*should” appears, “ought to” can also be used.<br>" +
+            "1.\t<u>Where “*should” appears, “ought to” can also be used.</u><br>" +
             "Expectation<br>" +
             "[This film *<b>should</b> be really good.]<br>" +
             "<br>" +
-            "2.\tRecommendation<br>" +
-            "[I think you *<b>should</b> talk it over with your parents.]<br>" +
-            "In writing, “should” can be used to express a strong obligation politely.<br>" +
+            "2.\t<u>Recommendation</u><br>" +
+            "[I think you *<b>should</b> talk it over with your parents.]<br><br>" +
+            "In writing, “should” can be used to express a strong obligation politely.<br><br>" +
             "[Guests <b>should</b> vacate their rooms by midday.]<br>" +
             "<br>" +
-            "3.\tCriticism of an action<br>" +
+            "3.\t<u>Criticism of an action</u><br>" +
             "[You *<b>shouldn’t</b> eat so much late at night.]<br>" +
             "<br>" +
-            "4.\tUncertainty<br>" +
+            "4.\t<u>Uncertainty</u><br>" +
             "[<b>Should</b> I leave these papers on your desk?]<br>" +
             "<br>" +
-            "5.\t“Should” and verbs of thinking<br>" +
-            "“Should” is often used with verbs of thinking, to make an opinion less direct.<br>" +
+            "5.\t<u>“Should” and verbs of thinking</u><br>" +
+            "“Should” is often used with verbs of thinking, to make an opinion less direct.<br><br>" +
             "[I <b>should</b> think that model would sell quite well.]<br>" +
             "<br>" +
-            "6.\tWith “be” and adjectives describing chance<br>" +
-            "This group of adjectives includes “odd”, “strange”, “funny” (odd), and the expression “what a coincidence”.<br>" +
+            "6.\t<u>With “be” and adjectives describing chance</u><br>" +
+            "This group of adjectives includes “odd”, “strange”, “funny” (odd), and the expression “what a coincidence”.<br><br>" +
             "[It’s strange that you <b>should</b> be staying in the same hotel.]<br>" +
             "<br>" +
-            "7.\tAfter “in case” to emphasize unlikelihood<br>" +
-            "[I’m taking an umbrella in case it <b>should</b> rain.]<br><br>" +
+            "7.\t<u>After “in case” to emphasize unlikelihood</u><br>" +
+            "[I’m taking an umbrella in case it <b>should</b> rain.]<br><br><br>" +
             "<b><u>“Could”</u></b><br>" +
-            "1.\t“Could” is used to express possibility or uncertainty.<br>" +
+            "1.\t<u>“Could” is used to express possibility or uncertainty.</u><br>" +
             "[This <b>could</b> be the house.]<br>" +
             "<br>" +
-            "2.\t“Could” is used with comparative adjectives to express possibility or impossibility.<br>" +
+            "2.\t<u>“Could” is used with comparative adjectives to express possibility or impossibility.</u><br>" +
             "[The situation <b>couldn’t</b> be worse.]<br>" +
             "[It <b>could</b> be better.]<br>" +
             "<br>" +
-            "3.\t“Could” is used to make suggestions.<br>" +
+            "3.\t<u>“Could” is used to make suggestions.</u><br>" +
             "[We <b>could</b> go to that new restaurant opposite the cinema.]<br>" +
             "<br>" +
-            "4.\t“Could” is used to express unwillingness.<br>" +
-            "[I <b>couldn’t</b> possibly leave Tim here on his own.]<br><br>" +
+            "4.\t<u>“Could” is used to express unwillingness.</u><br>" +
+            "[I <b>couldn’t</b> possibly leave Tim here on his own.]<br><br><br>" +
             "<b><u>“Can”</u></b><br>" +
-            "1.\t“Can” with “be” is used to make criticisms.<br>" +
+            "1.\t<u>“Can” with “be” is used to make criticisms.</u><br>" +
             "[You <b>can be</b> really annoying, you know!]<br>" +
             "<br>" +
-            "2.\t“Can” is also used with “be” to refer to capability.<br>" +
-            "[Winter here <b>can be</b> really cold.]<br><br>" +
+            "2.\t<u>“Can” is also used with “be” to refer to capability.</u><br>" +
+            "[Winter here <b>can be</b> really cold.]<br><br><br>" +
             "<b><u>“Must” and “can’t”</u></b><br>" +
-            "1.\tThese refer to present time only. In expressing certainty, they are opposites.<br>" +
+            "These refer to present time only. In expressing certainty, they are opposites.<br>" +
             "[This <b>must</b> be our stop.] (I’m sure it is.)<br>" +
-            "[This <b>can’t</b> be our stop.] (I’m sure it isn’t.)<br><br>" +
+            "[This <b>can’t</b> be our stop.] (I’m sure it isn’t.)<br><br><br>" +
             "<b><u>“May” and “might”</u></b><br>" +
-            "1.\t“May” can be used to express “although” clauses.<br>" +
+            "1.\t<u>“May” can be used to express “although” clauses.</u><br>" +
             "[She <b>may</b> be the boss, <b>but</b> that is no excuse for shouting like that.]<br>" +
             "<br>" +
-            "2.\t“May/might as well”<br>" +
-            "This describes the only thing left to do, something which the speaker is not enthusiastic about.<br>" +
+            "2.\t<u>“May/might as well”</u><br>" +
+            "This describes the only thing left to do, something which the speaker is not enthusiastic about.<br><br>" +
             "[Nobody else is going to turn up now for the lesson, so you <b>may/might as well</b> go home.<br>" +
             "<br>" +
-            "3.\t“May” and “might” both express possibility or uncertainty. “May” is more common in formal language.<br>" +
+            "3.\t<u>“May” and “might” both express possibility or uncertainty.</u><br>“May” is more common in formal language.<br><br>" +
             "[The peace conference <b>may</b> find a solution to the problem.]<br>" +
             "<br>" +
-            "4.\tThere is an idiomatic expression with “try”, using “may” for present reference, and “might” for past reference.<br>" +
-            "[<b>Try</b> as I <b>might</b>, I could not pass my driving test.] (This means although I tried hard, I could not pass my driving test.)<br><br>" +
+            "4.\t<u>There is an idiomatic expression with “try”, using “may” for present reference, and “might” for past reference.</u><br>" +
+            "[<b>Try</b> as I <b>might</b>, I could not pass my driving test.] (This means although I tried hard, I could not pass my driving test.)<br><br><br>" +
             "<b><u>“Shall”</u></b><br>" +
-            "1.\t“Shall” can be used with all persons to emphasize something which the speaker feels is certain to happen or wants to happen.<br>" +
+            "1.\t<u>“Shall” can be used with all persons to emphasize something which the speaker feels is certain to happen or wants to happen.</u><br>" +
             "[I <b>shall</b> definitely give up smoking this year.]<br>" +
             "[We <b>shall</b> win!] (“shall” is stressed in this sentence)<br>" +
             "<br>" +
-            "2.\tSimilarly, “shall” is used in formal rules and regulations.<br>" +
-            "[No player <b>shall</b> knowingly pick up or move the ball of another player.]<br><br>" +
+            "2.\t<u>Similarly, “shall” is used in formal rules and regulations.</u><br>" +
+            "[No player <b>shall</b> knowingly pick up or move the ball of another player.]<br><br><br>" +
             "<b><u>“Will”</u></b><br>" +
-            "1.\t“Will” can be used to express an assumption.<br>" +
+            "1.\t<u>“Will” can be used to express an assumption.</u><br>" +
             "[A: The phone is ringing. B: That <b>will</b> be for me.]<br>" +
             "<br>" +
-            "2.\t“Will”/”won’t” can be used emphatically to tell someone of the speaker’s intention, or to forbid an action, in response to a “will” expression.<br>" +
+            "2.\t<u>“Will”/”won’t” can be used emphatically to tell someone of the speaker’s intention, or to forbid an action, in response to a “will” expression.</u><br><br>" +
             "[I <b>will</b> take the money anyway, so there!]<br>" +
             "[You <b>won’t</b>!]<br>" +
             "[I <b>will</b>!]<br>" +
             "<br>" +
             "Similarly “I won’t” can mean “I refuse”, and “I will” can mean “I insist”.<br>" +
-            "[A: I <b>won’t</b> do it! B: Yes, you <b>will</b>!]<br><br>" +
+            "[A: I <b>won’t</b> do it! B: Yes, you <b>will</b>!]<br><br><br>" +
             "<b><u>“Would”</u></b><br>" +
-            "1.\t“Would” is often used in situations where a conditional sense is understood but not stated.<br>" +
-            "[Nobody <b>would</b> agree with that idea.] (if we asked them)<br>" +
-            "[Life <b>wouldn’t</b> be worth living without you.] (if you weren’t there)<br>" +
-            "[I think Jim <b>would</b> be the best candidate.] (if he was under consideration for the job)<br>" +
-            "[Sue <b>wouldn’t</b> do that, surely!] (if you think she’s capable of doing that).<br><br>" +
+            "1.\t<u>“Would” is often used in situations where a conditional sense is understood but not stated.</u><br><br>" +
+            "[Nobody <b>would</b> agree with that idea.] (if we asked them)<br><br>" +
+            "[Life <b>wouldn’t</b> be worth living without you.] (if you weren’t there)<br><br>" +
+            "[I think Jim <b>would</b> be the best candidate.] (if he was under consideration for the job)<br><br>" +
+            "[Sue <b>wouldn’t</b> do that, surely!] (if you think she’s capable of doing that).<br><br><br>" +
             "<b><u>“Need”</u></b><br>" +
-            "1.\t“Need to” is a modal auxiliary, and behaves like a normal verb.<br>" +
+            "1.\t<u>“Need to” is a modal auxiliary, and behaves like a normal verb.</u><br>" +
             "[Do you <b>need to</b> use the photocopier?]<br>" +
             "<br>" +
-            "2.\t“Need” is a modal auxiliary, but mainly in question and negative forms.<br>" +
+            "2.\t<u>“Need” is a modal auxiliary, but mainly in question and negative forms.</u><br>" +
             "[<b>Need</b> you make so much noise?]<br>";
 
     private String pastModalsLessonContent = "<b><u>“Had to” and “must have”</u></b><br>" +
-            "1.\t“Had to” is the past form of “must” and refers to a past obligation.<br>" +
+            "1.\t<u>“Had to” is the past form of “must” and refers to a past obligation.</u><br>" +
             "[Sorry I''m late, I <b>had to</b> post some letters.]<br>" +
             "<br>" +
-            "The negative form is “didn''t have to” and refers to an absence of obligation.<br>" +
-            "“Must have” refers to past certainty. (see below)<br><br>" +
+            "The negative form is “didn''t have to” and refers to an absence of obligation.<br><br>" +
+            "“Must have” refers to past certainty. (see below)<br><br><br>" +
             "<b><u>“Should have” and “ought to have”</u></b><br>" +
             "Where “*should” appears, “ought to” is also possible.<br>" +
-            "1.\tExpectation<br>" +
+            "1.\t<u>Expectation</u><br>" +
             "“Should have” refers to something which was supposed to happen.<br>" +
             "[The parcel I sent you *<b>should have</b> arrived by now.]<br>" +
             "<br>" +
-            "2.\tCriticism of an action<br>" +
+            "2.\t<u>Criticism of an action</u><br>" +
             "[You *<b>shouldn''t have</b> eaten so much last night.]<br>" +
             "<br>" +
-            "3.\t“Should have” and verbs of thinking<br>" +
-            "The past form “knew” in the example is an unreal verb form, and the “should have” form is used according to “sequence of verb forms”.<br>" +
+            "3.\t<u>“Should have” and verbs of thinking</u><br>" +
+            "The past form “knew” in the example is an unreal verb form, and the “should have” form is used according to “sequence of verb forms”.<br><br>" +
             "[I <b>should have</b> thought you knew.]<br>" +
             "<br>" +
-            "4.\t\"With “be” and adjectives describing chance<br>" +
+            "4.\t<u>With “be” and adjectives describing chance</u><br>" +
             "[It was strange that you <b>should have been</b> staying in the same hotel last year.]<br>" +
             "<br>" +
-            "5.\tAs a polite expression of thanks on receiving a gift or a favour<br>" +
-            "[I''ve done the washing up for you. - Oh, you really <b>shouldn''t have</b>.]<br>" +
-            "The intonation should be friendly, as this is not a criticism.<br><br>" +
+            "5.\t<u>As a polite expression of thanks on receiving a gift or a favour</u><br>" +
+            "[I''ve done the washing up for you. - Oh, you really <b>shouldn''t have</b>.]<br><br>" +
+            "The intonation should be friendly, as this is not a criticism.<br><br><br>" +
             "<b><u>“Could have”</u></b><br>" +
-            "1.\t“Could have” refers to past possibility or uncertainty.<br>" +
-            "[David <b>could have</b> won the race if he had tried.] (possibility/ability)<br>" +
+            "1.\t<u>“Could have” refers to past possibility or uncertainty.</u><br>" +
+            "[David <b>could have</b> won the race if he had tried.] (possibility/ability)<br><br>" +
             "[It <b>could have</b> been Sue, I suppose.] (uncertainty)<br>" +
             "<br>" +
-            "2.\t“Couldn''t have” is also possible for both meanings.<br>" +
+            "2.\t<u>“Couldn''t have” is also possible for both meanings.</u><br>" +
             "<br>" +
-            "3.\t“Couldn''t have” can be used with comparative adjectives.<br>" +
+            "3.\t<u>“Couldn''t have” can be used with comparative adjectives.</u><br>" +
             "[We <b>couldn''t have</b> been happier in those days.]<br>" +
             "<br>" +
-            "4.\t“Could have” can also express unwillingness.<br>" +
-            "[She <b>could have</b> gone to the party with her friends.] (but she didn''t)<br>" +
-            "[We couldn''t have left the dog on its own.] (so we didn''t)<br><br>" +
+            "4.\t<u>“Could have” can also express unwillingness.</u><br>" +
+            "[She <b>could have</b> gone to the party with her friends.] (but she didn''t)<br><br>" +
+            "[We couldn''t have left the dog on its own.] (so we didn''t)<br><br><br>" +
             "<b><u>“Could”</u></b><br>" +
-            "1.\t“Could” refers to past permission or past ability.<br>" +
-            "[When I was sixteen I <b>could</b> stay out till 11.00.” (I was allowed to)<br>" +
+            "1.\t<u>“Could” refers to past permission or past ability.</u><br>" +
+            "[When I was sixteen I <b>could</b> stay out till 11.00.” (I was allowed to)<br><br>" +
             "[Mary <b>could</b> swim when she was three.] (she actually did)<br>" +
             "<br>" +
-            "2.\tCompare:<br>" +
-            "[Mary <b>could have</b> swum when she was three.] (but she didn''t)<br><br>" +
+            "2.\t<u>Compare:</u><br>" +
+            "[Mary <b>could have</b> swum when she was three.] (but she didn''t)<br><br><br>" +
             "<b><u>“May have” and “might have”</u></b><br>" +
-            "1.\t“Might have” refers to past possibility which did not happen.<br>" +
+            "1.\t<u>“Might have” refers to past possibility which did not happen.</u><br>" +
             "[You <b>might have</b> drowned!]<br>" +
             "<br>" +
-            "2.\t“Might have” and “may have” refer to uncertainty.<br>" +
+            "2.\t<u>“Might have” and “may have” refer to uncertainty.</u><br>" +
             "[I suppose I <b>may have</b> been rather critical.]<br>" +
             "<br>" +
-            "3.\tBoth can be used in the negative to express uncertainty.<br>" +
+            "3.\t<u>Both can be used in the negative to express uncertainty.</u><br>" +
             "[They <b>might not have</b> received our letter yet.]<br>" +
             "<br>" +
-            "4.\t“Might have” is used to express annoyance at someone''s failure to do something. There is strong stress on the words underlined.<br>" +
+            "4.\t<u>“Might have” is used to express annoyance at someone''s failure to do something.</u><br>There is strong stress on the words underlined.<br>" +
             "[You <b>might have</b> <u>told</u> me my trousers were split!]<br>" +
             "<br>" +
-            "5.\t“I might have known” + “would” is an idiom by which the speaker expresses ironically that an action was typical of someone else.<br>" +
-            "[<b>I might have known</b> that he <b>would</b> be late.]<br>" +
-            "[A: It was Jack who broke the vase. B: <b>I might have known</b>!]<br><br>" +
+            "5.\t<u>“I might have known” + “would” is an idiom</u> by which the speaker expresses ironically that an action was typical of someone else.<br>" +
+            "[<b>I might have known</b> that he <b>would</b> be late.]<br><br>" +
+            "[A: It was Jack who broke the vase. B: <b>I might have known</b>!]<br><br><br>" +
             "<b><u>“Must have” and “can’t have”</u></b><br>" +
-            "1.\tThese refer to the speaker''s certainty about a past action.<br>" +
+            "1.\t<u>These refer to the speaker''s certainty about a past action.</u><br>" +
             "[Someone <b>must have</b> taken it.] (I am sure they did)<br>" +
             "[You <b>can''t have</b> lost it.] (I am sure you didn''t)<br>" +
             "<br>" +
-            "2.\tBoth can also be used with surely in exclamations.<br>" +
+            "2.\t<u>Both can also be used with surely in exclamations.</u><br>" +
             "[Surely you <b>can''t have</b> eaten all of it.]<br>" +
-            "[Surely you <b>must have</b> noticed it.]<br><br>" +
+            "[Surely you <b>must have</b> noticed it.]<br><br><br>" +
             "<b><u>“Would not”</u></b><br>" +
-            "1.\tThis expresses an unwillingness in the past.<br>" +
-            "[Everyone was angry because Sam <b>wouldn''t</b> turn off the television.]<br><br>" +
+            "This expresses an unwillingness in the past.<br>" +
+            "[Everyone was angry because Sam <b>wouldn''t</b> turn off the television.]<br><br><br>" +
             "<b><u>“Would have”</u></b><br>" +
-            "1.\t“Would have” can refer to events in the past which did not actually happen.<br>" +
+            "1.\t<u>“Would have” can refer to events in the past which did not actually happen.</u><br>" +
             "[I <b>would have</b> accepted this job, but I didn''t want to move house.]<br>" +
             "<br>" +
-            "2.\tAssumptions about the past are also possible with “would have”.<br>" +
+            "2.\t<u>Assumptions about the past are also possible with “would have”.</u><br>" +
             "[A: Someone called after you left but didn''t leave a message.]<br>" +
-            "[B: That <b>would have</b> been Cathy, probably.]<br><br>" +
+            "[B: That <b>would have</b> been Cathy, probably.]<br><br><br>" +
             "<b><u>“Needn’t have and didn’t need to”</u></b><br>" +
-            "1.\t“Needn''t have done” refers to an unnecessary action which was actually done.<br>" +
+            "1.\t<u>“Needn''t have done” refers to an unnecessary action which was actually done.</u><br>" +
             "[You <b>needn''t have paid</b> all at once.] (you did pay)<br>" +
             "<br>" +
-            "“Didn''t need to” refers to an unnecessary action which was not done.<br>" +
+            "2.\t<u>“Didn''t need to” refers to an unnecessary action which was not done.</u><br>" +
             "[I <b>didn''t need to</b> go to the dentist again, luckily.]<br>";
 
-    private String articlesLessonContent = "<b><u>Definite article</u></b><br>" +
-            "1.\tClasses<br>" +
+    private String articlesPartOneLessonContent = "<b><u>Definite article</u></b><br>" +
+            "1.\t<u>Classes</u><br>" +
             "This is one way to refer to classes, and is perhaps more formal than using a plural.<br>" +
             "[<b>The tiger</b> is threatened with extinction.]<br>" +
             "<br>" +
-            "2.\tNational groups<br>" +
+            "2.\t<u>National groups</u><br>" +
             "Groups as a whole.<br>" +
             "[<b>The French</b> eat in restaurants more than <b>the English</b>.]<br>" +
             "<br>" +
             "Single examples are not formed in the same way:<br>" +
             "[<b>A Frenchman/woman</b>, <b>an Englishman/woman</b>.]<br>" +
             "<br>" +
-            "3.\tOther groups<br>" +
+            "3.\t<u>Other groups</u><br>" +
             "If these are clearly plural.<br>" +
             "[<b>the Social Democrats</b>], [<b>The Rolling Stones</b>]<br>" +
             "<br>" +
             "Note the difference:<br>" +
             "[<b>Pink Floyd</b>], [<b>Queen</b>] (no article)<br>" +
             "<br>" +
-            "4.\tUnique objects<br>" +
+            "4.\t<u>Unique objects</u><br>" +
             "[<b>the moon</b>], [<b>the sun</b>]<br>" +
             "<br>" +
             "Note that there are other suns and moons in the universe.<br>" +
             "[This planet has <b>a</b> small <b>moon</b>.]<br>" +
             "<br>" +
-            "5.\tTitles<br>" +
+            "5.\t<u>Titles</u><br>" +
             "These tend to be ''unique''.<br>" +
             "[<b>The director</b> of studies]<br>" +
             "<br>" +
-            "If the title is post-modified (has a description coming after the noun), the is more likely, but not essential. Compare:<br>" +
-            "[She became President in 1998.] [She became <b>(the) President</b> of the United States in 1998.]<br>" +
+            "If the title is post-modified (has a description coming after the noun), the is more likely, but not essential.<br><br>Compare:<br>" +
+            "[She became President in 1998.]<br>[She became <b>(the) President</b> of the United States in 1998.]<br>" +
             "<br>" +
-            "6.\tOther titles<br>" +
+            "6.\t<u>Other titles</u><br>" +
             "The may be part of the title, and so is capitalized.<br>" +
             "[Newspapers: <b>The Independent</b>, <b>The Sunday Times</b>]<br>" +
             "<br>" +
-            "7.\tMusical instruments<br>" +
+            "7.\t<u>Musical instruments</u><br>" +
             "[Jane plays <b>the flute</b>.]<br>" +
-            "[<b>The guitar</b> is my favourite instrument.]<br>" +
+            "[<b>The guitar</b> is my favourite instrument.]<br><br>" +
             "It is, of course, still possible to use a where it would naturally be used.<br>" +
             "[There was <b>a</b> small brown <b>flute</b> in the window of <b>the shop</b>.]<br>" +
             "<br>" +
-            "8.\tEmphatic use<br>" +
+            "8.\t<u>Emphatic use</u><br>" +
             "This is heavily stressed and emphasises the following noun.<br>" +
             "[<b>This hotel</b> is <b>the place</b> to stay.]<br>" +
             "<br>" +
-            "9.\tPlace names<br>" +
-            "Post-modification, especially with “… of ….” plays a role in place names.<br>" +
+            "9.\t<u>Place names</u><br>" +
+            "Post-modification, especially with “… of ….” plays a role in place names.<br><br>" +
             "Compare:<br>" +
-            "[<b>Leeds University/The University of Leeds</b>], [<b>London Bridge/The Tower of London</b>]<br>" +
+            "[<b>Leeds University/The University of Leeds</b>],<br>[<b>London Bridge/The Tower of London</b>]<br>" +
             "<br>" +
             "If the first part of a place-name is another name, then normal rules about zero article apply.<br>" +
             "[<b>Brown''s Restaurant</b>], [<b>The Garden House Hotel</b>]<br>" +
@@ -721,125 +722,126 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "The same applies in geographical names:<br>" +
             "[<b>Canvey Island</b>], [<b>The Isle of Man</b>]<br>" +
             "<br>" +
-            "10.\tMost and the most<br>" +
-            "[<b>Most hotels</b> in England are very expensive.] (making a generalisation)<br>" +
+            "10.\t<u>Most and the most</u><br>" +
+            "[<b>Most hotels</b> in England are very expensive.] (making a generalisation)<br><br>" +
             "[This is <b>the most expensive hotel</b> in town.] (talking about a specific hotel)<br>" +
             "<br>" +
-            "11.\tImportance of context<br>" +
-            "The definite article refers to already mentioned items, and so its use depends on context.<br>" +
+            "11.\t<u>Importance of context</u><br>" +
+            "The definite article refers to already mentioned items, and so its use depends on context.<br><br>" +
             "[<b>The Smiths</b> had <b>a son</b> and <b>a daughter</b>. <b>The son</b> was in <b>the Army</b> and <b>the daughter</b> was training to be <b>a doctor</b>.]<br>" +
             "<br>" +
-            "[On <b>the Saturday</b>, there was <b>a</b> terrible <b>storm</b>.]<br>" +
-            "Here, “the Saturday” refers to a day in an area of time already mentioned.<br>" +
-            "[On <b>the Saturday</b> of <b>that week</b> ...]<br><br>" +
-            "<b><u>Indefinite article</u></b><br>" +
-            "1.\tJobs<br>" +
-            "Compare: Tony is <b>a</b> builder. Tony was <b>the builder</b> of that house.<br>" +
+            "[On <b>the Saturday</b>, there was <b>a</b> terrible <b>storm</b>.]<br><br>" +
+            "Here, “the Saturday” refers to a day in an area of time already mentioned.<br><br>" +
+            "[On <b>the Saturday</b> of <b>that week</b> ...]";
+
+    private String articlesPartTwoLessonContent = "<b><u>Indefinite article</u></b><br>" +
+            "1.\t<u>Jobs</u><br>" +
+            "Compare:<br>[Tony is <b>a</b> builder.]<br>[Tony was <b>the builder</b> of that house.]<br>" +
             "<br>" +
-            "2.\tIn measuring<br>" +
-            "Three times <b>a</b> week. Fifty kilometres <b>an</b> hour.<br>" +
-            "£3.50 <b>a</b> kilo. £15,000 <b>a</b> year.<br>" +
+            "2.\t<u>In measuring</u><br>" +
+            "[Three times <b>a</b> week.]<br>[Fifty kilometres <b>an</b> hour.]<br><br>" +
+            "[£3.50 <b>a</b> kilo.]<br>[£15,000 <b>a</b> year.]<br><br>" +
             "Formally, “per” can replace “a/an”.<br>" +
             "<br>" +
-            "3.\tUnknown people<br>" +
+            "3.\t<u>Unknown people</u><br>" +
             "Use of “a/an” emphasises that a person is unknown.<br>" +
-            "<b>A</b> Mr. Jones called while you were out.<br>";
+            "[<b>A Mr. Jones</b> called while you were out.]";
 
-    private String prepositionsLessonContent = "<b><u>Prepositions of place</u></b><br>" +
-            "1.\t“In”<br>" +
+    private String prepositionsPartOneLessonContent = "<b><u>Prepositions of place</u></b><br>" +
+            "1.\t<u>“In”</u><br>" +
             "Use “in” before buildings, towns, cities, regions, provinces, countries, and continents.<br>" +
             "[Eduardo is <b>in</b> the <b>library</b>.]<br>" +
             "[Palermo is a city <b>in Italy</b>.]<br>" +
             "<br>" +
-            "2.\t“On”<br>" +
+            "2.\t<u>“On”</u><br>" +
             "Use “on” before streets and bodies of water.<br>" +
             "[I live <b>on</b> a beautiful <b>street</b>.]<br>" +
             "[The boat is sailing <b>on</b> the <b>river</b>.]<br>" +
             "<br>" +
-            "3.\t“At”<br>" +
+            "3.\t<u>“At”</u><br>" +
             "Use “at” with street addresses and many specific locations.<br>" +
             "[Jen lives <b>at 17 Bow Street</b>.]<br>" +
             "[I will meet you <b>at</b> the <b>corner</b> of Main Street and Elm Street.]<br>" +
             "<br>" +
-            "4.\t“Between”<br>" +
+            "4.\t<u>“Between”</u><br>" +
             "“Between” describes a location between two points.<br>" +
             "[The video store is <b>between</b> the <b>bank</b> and the <b>post office</b>.]<br>" +
             "[The house is <b>between</b> two big <b>trees</b>.]<br>" +
             "<br>" +
-            "5.\t“Near”<br>" +
+            "5.\t<u>“Near”</u><br>" +
             "“Near” describes something close in distance.<br>" +
             "[I hope there is a cash machine <b>near</b> the <b>movie theatre</b>.]<br>" +
             "[The professor’s office is <b>near</b> the <b>chemistry laboratory</b>.]<br>" +
             "<br>" +
-            "6.\t“Far from”<br>" +
+            "6.\t<u>“Far from”</u><br>" +
             "“Far from” describes something far in distance.<br>" +
             "[Your house is too <b>far from school</b> to walk.]<br>" +
             "[The hospital is <b>far from town</b>.]<br>" +
             "<br>" +
-            "7.\t“Next to”<br>" +
+            "7.\t<u>“Next to”</u><br>" +
             "“Next to” describes something beside something else.<br>" +
             "[Her house is <b>next to yours</b>.]<br>" +
             "[The restaurant is <b>next to</b> the <b>movie theatre</b>.]<br>" +
             "<br>" +
-            "8.\t“Across from”<br>" +
+            "8.\t<u>“Across from”</u><br>" +
             "“Across from” describes something opposite something else.<br>" +
             "[The post office is <b>across from</b> the <b>police station</b>.]<br>" +
             "[Their house is a<b>cross from</b> a <b>bookstore</b>.]<br>" +
             "<br>" +
-            "9.\t“Under”<br>" +
+            "9.\t<u>“Under”</u><br>" +
             "“Under” describes something that is below something else.<br>" +
             "[The boats pass <b>under</b> the <b>bridge</b>.]<br>" +
             "[The ball is rolling <b>under</b> the <b>car</b>.]<br>" +
             "<br>" +
-            "10.\t“Over”<br>" +
+            "10.\t<u>“Over”</u><br>" +
             "“Over” describes something that is above something else.<br>" +
             "[The airplane is flying <b>over</b> the <b>ocean</b>.]<br>" +
-            "[Her office is <b>over</b> a <b>café</b>.]<br>" +
-            "<br>" +
-            "<b><u>Prepositions of time</u></b><br>" +
-            "1.\t“In”<br>" +
+            "[Her office is <b>over</b> a <b>café</b>.]";
+
+    private String prepositionsPartTwoLessonContent = "<b><u>Prepositions of time</u></b><br>" +
+            "1.\t<u>“In”</u><br>" +
             "Use “in” before years, seasons, months, and parts of the day.<br>" +
             "[The new post office will open <b>in January</b>.]<br>" +
             "[Paris is beautiful <b>in</b> the <b>springtime</b>.]<br>" +
             "<br>" +
-            "2.\t“On”<br>" +
+            "2.\t<u>“On”</u><br>" +
             "Use “on” before days of the week and dates.<br>" +
             "[Some stores are closed <b>on Sunday</b>.]<br>" +
             "[We’ll have a St. Patrick’s Day parade <b>on March 17th</b>.]<br>" +
             "<br>" +
-            "3.\t“At”<br>" +
+            "3.\t<u>“At”</u><br>" +
             "Use “at” before a specific time of day and with the nouns noon, night, and midnight.<br>" +
             "[The Laundromat opens <b>at 9:00</b>.]<br>" +
             "[I love to walk around the city <b>at night</b>.]<br>" +
             "<br>" +
-            "4.\t“From … to”<br>" +
+            "4.\t<u>“From … to”</u><br>" +
             "Use “from … to” with beginning and ending times.<br>" +
             "[The library is open <b>from 9:30 a.m. to 5:00 p.m.</b>]<br>" +
             "[The parade will last <b>from late morning to early afternoon</b>.]<br>" +
             "<br>" +
-            "5.\t“During”<br>" +
+            "5.\t<u>“During”</u><br>" +
             "Use “during” with periods of time.<br>" +
             "[The supermarket is open late <b>during</b> the <b>week</b>.]<br>" +
             "[My town is usually covered in snow <b>during</b> the <b>winter</b>.]<br>" +
             "<br>" +
-            "6.\t“Until”<br>" +
+            "6.\t<u>“Until”</u><br>" +
             "Use “until” with periods of time.<br>" +
             "[The coffee shop is open <b>until 9:00 p.m.</b>]<br>" +
             "[I am going to live here <b>until</b> I <b>graduate</b>.]<br>" +
             "<br>" +
-            "7.\t“Before”<br>" +
+            "7.\t<u>“Before”</u><br>" +
             "Use “before” to express an earlier event or time.<br>" +
             "[I want to go to the mountains <b>before</b> summer is <b>over</b>.]<br>" +
             "[Run to the store <b>before</b> it <b>closes</b>!]<br>" +
             "<br>" +
-            "8.\t“After”<br>" +
+            "8.\t<u>“After”</u><br>" +
             "Use ‘after” to express a later event or time.<br>" +
             "[Let’s get a bite <b>after</b> the <b>movie</b>.]<br>" +
             "[I like to meet my friends in town <b>after class</b>.]<br>";
 
     //Insert lesson values
     private String SQL_INSERT_LESSON = "INSERT INTO LESSON " +
-            "VALUES ('1', 'Tense Consolidation', '"+tenseConsolidationLessonContent+"'), ('2', 'Passive', '"+passiveLessonContent+"'), ('3', 'Conditionals and if-sentences', '"+conditionalsLessonContent+"'), ('4', 'Present / Future Modals','"+presentFutureModalsLessonContent+ "'), ('5', 'Past Modals', '"+pastModalsLessonContent+"'), ('6', 'Articles', '"+articlesLessonContent+"'), ('7', 'Prepositions', '"+prepositionsLessonContent+"')";
+            "VALUES ('1', 'Tense Consolidation', '"+tenseConsolidationLessonContent+"', 'There is no second part for tenses'), ('2', 'Passive', '"+passiveLessonContent+"', 'There is no second part for passive'), ('3', 'Conditionals and if-sentences', '"+conditionalsPartOneLessonContent+"', '"+conditionalsPartTwoLessonContent+"'), ('4', 'Present / Future Modals','"+presentFutureModalsLessonContent+ "', 'There is no second part for present / future modals'), ('5', 'Past Modals', '"+pastModalsLessonContent+"', 'There is no second part for past modals'), ('6', 'Articles', '"+articlesPartOneLessonContent+"', '"+articlesPartTwoLessonContent+"'), ('7', 'Prepositions', '"+prepositionsPartOneLessonContent+"', '"+prepositionsPartTwoLessonContent+"')";
 
     //EXERCISE table ===================================================================================================================================
     //tag identifies the lesson name

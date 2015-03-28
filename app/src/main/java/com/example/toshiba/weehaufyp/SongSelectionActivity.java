@@ -83,6 +83,11 @@ public class SongSelectionActivity extends Activity {
             lessonContentIntentForTense.putExtra("tag", tag);
             startActivity(lessonContentIntentForTense);
         }
+        else if(tag.equals("Conditionals and if-sentences") || tag.equals("Articles") || tag.equals("Prepositions")){
+            Intent lessonContentIntentForTwoParts = new Intent(SongSelectionActivity.this, TwoPartsLessonContentActivity.class);
+            lessonContentIntentForTwoParts.putExtra("tag", tag);
+            startActivity(lessonContentIntentForTwoParts);
+        }
         else{
             Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);
             lessonContentIntent.putExtra("tag", tag);

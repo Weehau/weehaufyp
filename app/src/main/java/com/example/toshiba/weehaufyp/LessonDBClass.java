@@ -37,7 +37,22 @@ public final class LessonDBClass {
     {
         Cursor mCursor =
                 db.query("LESSON", new String[]
-                                {"lessonContent"},
+                                {"lessonContentPartOne"},
+                        "tag=?", new String[] {selected}, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    //Display lesson content for lessons with two parts
+    //Display lesson content acording to the lesson name
+    public Cursor getTwoPartsLessonContentByLesson(String selected) throws SQLException
+    {
+        Cursor mCursor =
+                db.query("LESSON", new String[]
+                                {"lessonContentPartOne", "lessonContentPartTwo"},
                         "tag=?", new String[] {selected}, null, null, null);
 
         if (mCursor != null) {

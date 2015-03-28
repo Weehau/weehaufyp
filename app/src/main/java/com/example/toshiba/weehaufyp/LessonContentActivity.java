@@ -45,7 +45,6 @@ public class LessonContentActivity extends Activity {
         songListHeader.setText(tag + " Lesson");
 
         lessonContentScrollableView = (TextView)findViewById(R.id.lesson_content_view);
-        //lessonContentScrollableView.setText(lessonContent);
         lessonContentScrollableView.setText(Html.fromHtml(lessonContent));
     }
 

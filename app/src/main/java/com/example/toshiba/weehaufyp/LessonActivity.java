@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 public class LessonActivity extends Activity {
 
@@ -24,12 +23,9 @@ public class LessonActivity extends Activity {
             public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
                 if(groupPosition != 3){
                     String tag = LessonAdapter.parentList[groupPosition];
-                    Toast.makeText(getApplicationContext(), "Select a song to play", Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(LessonActivity.this, SongSelectionActivity.class);
                     intent.putExtra("tag", tag);
                     startActivity(intent);
-
                     return true;
                 }
                 else{
@@ -38,12 +34,9 @@ public class LessonActivity extends Activity {
                         @Override
                         public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                             String tag = LessonAdapter.childList[groupPosition][childPosition];
-                            Toast.makeText(getApplicationContext(), "Select a song to play", Toast.LENGTH_LONG).show();
-
                             Intent intent = new Intent(LessonActivity.this, SongSelectionActivity.class);
                             intent.putExtra("tag", tag);
                             startActivity(intent);
-
                             return false;
                         }
                     });

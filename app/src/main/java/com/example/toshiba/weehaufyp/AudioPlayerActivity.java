@@ -161,7 +161,7 @@ public class AudioPlayerActivity extends Activity implements SeekBar.OnSeekBarCh
         }
     }
     public void nowPlayingInfo(View view){
-        Toast.makeText(getApplicationContext(), "Now Playing " + titles + "\nArtist: " + artists + "\nAlbum: " + albums, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Now Playing: " + titles + "\nArtist: " + artists + "\nAlbum: " + albums, Toast.LENGTH_LONG).show();
     }
     public void exercise (View view){
         //Intent exerciseIntent = new Intent(AudioPlayerActivity.this, ExerciseActivity.class);

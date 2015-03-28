@@ -18,7 +18,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class SongSelectionActivity extends Activity {
     ListView list;
     TextView songListHeader, lessonContentButton;
@@ -68,8 +67,6 @@ public class SongSelectionActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //String selectedItem = (String) list.getItemAtPosition(position);
-                //Toast.makeText(SongSelectionActivity.this, titles[position] + " is clicked", Toast.LENGTH_SHORT).show();
-
                 Intent intent = new Intent(SongSelectionActivity.this, AudioPlayerActivity.class);
                 intent.putExtra("songIDs", songIDs.get(position));
                 startActivity(intent);
@@ -81,9 +78,16 @@ public class SongSelectionActivity extends Activity {
     }
 
     public void lessonContent(View view){
-        Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);
-        lessonContentIntent.putExtra("tag", tag);
-        startActivity(lessonContentIntent);
+        if(tag.equals("Tense Consolidation")){
+            Intent lessonContentIntentForTense = new Intent(SongSelectionActivity.this, TenseLessonContentActivity.class);
+            lessonContentIntentForTense.putExtra("tag", tag);
+            startActivity(lessonContentIntentForTense);
+        }
+        else{
+            Intent lessonContentIntent = new Intent(SongSelectionActivity.this, LessonContentActivity.class);
+            lessonContentIntent.putExtra("tag", tag);
+            startActivity(lessonContentIntent);
+        }
     }
 }
 

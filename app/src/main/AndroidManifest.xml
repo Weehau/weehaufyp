@@ -16,7 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,18 +27,18 @@
         <activity
             android:name=".LessonActivity"
             android:label="@string/title_activity_lesson"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".CreditsActivity"
             android:label="@string/title_activity_credits"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".SongSelectionActivity"
             android:label="@string/title_activity_song_selection"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
 
         <service android:name=".MusicService" />
@@ -46,12 +46,12 @@
         <activity
             android:name=".SongListActivity"
             android:label="@string/title_activity_song_list"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".AudioPlayerActivity"
             android:label="@string/title_activity_audio_player"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
 
         <service android:name=".MusicService" />
@@ -65,22 +65,23 @@
             android:label="@string/title_activity_lesson_content_fragment" >
         </activity>
         <activity
-            android:name=".ExerciseActivity"
-            android:label="@string/title_activity_exercise" >
-        </activity>
-        <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".ResultActivity"
             android:label="@string/title_activity_result"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".LessonContentActivity"
             android:label="@string/title_activity_lesson_content"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".TenseLessonContentActivity"
+            android:label="@string/title_activity_tense_lesson_content"
             android:screenOrientation="portrait">
         </activity>
     </application>

@@ -87,7 +87,6 @@
             android:layout_weight="1"
             android:background="@null"
             android:paddingLeft="10dp"/>
-
     </LinearLayout>
 
     <!-- Fragment holder -->

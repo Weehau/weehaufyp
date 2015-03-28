@@ -26,7 +26,7 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
             "<u>Habits</u>:<br>[British people <b>drink</b> a lot of tea.]<br><br>" +
             "<u>States</u>:<br>[I <b>don’t like</b> gangster films.]<br>" +
             "<br>" +
-            "2.\t<u>Present continuous (progressive)</u> generally refers to actions which are in progress at the moment.<br>These can be temporary:<br>[I’<b>m staying</b> in a hotel until I find a flat.]<br><br>" +
+            "2.\t<u>Present continuous (progressive)</u> generally refers to actions which are in progress at the moment.<br><br>These can be temporary:<br>[I’<b>m staying</b> in a hotel until I find a flat.]<br><br>" +
             "They can be actually in progress:<br>[The dog <b>is sleeping</b> on our bed.]<br><br>" +
             "Or they can be generally in progress but not actually happening at the moment:<br>[I’<b>m learning</b> to drive.]<br><br><br>" +
             "<b><u>State verbs and event (action or dynamic) verbs</u></b><br>" +
@@ -256,7 +256,7 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
         switch(v.getId()) {
             case R.id.present_time_button :
                 presentTimeButton.setTextColor(Color.WHITE);
-                presentTimeButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                presentTimeButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 futureTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
                 futureTimeButton.setBackgroundColor(Color.parseColor("#404040"));
                 pastTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -268,7 +268,7 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
 
             case R.id.future_time_button :
                 futureTimeButton.setTextColor(Color.WHITE);
-                futureTimeButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                futureTimeButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 presentTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
                 presentTimeButton.setBackgroundColor(Color.parseColor("#404040"));
                 pastTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -280,7 +280,7 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
 
             case R.id.past_time_button :
                 pastTimeButton.setTextColor(Color.WHITE);
-                pastTimeButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                pastTimeButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 futureTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
                 futureTimeButton.setBackgroundColor(Color.parseColor("#404040"));
                 presentTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -292,7 +292,7 @@ public class TenseLessonContentActivity extends Activity implements View.OnClick
 
             case R.id.present_perfect_button :
                 presentPerfectButton.setTextColor(Color.WHITE);
-                presentPerfectButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                presentPerfectButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 futureTimeButton.setTextColor(Color.parseColor("#e5e5e5"));
                 futureTimeButton.setBackgroundColor(Color.parseColor("#404040"));
                 pastTimeButton.setTextColor(Color.parseColor("#e5e5e5"));

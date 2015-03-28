@@ -105,7 +105,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     private String conditionalsPartTwoLessonContent = "1.\t<u>“If only”</u><br>" +
             "This adds emphasis to hypothetical situations.<br><br>With past events it adds a sense of regret.<br>The second part of the sentence is often left out.<br><br>" +
-            "<b>[If only</b> I <b>had</b> enough time.]<br>" +
+            "[<b>If only</b> I <b>had</b> enough time.]<br>" +
             "[<b>If only<//b> I <b>hadn''t</b> drunk too much, this <b>wouldn''t have</b> happened!]<br>" +
             "<br>" +
             "2.\t<u>“Unless” and other alternatives to “if”</u><br>" +

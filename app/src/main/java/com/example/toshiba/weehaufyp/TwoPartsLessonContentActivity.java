@@ -83,7 +83,7 @@ public class TwoPartsLessonContentActivity extends Activity implements View.OnCl
         switch(v.getId()) {
             case R.id.part_one_button :
                 partOneButton.setTextColor(Color.WHITE);
-                partOneButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partOneButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partOneLessonContent));
@@ -91,7 +91,7 @@ public class TwoPartsLessonContentActivity extends Activity implements View.OnCl
 
             case R.id.part_two_button :
                 partTwoButton.setTextColor(Color.WHITE);
-                partTwoButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partOneButton.setBackgroundColor(Color.parseColor("#404040"));
                 lessonContentScrollableView.setText(Html.fromHtml(partTwoLessonContent));

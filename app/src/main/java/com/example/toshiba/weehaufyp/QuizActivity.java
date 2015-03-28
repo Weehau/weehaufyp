@@ -5,14 +5,20 @@ import java.util.List;
 
 import android.database.Cursor;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -82,9 +88,13 @@ public class QuizActivity extends Activity {
         rdd=(RadioButton)findViewById(R.id.choice_4_button);
         grp.check(rda.getId()); //default choice is A
         checkAnswerButton = (Button) findViewById(R.id.check_answer_button);
+        checkAnswerButton.setBackgroundResource(android.R.drawable.btn_default);
+        checkAnswerButton.setTextColor(Color.BLACK);
         answerResponse = (TextView) findViewById(R.id.answer_response_text_view);
         checkResultButton = (Button) findViewById(R.id.check_result_button);
         checkResultButton.setEnabled(false);
+        checkResultButton.setBackgroundResource(android.R.drawable.btn_default);
+        checkResultButton.setTextColor(Color.parseColor("#cccccc"));
         nextButton=(ImageButton)findViewById(R.id.next_question_button);
         nextButton.setEnabled(false);
         nextButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
@@ -98,11 +108,6 @@ public class QuizActivity extends Activity {
         //Log.d("yourans", currentQ.getANSWER()+" "+answer.getText());
         Log.d("yourans", answer.get(currentQuestionIndex) +" "+ choice.getText());
         Log.d("question count", currentQuestionIndex + " " + totalQuestionsCount);
-        /*if(currentQ.getANSWER().equals(answer.getText()))
-        {
-            score++;
-            Log.d("score", "Your score" + score);
-        }*/
         //if there's more questions
         if(currentQuestionIndex < (totalQuestionsCount - 1)){
             //currentQ=quesList.get(qid);
@@ -111,6 +116,7 @@ public class QuizActivity extends Activity {
             currentQuestionCount++;
             currentQuestion.setText(String.valueOf(currentQuestionCount));
             checkAnswerButton.setEnabled(true);
+            checkAnswerButton.setTextColor(Color.BLACK);
             nextButton.setEnabled(false);
             nextButton.setColorFilter(Color.argb(204, 204, 204, 204)); // Grey Tint
             answerResponse.setText("");
@@ -122,13 +128,13 @@ public class QuizActivity extends Activity {
         //if it's the last question
         else{
             checkResultButton.setEnabled(true);
-            Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
+            /*Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
             Bundle b = new Bundle();
             b.putInt("score", score); //Your score
             b.putInt("totalQuestionsCount", totalQuestionsCount);
             intent.putExtras(b); //Put your score to your next Intent
             startActivity(intent);
-            finish();
+            finish();*/
         }
     }
 
@@ -146,26 +152,27 @@ public class QuizActivity extends Activity {
 
     public void checkAnswer(View view){
         checkAnswerButton.setEnabled(false);
+        checkAnswerButton.setBackgroundResource(android.R.drawable.btn_default);
+        checkAnswerButton.setTextColor(Color.parseColor("#cccccc"));
         if(currentQuestionIndex != (totalQuestionsCount - 1)){ //if it's not the last question
             nextButton.setEnabled(true);
             nextButton.clearColorFilter();
         }
         else{
             checkResultButton.setEnabled(true);
+            checkResultButton.setTextColor(Color.BLACK);
             Toast.makeText(getApplicationContext(), "Click 'Check Overall Result' to see how well you did", Toast.LENGTH_LONG).show();
         }
         RadioButton choice = (RadioButton)findViewById(grp.getCheckedRadioButtonId());
         Log.d("yourans", answer.get(currentQuestionIndex) +" "+ choice.getText());
-        //if(currentQ.getANSWER().equals(answer.getText())){
         if(answer.get(currentQuestionIndex).equals(choice.getText())){
             score++;
             answerResponse.setText("Correct!");
             answerResponse.setTextColor(Color.BLUE);
         }
         else{
-            //answerResponse.setText("Oops!\nThe correct answer: " + currentQ.getANSWER().toString());
             answerResponse.setText("Oops!\nThe correct answer: " + answer.get(currentQuestionIndex));
-            answerResponse.setTextColor(Color.RED);
+            answerResponse.setTextColor(Color.parseColor("#cc0000"));
         }
         //disable all radio buttons after checking answer
         for (int i = 0; i < grp.getChildCount(); i++) {
@@ -174,33 +181,50 @@ public class QuizActivity extends Activity {
     }
 
     public void checkResult(View view){
-        checkResultButton.setEnabled(true);
-        Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
-        Bundle b = new Bundle();
-        b.putInt("score", score); //Your score
-        b.putInt("totalQuestionsCount", totalQuestionsCount);
-        intent.putExtras(b); //Put your score to your next Intent
-        startActivity(intent);
-        finish();
-        /*LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater =
+                (LayoutInflater) getBaseContext()
+                        .getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = layoutInflater.inflate(R.layout.layout_result_popup, null);
-        final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        final PopupWindow popupWindow = new PopupWindow(
+                popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        TextView scorePopup = (TextView)findViewById(R.id.score_popup);
-        scorePopup.setText("Your score: " + score + "/" + totalQuestionsCount);
+        //Update TextView in PopupWindow dynamically
+        TextView textOut = (TextView) popupView.findViewById(R.id.score_output);
+        String stringOut = String.valueOf(score) + "/" + String.valueOf(totalQuestionsCount);
+        if (!stringOut.equals("")) {
+            textOut.setText(stringOut);
+        }
 
-        Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
-        btnDismiss.setOnClickListener(new Button.OnClickListener(){
+        ImageView popupImage = (ImageView)popupView.findViewById(R.id.popup_image);
+
+        if(((double)score / totalQuestionsCount) == 1){
+            popupImage.setImageResource(R.drawable.grade_a_plus_2nd_resize);
+        }
+        else if (((double)score / totalQuestionsCount) < 1 && ((double)score / totalQuestionsCount) >= 0.8){
+            popupImage.setImageResource((R.drawable.grade_a_2nd_resize));
+        }
+        else if(((double)score / totalQuestionsCount) < 0.8 && ((double)score / totalQuestionsCount) >= 0.5 ){
+            popupImage.setImageResource((R.drawable.grade_b_2nd_resize));
+        }
+        else if(((double)score / totalQuestionsCount) < 0.5){
+            popupImage.setImageResource((R.drawable.grade_c_2nd_resize));
+        }
+
+        Button btnDismiss = (Button) popupView.findViewById(R.id.dismiss);
+        btnDismiss.setTextColor(Color.BLACK);
+        btnDismiss.setBackgroundResource(android.R.drawable.btn_default);
+
+        btnDismiss.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 popupWindow.dismiss();
-            }});
+            }
+        });
 
-        popupWindow.showAsDropDown(checkResultButton, 100, -1200);
+        popupWindow.showAtLocation(checkResultButton, Gravity.CENTER, 0, 0); //show at center of screen no matter what
         popupWindow.setFocusable(true);
-        popupWindow.update();*/
+        popupWindow.update();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

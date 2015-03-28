@@ -1,33 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent" android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@android:color/background_light">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/customborder"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="1dp"
-        android:background="@android:color/darker_gray">
+        android:orientation="vertical"
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/score_popup"
-                android:layout_width="fill_parent"
+                android:text="Your score:"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Result Pop-up" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:background="#000000"
+                android:textColor="#cc0000"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/score_output"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="It is a PopupWindow"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:background="#000000"
+                android:textColor="#cc0000"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:paddingBottom="3dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
             <ImageView
-                android:layout_width="fill_parent"
+                android:id="@+id/popup_image"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/ic_launcher"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
             <Button
                 android:id="@+id/dismiss"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Dismiss" />
         </LinearLayout>

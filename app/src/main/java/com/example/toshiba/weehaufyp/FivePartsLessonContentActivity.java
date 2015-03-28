@@ -410,7 +410,7 @@ public class FivePartsLessonContentActivity extends Activity implements View.OnC
         switch(v.getId()) {
             case R.id.part_one_button :
                 partOneButton.setTextColor(Color.WHITE);
-                partOneButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partOneButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -433,7 +433,7 @@ public class FivePartsLessonContentActivity extends Activity implements View.OnC
 
             case R.id.part_two_button :
                 partTwoButton.setTextColor(Color.WHITE);
-                partTwoButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partTwoButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partOneButton.setBackgroundColor(Color.parseColor("#404040"));
                 partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -456,7 +456,7 @@ public class FivePartsLessonContentActivity extends Activity implements View.OnC
 
             case R.id.part_three_button :
                 partThreeButton.setTextColor(Color.WHITE);
-                partThreeButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partThreeButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 partOneButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -479,7 +479,7 @@ public class FivePartsLessonContentActivity extends Activity implements View.OnC
 
             case R.id.part_four_button :
                 partFourButton.setTextColor(Color.WHITE);
-                partFourButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partFourButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));
@@ -502,7 +502,7 @@ public class FivePartsLessonContentActivity extends Activity implements View.OnC
 
             case R.id.part_five_button :
                 partFiveButton.setTextColor(Color.WHITE);
-                partFiveButton.setBackgroundColor(Color.rgb(153, 0, 0));
+                partFiveButton.setBackgroundColor(Color.parseColor("#cc0000"));
                 partTwoButton.setTextColor(Color.parseColor("#e5e5e5"));
                 partTwoButton.setBackgroundColor(Color.parseColor("#404040"));
                 partThreeButton.setTextColor(Color.parseColor("#e5e5e5"));

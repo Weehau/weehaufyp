@@ -333,7 +333,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "pastResult TEXT," +
             "currentResult TEXT)";
 
-    //Insert exercise values
+    //Insert quiz values
     private String SQL_INSERT_EXERCISE = "INSERT INTO EXERCISE " +
             "VALUES ('1', 'Abstract Nouns','this is a question.','0,1','2')";
     //"VALUES ('1', 'Abstract Nouns','1,2','0,1','2')";

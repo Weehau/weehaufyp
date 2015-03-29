@@ -123,7 +123,7 @@ public class SongListActivity extends Activity implements MediaPlayerControl {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //menu item selected
-        switch (item.getItemId()) {
+        /*switch (item.getItemId()) {
             case R.id.action_shuffle:
                 musicSrv.setShuffle();
                 break;
@@ -132,7 +132,7 @@ public class SongListActivity extends Activity implements MediaPlayerControl {
                 musicSrv=null;
                 System.exit(0);
                 break;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

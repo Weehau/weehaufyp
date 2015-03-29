@@ -206,8 +206,11 @@ public class QuizActivity extends Activity {
         else if(((double)score / totalQuestionsCount) < 0.8 && ((double)score / totalQuestionsCount) >= 0.5 ){
             popupImage.setImageResource((R.drawable.grade_b_2nd_resize));
         }
-        else if(((double)score / totalQuestionsCount) < 0.5){
+        else if(((double)score / totalQuestionsCount) < 0.5 && ((double)score / totalQuestionsCount) > 0){
             popupImage.setImageResource((R.drawable.grade_c_2nd_resize));
+        }
+        else if(((double)score / totalQuestionsCount) == 0){
+            popupImage.setImageResource((R.drawable.grade_f_2nd_resize));
         }
 
         TextView btnDismiss = (TextView) popupView.findViewById(R.id.dismiss);

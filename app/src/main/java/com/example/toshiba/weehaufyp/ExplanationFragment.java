@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,7 @@ public class ExplanationFragment extends Fragment {
         songDB.close();
 
         lesson_content_view = (TextView) activity.findViewById(R.id.lesson_content_view);
-        lesson_content_view.setText(explanation);
+        lesson_content_view.setText(Html.fromHtml(explanation));
 
         //lesson_content_view.setText(Html.fromHtml("<h1><b><u>" + lesson_name + "</u></b></h1>" + actual_content));
     }

@@ -135,6 +135,36 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "<br>" +
             "2x [Chorus]<br>";
 
+    private String lyrics_passive_you_lost_me = "<b>I am done</b>, smoking gun<br>" +
+            "We''ve lost it all, the <b>love is gone</b><br>" +
+            "She has won, now it''s no fun<br>" +
+            "We''ve lost it all, the <b>love is gone</b><br>" +
+            "<br>" +
+            "[Pre-chorus]<br>" +
+            "•\tAnd we had magic<br>" +
+            "•\tAnd this is tragic<br>" +
+            "•\tYou couldn''t keep your hands to yourself<br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\tI feel like <b>our world''s been infected</b><br>" +
+            "•\tAnd somehow <b>you left me neglected</b><br>" +
+            "•\t<b>We''ve found our lives been changed</b><br>" +
+            "•\tBabe, you lost me<br>" +
+            "<br>" +
+            "And we tried, oh how we cried<br>" +
+            "We lost ourselves, the love has died<br>" +
+            "And though we tried you can''t deny<br>" +
+            "<b>We''re left as shells</b>, we lost the fight<br>" +
+            "<br>" +
+            "[Pre-chorus] + [Chorus]<br>" +
+            "<br>" +
+            "Now I know you''re sorry and we were sweet<br>" +
+            "But you chose lust when you deceived me<br>" +
+            "And you''ll regret it, but it''s too late<br>" +
+            "How can I ever trust you again?<br>" +
+            "<br>" +
+            "[Chorus]<br>";
+
     //Song lesson contents
     private String actual_explanation_summertime_sadness = "the lesson content for summertime sadness will be shown here, with explanation, examples, and some vocabs";
     private String actual_explanation_locked_out_of_heaven_abstract_nouns = "the lesson content for locked out of heaven under the lesson name of abstract nouns will be shown here, with explanation, examples, and some vocabs";
@@ -154,10 +184,25 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     //Song explanation for passive
     private String explanation_passive_demons = "explanation for demons passive";
     private String explanation_passive_someone_like_you = "explanation for someone like you passive";
+    private String explanation_passive_you_lost_me = "<b>Smoking gun</b> means something that serves as strong evidence or irrefutable proof<br><br>" +
+            "<u>She has won, now it''s no fun<br>" +
+            "We''ve lost it all, the love is gone</u><br>" +
+            "She has decided to end the relationship over a girl who got in between in it<br><br>" +
+            "<u>And we had magic</u><br>" +
+            "They had something like no other relationship has<br><br>" +
+            "<u>You couldn''t keep your hands to yourself</u><br>" +
+            "He couldn’t resist cheating on her<br><br>" +
+            "<u>I feel like our world''s been infected<br>" +
+            "And somehow you left me neglected<br>" +
+            "We''ve found our lives been changed<br>" +
+            "Babe, you lost me</u><br>" +
+            "She doesn’t understand how such thing happened their love was so strong so she thinks maybe it was infected. He lost her because of the mistake he has done<br><br>" +
+            "<u>And we tried</u><br>" +
+            "They tried to keep the relationship going";
 
     //Insert song values
     private String SQL_INSERT_SONG = "INSERT INTO SONG" +
-            " VALUES ('1', 'Tense Consolidation','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('2', 'Passive', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_abstract_nouns+"'), ('3', 'Conditionals and if-sentences', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Past Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Articles', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Prepositions', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Tense Consolidation', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('9', 'Passive', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"', '"+actual_explanation_drunk_in_love+"'), ('10', 'Conditionals and if-sentences', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Articles', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"'), ('14', 'Articles', 'Style', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_style+"', '"+actual_lyrics_style+"', '"+actual_explanation_style+"'), ('2.1', 'Passive', 'Demons', 'Imagine Dragons', 'Night Visions', '"+R.drawable.imagine_dragons_night_visions+"', '"+R.raw.imagine_dragons_demons+"', '"+lyrics_passive_demons+"', '"+explanation_passive_demons+"'), ('2.2', 'Passive', 'Someone Like You', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_someone_like_you+"', '"+lyrics_passive_someone_like_you+"', '"+explanation_passive_someone_like_you+"')";
+            " VALUES ('1', 'Tense Consolidation','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('3', 'Conditionals and if-sentences', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Past Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Articles', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Prepositions', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Tense Consolidation', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('10', 'Conditionals and if-sentences', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Articles', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"'), ('14', 'Articles', 'Style', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_style+"', '"+actual_lyrics_style+"', '"+actual_explanation_style+"'), ('2.1', 'Passive', 'Demons', 'Imagine Dragons', 'Night Visions', '"+R.drawable.imagine_dragons_night_visions+"', '"+R.raw.imagine_dragons_demons+"', '"+lyrics_passive_demons+"', '"+explanation_passive_demons+"'), ('2.2', 'Passive', 'Someone Like You', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_someone_like_you+"', '"+lyrics_passive_someone_like_you+"', '"+explanation_passive_someone_like_you+"'), ('2.3', 'Passive', 'You Lost Me', 'Christina Aguilera', 'Bionic', '"+R.drawable.christina_aguilera_bionic+"', '"+R.raw.christina_aguilera_you_lost_me+"', '"+lyrics_passive_you_lost_me+"', '"+explanation_passive_you_lost_me+"')";
 
     //LESSON table ===================================================================================================================================
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +

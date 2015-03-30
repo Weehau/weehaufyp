@@ -2,25 +2,30 @@ package com.example.toshiba.weehaufyp;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
 
 import static com.example.toshiba.weehaufyp.R.*;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    TextView menu_help_button, menu_credits_button, menu_start_button;
+    TextView welcomeText, menu_help_button, menu_credits_button, menu_start_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
+
+        welcomeText = (TextView) findViewById(id.welcome_text);
+        final String[] proper_noun = {"An investment in knowledge pays the best interest. - Benjamin Franklin", "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time. - Thomas A. Edison", "Learning never exhausts the mind. - Leonardo da Vinci", "Where words fail, music speaks. - Hans Christian Andersen"};
+        Random random = new Random();
+        int index = random.nextInt(proper_noun.length);
+        welcomeText.setText(proper_noun[index]);
+        //System.out.println(proper_noun[index]);
 
         menu_start_button = (TextView) findViewById(id.menu_start_button);
         menu_help_button = (TextView) findViewById(id.menu_help_button);

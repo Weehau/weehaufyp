@@ -27,7 +27,7 @@ public class SongListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflator = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflator.inflate(R.layout.activity_song_selection, parent, false);
 
-        TextView textView = (TextView)rowView.findViewById(R.id.textView);
+        TextView textView = (TextView)rowView.findViewById(R.id.song__list_header);
         ImageView imageView = (ImageView)rowView.findViewById(R.id.coverArtImageView);
 
         textView.setText(values[position]);

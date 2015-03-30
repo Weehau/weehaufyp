@@ -11,23 +11,24 @@
     android:background="@drawable/a75362e36d117e02be7558badd7b3268">
     <!--android:background="@drawable/wp5"-->
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="5"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:text="@string/menu_welcome_text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:background="@drawable/rounded_corner"
-        android:padding="15dp"/>
+        android:orientation="vertical"
+        android:layout_weight="6"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome_text"
+            android:text="@string/menu_welcome_text"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:padding="15dp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

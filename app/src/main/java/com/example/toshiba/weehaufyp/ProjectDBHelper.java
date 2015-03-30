@@ -36,6 +36,105 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     private String actual_lyrics_mirror = "mirror by justin timberlake from 2020 experience\nlyrics will be shown here";
     private String actual_lyrics_style = "style by taylor swift from 1989\nlyrics will be shown here";
 
+    //Song lyrics for passive
+    private String lyrics_passive_demons = "When the days are cold<br>" +
+            "And the cards all fold<br>" +
+            "And the <b>saints</b> we see<br>" +
+            "<b>Are</b> all <b>made of</b> gold<br>" +
+            "<br>" +
+            "When your dreams all fail<br>" +
+            "And the ones we hail<br>" +
+            "Are the worst of all<br>" +
+            "And the blood’s run stale<br>" +
+            "<br>" +
+            "I wanna hide the truth<br>" +
+            "I wanna shelter you<br>" +
+            "But with the beast inside<br>" +
+            "There’s nowhere we can hide<br>" +
+            "<br>" +
+            "[Pre-chorus]<br>" +
+            "•\tNo matter what we breed<br>" +
+            "•\t<b>We</b> still <b>are made of</b> greed<br>" +
+            "•\tThis is my kingdom come<br>" +
+            "•\tThis is my kingdom come<br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\tWhen you feel my heat<br>" +
+            "•\tLook into my eyes<br>" +
+            "•\tIt’s where my demons hide<br>" +
+            "•\tIt’s where my demons hide<br>" +
+            "•\tDon’t get too close<br>" +
+            "•\tIt’s dark inside<br>" +
+            "•\tIt’s where my demons hide<br>" +
+            "•\tIt’s where my demons hide<br>" +
+            "<br>" +
+            "At the curtain’s call<br>" +
+            "It''s the last of all<br>" +
+            "When the lights fade out<br>" +
+            "All the sinners crawl<br>" +
+            "<br>" +
+            "So they dug your grave<br>" +
+            "And the masquerade<br>" +
+            "Will come calling out<br>" +
+            "At the mess you made<br>" +
+            "<br>" +
+            "Don''t wanna let you down<br>" +
+            "But <b>I am hell bound</b><br>" +
+            "Though this is all for you<br>" +
+            "Don''t wanna hide the truth<br>" +
+            "<br>" +
+            "[Pre-chorus] + [Chorus]<br>" +
+            "<br>" +
+            "They say it''s what you make<br>" +
+            "I say it''s up to fate<br>" +
+            "<b>It''s woven</b> in my soul<br>" +
+            "I need to let you go<br>" +
+            "<br>" +
+            "Your eyes, they shine so bright<br>" +
+            "I wanna save that light<br>" +
+            "I can''t escape this now<br>" +
+            "Unless you show me how<br>" +
+            "<br>" +
+            "[Chorus]<br>";
+
+    private String lyrics_passive_someone_like_you = "I heard that <b>you''re settled down</b><br>" +
+            "That you found a girl and <b>you''re married</b> now.<br>" +
+            "I heard that your dreams came true.<br>" +
+            "Guess she gave you things I didn''t give to you.<br>" +
+            "<br>" +
+            "Old friend, why are you so shy?<br>" +
+            "Ain''t like you to hold back or hide from the light.<br>" +
+            "<br>" +
+            "[Pre-chorus]<br>" +
+            "•\tI hate to turn up out of the blue uninvited<br>" +
+            "•\tBut I couldn''t stay away, I couldn''t fight it.<br>" +
+            "•\tI had hoped you''d see my face and that <b>you''d be reminded</b><br>" +
+            "•\tThat for me it isn''t over.<br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\tNever mind, I''ll find someone like you<br>" +
+            "•\tI wish nothing but the best for you too<br>" +
+            "•\tDon''t forget me, I beg<br>" +
+            "•\tI''ll remember you said,<br>" +
+            "•\t\"Sometimes it lasts in love but sometimes it hurts instead,<br>" +
+            "•\tSometimes it lasts in love but sometimes it hurts instead\"<br>" +
+            "<br>" +
+            "You know how the time flies<br>" +
+            "Only yesterday was the time of our lives<br>" +
+            "<b>We were born and raised</b><br>" +
+            "In a summer haze<br>" +
+            "<b>Bound by</b> the surprise of our glory days<br>" +
+            "<br>" +
+            "[Chorus] + [Pre-chorus]<br>" +
+            "<br>" +
+            "Nothing compares<br>" +
+            "No worries or cares<br>" +
+            "<b>Regrets and mistakes</b><br>" +
+            "<b>They are memories made</b>.<br>" +
+            "Who would have known how bittersweet this would taste?<br>" +
+            "<br>" +
+            "2x [Chorus]<br>";
+
     //Song lesson contents
     private String actual_explanation_summertime_sadness = "the lesson content for summertime sadness will be shown here, with explanation, examples, and some vocabs";
     private String actual_explanation_locked_out_of_heaven_abstract_nouns = "the lesson content for locked out of heaven under the lesson name of abstract nouns will be shown here, with explanation, examples, and some vocabs";
@@ -52,9 +151,13 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     private String actual_explanation_locked_out_of_heaven_collective_nouns = "the lesson content for locked out of heaven under the lesson name of collective nouns will be shown here, with explanation, examples, and some vocabs";
     private String actual_explanation_style = "explanation for style will be displayed here";
 
+    //Song explanation for passive
+    private String explanation_passive_demons = "explanation for demons passive";
+    private String explanation_passive_someone_like_you = "explanation for someone like you passive";
+
     //Insert song values
     private String SQL_INSERT_SONG = "INSERT INTO SONG" +
-            " VALUES ('1', 'Tense Consolidation','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('2', 'Passive', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_abstract_nouns+"'), ('3', 'Conditionals and if-sentences', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Past Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Articles', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Prepositions', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Tense Consolidation', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('9', 'Passive', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"', '"+actual_explanation_drunk_in_love+"'), ('10', 'Conditionals and if-sentences', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Articles', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"'), ('14', 'Articles', 'Style', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_style+"', '"+actual_lyrics_style+"', '"+actual_explanation_style+"')";
+            " VALUES ('1', 'Tense Consolidation','Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"','"+actual_lyrics_summertime_sadness+"', '"+actual_explanation_summertime_sadness+"'), ('2', 'Passive', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_abstract_nouns+"'), ('3', 'Conditionals and if-sentences', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_abstract_nouns+"'), ('4', 'Present / Future Modals', 'Chandelier', 'Sia', '1000 Forms of Fears', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_chandelier+"', '"+actual_lyrics_chandelier+"', '"+actual_explanation_chandelier+"'), ('5', 'Past Modals', 'Shake It Off', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+actual_lyrics_shake_it_off+"', '"+actual_explanation_shake_it_off+"'), ('6', 'Articles', 'Maps', 'Maroon 5', 'V', '"+R.drawable.maroon_5_v+"', '"+R.raw.maroon_5_maps+"', '"+actual_lyrics_maps+"', '"+actual_explanation_maps+"'), ('7', 'Prepositions', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+actual_lyrics_happy+"', '"+actual_explanation_happy+"'), ('8', 'Tense Consolidation', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_collective_nouns+"'), ('9', 'Passive', 'Drunk In Love', 'Beyonce', 'Beyonce', '"+R.drawable.beyonce_beyonce+"', '"+R.raw.beyonce_haunted+"', '"+actual_lyrics_drunk_in_love+"', '"+actual_explanation_drunk_in_love+"'), ('10', 'Conditionals and if-sentences', 'Mirror', 'Justin Timberlake', '20/20 Experience', '"+R.drawable.justin_timberlake_the_20_20_experience_2_of_2+"', '"+R.raw.justin_timberlake_mirrors+"', '"+actual_lyrics_mirror+"', '"+actual_explanation_mirror+"'), ('11', 'Present / Future Modals', 'Stay With Me', 'Sam Smith', 'In The Lonely Hours', '"+R.drawable.sam_smith_in_the_lonely_hour+"', '"+R.raw.sam_smith_stay_with_me+"', '"+actual_lyrics_stay_with_me+"', '"+actual_explanation_stay_with_me_collective_nouns+"'), ('12', 'Past Modals', 'Locked out of Heaven', 'Bruno Mars', 'Unorthodox Jukebox', '"+R.drawable.bruno_mars_unorthodox_jukebox+"', '"+R.raw.bruno_mars_locked_out_of_heaven+"', '"+actual_lyrics_locked_out_of_heaven+"', '"+actual_explanation_locked_out_of_heaven_collective_nouns+"'), ('13', 'Articles', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_royals+"', '"+R.raw.lorde_royals+"', '"+actual_lyrics_royals+"', '"+actual_explanation_royals_abstract_nouns+"'), ('14', 'Articles', 'Style', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_style+"', '"+actual_lyrics_style+"', '"+actual_explanation_style+"'), ('2.1', 'Passive', 'Demons', 'Imagine Dragons', 'Night Visions', '"+R.drawable.imagine_dragons_night_visions+"', '"+R.raw.imagine_dragons_demons+"', '"+lyrics_passive_demons+"', '"+explanation_passive_demons+"'), ('2.2', 'Passive', 'Someone Like You', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_someone_like_you+"', '"+lyrics_passive_someone_like_you+"', '"+explanation_passive_someone_like_you+"')";
 
     //LESSON table ===================================================================================================================================
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +

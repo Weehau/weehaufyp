@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -70,7 +71,7 @@ public class LyricsFragment extends Fragment {
         //lyrics_view.setBackgroundDrawable(gd);
 
         lyrics_view = (TextView) activity.findViewById(R.id.lyrics_view);
-        lyrics_view.setText(lyrics);
+        lyrics_view.setText(Html.fromHtml(lyrics));
     }
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {

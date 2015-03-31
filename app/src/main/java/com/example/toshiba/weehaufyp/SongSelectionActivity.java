@@ -41,7 +41,7 @@ public class SongSelectionActivity extends Activity {
         songListHeader.setText(tag + " Playlist");
 
         lessonContentButton = (TextView)findViewById(R.id.lessonContent);
-        lessonContentButton.setText("Click here to learn about " + tag);
+        lessonContentButton.setText("Learn about " + tag);
 
         //DB for song
         final SongDBClass songDB = new SongDBClass(this);

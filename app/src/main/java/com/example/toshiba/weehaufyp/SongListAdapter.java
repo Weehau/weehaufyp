@@ -34,32 +34,11 @@ public class SongListAdapter extends ArrayAdapter<String> {
 
         String str = values[position];
 
-        if(str.equalsIgnoreCase("Song 1")){
-            imageView.setImageResource(R.drawable.beyonce_beyonce);
-        }
-        else if(str.equalsIgnoreCase("Song 2")){
-            imageView.setImageResource(R.drawable.justin_timberlake_the_20_20_experience_2_of_2);
-        }
-        else if(str.equalsIgnoreCase("Song 3")){
+        if(str.equalsIgnoreCase("Song 3")){
             imageView.setImageResource(R.drawable.lana_del_rey_born_to_die);
         }
-        else if(str.equalsIgnoreCase("Song 4")){
+        else {
             imageView.setImageResource(R.drawable.lorde_royals);
-        }
-        else if(str.equalsIgnoreCase("Song 5")){
-            imageView.setImageResource(R.drawable.maroon_5_v);
-        }
-        else if(str.equalsIgnoreCase("Song 6")){
-            imageView.setImageResource(R.drawable.pharrell_williams_girl);
-        }
-        else if(str.equalsIgnoreCase("Song 7")){
-            imageView.setImageResource(R.drawable.sam_smith_in_the_lonely_hour);
-        }
-        else if(str.equalsIgnoreCase("Song 8")){
-            imageView.setImageResource(R.drawable.sia_1000_forms_of_fear);
-        }
-        else if(str.equalsIgnoreCase("Song 9")){
-            imageView.setImageResource(R.drawable.taylor_swift_1989);
         }
 
         return rowView;

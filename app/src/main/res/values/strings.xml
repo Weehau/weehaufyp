@@ -75,5 +75,6 @@
     <string name="title_activity_two_parts_lesson">TwoPartsLessonActivity</string>
     <string name="title_activity_two_parts_lesson_content">TwoPartsLessonContentActivity</string>
     <string name="title_activity_passive_lesson_content">PassiveLessonContentActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
 
 </resources>

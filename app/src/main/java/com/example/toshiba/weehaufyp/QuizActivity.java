@@ -250,6 +250,5 @@ public class QuizActivity extends Activity {
         rdb.setText(optb.get(currentQuestionIndex));
         rdc.setText(optc.get(currentQuestionIndex));
         rdd.setText(optd.get(currentQuestionIndex));
-        //currentQuestionIndex++;
     }
 }

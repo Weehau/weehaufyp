@@ -51,7 +51,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case id.menu_help_button :
-                Toast.makeText(MainActivity.this, "You've just tapped Help", Toast.LENGTH_SHORT).show();
+                Intent helpIntent = new Intent(this, HelpActivity.class);
+                startActivity(helpIntent);
                 break;
         }
     }

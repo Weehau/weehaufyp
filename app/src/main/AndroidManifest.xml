@@ -67,7 +67,7 @@
         <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".ResultActivity"
@@ -87,12 +87,16 @@
         <activity
             android:name=".TwoPartsLessonContentActivity"
             android:label="@string/title_activity_two_parts_lesson_content"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".FivePartsLessonContentActivity"
             android:label="@string/title_activity_passive_lesson_content"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help" >
         </activity>
     </application>
 

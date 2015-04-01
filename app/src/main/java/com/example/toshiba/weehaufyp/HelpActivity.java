@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,18 +61,19 @@ public class HelpActivity extends Activity {
     }
 
     public void nextTip(View view){
-        //if there's more tips
-        if(currentHelpIndex < (totalHelpCount - 1)){
-            //currentQ=quesList.get(qid);
-            currentHelpIndex++;
-            setHelpView();
-        }
-        //if it's the last tip
-        else{
-            nextTipButton.setText("OK");
+        if(currentHelpIndex == 5){
             Intent homeIntent = new Intent(getApplicationContext(), MainActivity.class);
             homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(homeIntent);
+        }
+        else if(currentHelpIndex == 4){
+            nextTipButton.setText("OK");
+            currentHelpIndex++;
+            setHelpView();
+        }
+        else if(currentHelpIndex >= 0 || currentHelpIndex <= 3){
+            currentHelpIndex++;
+            setHelpView();
         }
     }
 
@@ -99,6 +101,6 @@ public class HelpActivity extends Activity {
 
     public void setHelpView(){
         tipImageView.setImageResource(tipImage.get(currentHelpIndex));
-        tipDescriptionTextView.setText(tipDescription.get(currentHelpIndex));
+        tipDescriptionTextView.setText(Html.fromHtml((currentHelpIndex + 1) + "/" + totalHelpCount + "<br>" + tipDescription.get(currentHelpIndex)));
     }
 }

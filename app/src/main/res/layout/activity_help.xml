@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tip_description"
                 android:text="Tip Description"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="16dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:background="@drawable/rounded_corner_help"
@@ -45,23 +45,40 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
 
-            <TextView
-                android:id="@+id/next_tip_button"
-                android:text="Next Tip"
-                android:onClick="nextTip"
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:clickable="true"
-                android:background="#404040"
-                android:textColor="#e5e5e5"
-                android:padding="10dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:layout_below="@+id/tip_description"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true">
+                <TextView
+                    android:id="@+id/previous_tip_button"
+                    android:text="Previous Tip"
+                    android:onClick="previousTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:clickable="true"
+                    android:background="#404040"
+                    android:textColor="#e5e5e5"
+                    android:padding="10dp"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:id="@+id/next_tip_button"
+                    android:text="Next Tip"
+                    android:onClick="nextTip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:clickable="true"
+                    android:background="#404040"
+                    android:textColor="#e5e5e5"
+                    android:padding="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/previous_tip_button"
+                    android:layout_toEndOf="@+id/previous_tip_button"/>
+            </RelativeLayout>
         </RelativeLayout>
-
     </LinearLayout>
-
 </RelativeLayout>

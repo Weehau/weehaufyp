@@ -25,7 +25,7 @@ public class HelpActivity extends Activity {
     List<String> tipDescription = new ArrayList<>();
 
     ImageView tipImageView;
-    TextView tipDescriptionTextView, nextTipButton;
+    TextView tipDescriptionTextView, nextTipButton, previousTipButton;
     String tag = "Help";
     int currentHelpIndex, totalHelpCount;
 
@@ -56,6 +56,9 @@ public class HelpActivity extends Activity {
         tipImageView = (ImageView)findViewById(R.id.tip_image);
         tipDescriptionTextView = (TextView)findViewById(R.id.tip_description);
         nextTipButton = (TextView)findViewById(R.id.next_tip_button);
+        previousTipButton = (TextView)findViewById(R.id.previous_tip_button);
+        previousTipButton.setEnabled(false);
+        previousTipButton.setTextColor(Color.parseColor("#515151"));
 
         setHelpView();
     }
@@ -73,6 +76,30 @@ public class HelpActivity extends Activity {
         }
         else if(currentHelpIndex >= 0 || currentHelpIndex <= 3){
             currentHelpIndex++;
+            setHelpView();
+            previousTipButton.setEnabled(true);
+            previousTipButton.setTextColor(Color.parseColor("#e5e5e5"));
+        }
+    }
+
+    public void previousTip(View view){
+        if(currentHelpIndex == 0){
+            previousTipButton.setEnabled(false);
+            previousTipButton.setTextColor(Color.parseColor("#515151"));
+        }
+        else if(currentHelpIndex == 1){
+            previousTipButton.setEnabled(false);
+            previousTipButton.setTextColor(Color.parseColor("#515151"));
+            currentHelpIndex--;
+            setHelpView();
+        }
+        else if(currentHelpIndex >= 2 && currentHelpIndex <= 4){
+            currentHelpIndex--;
+            setHelpView();
+        }
+        else if(currentHelpIndex == 5){
+            nextTipButton.setText("Next Tip");
+            currentHelpIndex--;
             setHelpView();
         }
     }

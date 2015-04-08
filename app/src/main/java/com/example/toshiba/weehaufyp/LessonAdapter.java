@@ -65,7 +65,7 @@ public class LessonAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         TextView tv = new TextView(context);
-        tv.setText(parentList[groupPosition]);
+        tv.setText((groupPosition + 1) + ". " + parentList[groupPosition]);
         tv.setPadding(80, 10, 10, 10);
         tv.setTextSize(25);
         //tv.setTextColor(Color.RED);
@@ -76,7 +76,7 @@ public class LessonAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         TextView tv = new TextView(context);
-        tv.setText(childList[groupPosition][childPosition]);
+        tv.setText((groupPosition + 1) + "." + (childPosition + 1) + " " + childList[groupPosition][childPosition]);
         //tv.setTag(groupPosition);
         tv.setPadding(120, 10, 10, 10);
         tv.setTextSize(20);

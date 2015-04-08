@@ -21,6 +21,75 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "lyrics TEXT," +
             "explanation TEXT)";
 
+    //Song lyrics for tense consolidation
+    private String lyrics_tense_counting_stars = "[Chorus]<br>" +
+            "•\tLately I''ve been, I''<b>ve been losing</b> sleep<br>" +
+            "•\t<b>Dreaming</b> about the things that we could be<br>" +
+            "•\tBut, baby I''ve been, I''<b>ve been praying</b> hard<br>" +
+            "•\t<u><b>Said</b> no more counting dollars, we''<b>ll be counting</b> stars<br>" +
+            "•\tYeah, we''<b>ll be counting</b> stars</u><br>" +
+            "<br>" +
+            "<u>I <b>see</b> this life like a swinging vine,<br>" +
+            "<b>Swing</b> my heart across the line</u><br>" +
+            "<u>In my face is flashing signs</u><br>" +
+            "<u><b>Seek</b> it out and ye <b>shall find</b></u><br>" +
+            "<br>" +
+            "[Pre-chorus]<br>" +
+            "•\t<u>Old but I''m not that old<br>" +
+            "•\tYoung but I''m not that bold</u><br>" +
+            "•\t<u>And I <b>don''t think</b> the world is sold<br>" +
+            "•\tI''<b>m</b> just <b>doing</b> what we''re told</u><br>" +
+            "<br>" +
+            "•\t<u>And I <b>feel</b> something so right by <b>doing</b> the wrong thing<br>" +
+            "•\tAnd I <b>feel</b> something so wrong by <b>doing</b> the right thing</u><br>" +
+            "•\tI <b>could lie</b>, <b>could lie</b>, <b>could lie</b><br>" +
+            "<br>" +
+            "<u>Everything that <b>kills</b> me <b>makes</b> me <b>feel</b> alive</u><br>" +
+            "<br>" +
+            "2x [Chorus]<br>" +
+            "<br>" +
+            "Baby. I <b>feel</b> her love and<br>" +
+            "And I <b>feel</b> it <b>burn</b> down this river every time<br>" +
+            "<u>Hope is our four-letter word, <b>make</b> that money <b>watch</b> it <b>burn</b></u><br>" +
+            "<br>" +
+            "[Pre-chorus]<br>" +
+            "<br>" +
+            "<u>Everything that <b>drowns</b> me <b>makes</b> me <b>wanna</b> fly</u><br>" +
+            "<br>" +
+            "2x [Chorus]<br>" +
+            "<br>" +
+            "4x [Bridge]<br>" +
+            "<u>Oh, <b>take</b> that money <b>watch</b> it <b>burn</b><br>" +
+            "<b>Sing</b> in the river the lessons I <b>learned</b></u><br>" +
+            "<br>" +
+            "Everything that <b>kills</b> me <b>makes</b> me <b>feel</b> alive<br>" +
+            "<br>" +
+            "2x [Chorus] + 4x [Bridge]";
+
+    private String lyrics_tense_cool_kids = "<u>She <b>sees</b> them <b>walking</b> in a straight line, that''s not really her style<br>" +
+            "And they all <b>got</b> the same heartbeat, but hers <b>is falling</b> behind</u><br>" +
+            "<u>Nothing in this world <b>could</b> ever <b>bring</b> them down<br>" +
+            "Yeah, they''re invincible, and she''s just in the background</u><br>" +
+            "And she <b>says</b><br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\t\"<u>I <b>wish</b> that I <b>could be</b> like the cool kids<br>" +
+            "•\t''Cause all the cool kids, they seem to <b>fit in</b><br>" +
+            "•\tI <b>wish</b> that I <b>could be</b> like the cool kids, like the cool kids</u><br>" +
+            "<br>" +
+            "<u>He <b>sees</b> them <b>talking</b> with a big smile, but they <b>haven''t got</b> a clue<br>" +
+            "Yeah, they''<b>re living</b> the good life, <b>can''t see</b> what he <b>is going through</b></u><br>" +
+            "<u>They''<b>re driving</b> fast cars, but they <b>don''t know</b> where they''<b>re going</b><br>" +
+            "In the fast lane, <b>living</b> life <b>without knowing</b></u><br>" +
+            "And he <b>says</b><br>" +
+            "<br>" +
+            "2x [Chorus]<br>" +
+            "<br>" +
+            "And they <b>said</b><br>" +
+            "3x [Chorus]<br>" +
+            "<br>" +
+            "Like the cool kids";
+
     //Song lyrics for passive
     private String lyrics_passive_demons = "<u>When the days are cold</u><br>" +
             "<u>And the cards all fold</u><br>" +
@@ -542,7 +611,98 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "The one that got away<br>";
 
     //Song lyrics for articles
+    private String lyrics_articles_just_give_me_a_reason = "<u>Right from <b>the</b> start<br>" +
+            "You were <b>a</b> thief<br>" +
+            "You stole my heart<br>" +
+            "And I your willing victim</u><br>" +
+            "<u>I let you see <b>the</b> parts of me<br>" +
+            "That weren''t all that pretty<br>" +
+            "And with every touch you fixed them</u><br>" +
+            "<br>" +
+            "<u>Now you''ve been talking in your sleep, oh, oh<br>" +
+            "Things you never say to me</u>, oh, oh<br>" +
+            "Tell me that you''ve had enough<br>" +
+            "Of our love, our love<br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\t<u>Just give me <b>a</b> reason<br>" +
+            "•\tJust <b>a</b> little bit''s enough<br>" +
+            "•\tJust <b>a</b> second we''re not broken just bent<br>" +
+            "•\tAnd we can learn to love again</u><br>" +
+            "•\t<u>It''s in <b>the</b> stars<br>" +
+            "•\tIt''s been written in <b>the</b> scars on our hearts<br>" +
+            "•\tWe''re not broken just bent<br>" +
+            "•\tAnd we can learn to love again</u><br>" +
+            "<br>" +
+            "I''m sorry I don''t understand<br>" +
+            "Where all of this is coming from<br>" +
+            "I thought that we were fine<br>" +
+            "(Oh, we had everything)<br>" +
+            "<u>Your head is running wild again<br>" +
+            "My dear we still have everythin''<br>" +
+            "And it''s all in your mind</u><br>" +
+            "<u>(Yeah, but this is happenin'')</u><br>" +
+            "<br>" +
+            "You''ve been havin'' real bad dreams, oh, oh<br>" +
+            "You used to lie so close to me, oh, oh<br>" +
+            "<u>There''s nothing more than empty sheets<br>" +
+            "Between our love, our love, oh, our love, our love</u><br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "<br>" +
+            "Oh, tear ducts and rust<br>" +
+            "I''ll fix it for us<br>" +
+            "<u>We''re collecting dust<br>" +
+            "But our love''s enough</u><br>" +
+            "You''re holding it in<br>" +
+            "You''re pouring <b>a</b> drink<br>" +
+            "No nothing is as bad as it seems<br>" +
+            "We''ll come clean<br>" +
+            "<br>" +
+            "2x [Chorus]<br>" +
+            "<br>" +
+            "Oh, we can learn to love again<br>" +
+            "Oh, we can learn to love again<br>" +
+            "Oh, oh, that we''re not broken just bent<br>" +
+            "And we can learn to love again";
 
+    private String lyrics_articles_love_me_like_you_do = "<u>You''re <b>the</b> light, you''re <b>the</b> night<br>" +
+            "You''re <b>the</b> color of my blood<br>" +
+            "You''re <b>the</b> cure, you''re <b>the</b> pain</u><br>" +
+            "You''re <b>the</b> only thing I wanna touch<br>" +
+            "Never knew that it could mean so much, so much<br>" +
+            "<br>" +
+            "<u>You''re <b>the</b> fear, I don''t care</u><br>" +
+            "''Cause I''ve never been so high<br>" +
+            "<u>Follow me through <b>the</b> dark<br>" +
+            "Let me take you past our satellites</u><br>" +
+            "You can see <b>the</b> world you brought to life, to life<br>" +
+            "<br>" +
+            "[Chorus]<br>" +
+            "•\tSo love me like you do, lo-lo-love me like you do<br>" +
+            "•\tLove me like you do, lo-lo-love me like you do<br>" +
+            "•\tTouch me like you do, to-to-touch me like you do<br>" +
+            "•\tWhat are you waiting for?<br>" +
+            "<br>" +
+            "Fading in, fading out<br>" +
+            "<u>On <b>the</b> edge of paradise</u><br>" +
+            "Every inch of your skin is <b>a</b> holy grail I''ve got to find<br>" +
+            "Only you can set my heart on fire, on fire<br>" +
+            "Yeah, <u>I''ll let you set <b>the</b> pace</u><br>" +
+            "<u>''Cause I''m not thinking straight<br>" +
+            "My head''s spinning around I can''t see clear no more</u><br>" +
+            "What are you waiting for?<br>" +
+            "<br>" +
+            "2x [Chorus]<br>" +
+            "<br>" +
+            "I''ll let you set <b>the</b> pace<br>" +
+            "''Cause I''m not thinking straight<br>" +
+            "My head''s spinning around I can''t see clear no more<br>" +
+            "What are you waiting for?<br>" +
+            "<br>" +
+            "2x [Chorus]";
+
+    private String lyrics_articles_yellow_flicker_beat = "";
 
     //Song lyrics for prepositions
     private String lyrics_prepositions_royals = "<u>I''ve never seen a diamond <b>in the flesh</b></u><br>" +
@@ -665,6 +825,52 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "And we found love right where we are";
 
     //Song explanation for tense consolidation
+    private String explanation_tense_counting_starts = "<u>Said no more counting dollars, we''ll be counting stars<br>" +
+            "Yeah, we''ll be counting stars</u><br>" +
+            "In reference to everybody else singing about money and luxury, he’s referring to having faith in something more than just money that will make you happy.<br><br>" +
+            "<u>I see this life like a swinging vine,<br>" +
+            "Swing my heart across the line</u><br>" +
+            "Life is full of danger.<br><br>" +
+            "<u>In my face is flashing signs</u><br>" +
+            "<b>Flashing signs</b> means a lot of decisions, choices, and options.<br><b>In my face</b> means these things are what he has to deal with.<br><br>" +
+            "<u>Seek it out and ye shall find</u><br>" +
+            "This alludes to the Bible verses: “…seek, and ye shall find” Matthew 7:7. He is hoping to find the answers through the chaos of all the signs.<br><br>" +
+            "<u>Old but I''m not that old<br>" +
+            "Young but I''m not that bold</u><br>" +
+            "He’s acknowledging that he’s old, but not worn. Although he feels young, his appearance is not that youthful anymore. He’s getting wiser over the years.<br><br>" +
+            "<u>And I don''t think the world is sold<br>" +
+            "I''m just doing what we''re told</u><br>" +
+            "He wants to free himself from those fake rules which are made only to keep people under control, under the ‘normal’ way of living.<br><br>" +
+            "<u>And I feel something so right by doing the wrong thing<br>" +
+            "And I feel something so wrong by doing the right thing</u><br>" +
+            "He feels this way of living, by going against the established normal ways, is wrong in some way. But it doesn’t change the fact that he gains more joy from living this way.<br><br>" +
+            "<u>Everything that kills me makes me feel alive</u><br>" +
+            "He feels excited and gets a spike of adrenaline that comes with uncertainty, risk, and fear.<br><br>" +
+            "<u>Hope is our four-letter word, make that money watch it burn</u><br>" +
+            "Money is easier spent than it is made.<br>" +
+            "He is also referring to watching “hope” burn when money becomes the primary objective in our lives.<br><br>" +
+            "<u>Everything that drowns me makes me wanna fly</u><br>" +
+            "All the low points makes him want to succeed even more, it makes him want to “fly”. He suggests that if we never experience failure, we will never be able to enjoy success.<br><br>" +
+            "<u>Oh, take that money watch it burn<br>" +
+            "Sing in the river the lessons I learned</u><br>" +
+            "The money he was referring to earlier will disappear quickly, it won’t last forever. You will truly learn the lesson when you go through a tough situation.";
+
+    private String explanation_tense_cool_kids = "<u>She sees them walking in a straight line, that''s not really her style<br>" +
+            "And they all got the same heartbeat, but hers is falling behind</u><br>" +
+            "Popular kids tend to walk down the hall like there’s a spotlight on them in synchronization. They are something to idolize for her and she feels that she can’t match up to them in popularity or shine.<br><br>" +
+            "<u>Nothing in this world could ever bring them down<br>" +
+            "Yeah, they''re invincible, and she''s just in the background</u><br>" +
+            "They’re so cool, no one can touch them. And compared to them, she’s just invisible because everyone only pays attention to the popular people.<br><br>" +
+            "<u>I wish that I could be like the cool kids<br>" +
+            "''Cause all the cool kids, they seem to fit in<br>" +
+            "I wish that I could be like the cool kids, like the cool kids</u><br>" +
+            "She wishes she could join and become one of the popular people because they are favored, and the environment revolves around them.<br><br>" +
+            "<u>He sees them talking with a big smile, but they haven''t got a clue<br>" +
+            "Yeah, they''re living the good life, can''t see what he is going through</u><br>" +
+            "He realizes the superficiality of their social dynamic and how they don’t know or care about the guy’s personal life and issues.<br><br>" +
+            "<u>They''re driving fast cars, but they don''t know where they''re going<br>" +
+            "In the fast lane, living life without knowing</u><br>" +
+            "They may be rich, and be able to drive their ‘fast cars’ but their life doesn’t really have direction, and they don’t have a plan for their future.";
 
     //Song explanation for passive
     private String explanation_passive_demons = "<u>When the days are cold</u><br>" +
@@ -906,6 +1112,62 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
             "Before the guy left her, she didn’t tell him how much she loved him. If she had, things would have been different, but since she did not, she’s suffering because of the decision she made.";
 
     //Song explanation for articles
+    private String explanation_articles_just_give_me_a_reason = "<u>Right from the start<br>" +
+            "You were a thief<br>" +
+            "You stole my heart<br>" +
+            "And I your willing victim</u><br>" +
+            "She willingly let this guy sweep her off her feet. Even though she consented, she calls him a thief probably to give him a bad-boy image.<br><br>" +
+            "<u>I let you see the parts of me<br>" +
+            "That weren''t all that pretty<br>" +
+            "And with every touch you fixed them</u><br>" +
+            "She let the guy see all her imperfections, but for him, she was perfect.<br><br>" +
+            "<u>Now you''ve been talking in your sleep</u><br>" +
+            "While he sleep, he says things she is not supposed to hear.<br>" +
+            "When someone is asleep and relaxed, often they let their guards down and may mumble secrets or feelings they meant to keep. This line refers to how the female overheard what he truly feels.<br><br>" +
+            "<u>Things you never say to me</u><br>" +
+            "He’s saying affectionate things, but to whatever girl is in his dreams and not her.<br><br>" +
+            "<u>Just give me a reason<br>" +
+            "Just a little bit''s enough<br>" +
+            "Just a second we''re not broken just bent<br>" +
+            "And we can learn to love again</u><br>" +
+            "The relationship hasn’t necessarily hit a dead end; merely it has hit a rough patch or uncomfortable situation but if they really want to their love can overcome it all.<br><br>" +
+            "<u>It''s in the stars<br>" +
+            "It''s been written in the scars on our hearts<br>" +
+            "We''re not broken just bent<br>" +
+            "And we can learn to love again</u><br>" +
+            "Their love has been going on a long time. The scars are written in their hearts because of the hurt and trials they have been through.<br>" +
+            "<b>It’s in the stars</b> can refer to Romeo & Juliet’s theme of star crossed lovers; meaning that their love was destined and they are truly soul mates.<br><br>" +
+            "<u>Your head is running wild again<br>" +
+            "My dear we still have everythin''<br>" +
+            "And it''s all in your mind</u><br>" +
+            "Sometimes people create their own problems by overthinking things.<br><br>" +
+            "<u>(Yeah, but this is happenin'')</u><br>" +
+            "He says it’s in her mind, but she says it’s for real because it happened.<br><br>" +
+            "<u>There''s nothing more than empty sheets<br>" +
+            "Between our love, our love, oh, our love, our love</u><br>" +
+            "They have grown apart so there is a lot of space between them. They are not as close as they used to be.<br><br>" +
+            "<u>We''re collecting dust<br>" +
+            "But our love''s enough</u><br>" +
+            "Metaphorically speaking, she and he are getting older and starting to collect dust like an old car would. Fortunately for them this is not a problem because their love is more important than that.";
+
+    private String explanation_articles_love_me_like_you_do = "<u>You''re the light, you''re the night<br>" +
+            "You''re the color of my blood<br>" +
+            "You''re the cure, you''re the pain</u><br>" +
+            "Her lover is both the good (light, cure) and the bad (night, pain) in her life, along with the motivation that keeps her going, like blood’s importance.<br><br>" +
+            "<u>You''re the fear, I don''t care</u><br>" +
+            "Even though she’s afraid of him, she can’t help but love him. Her adoration trumps every emotion he could possibly instill in her.<br><br>" +
+            "<u>Follow me through the dark<br>" +
+            "Let me take you past our satellites</u><br>" +
+            "She wants her lover to see the bliss he brings to her. The dark represents the places where they’re most intimate, the satellites are all the little things that separate them, the world is the results of their romance.<br><br>" +
+            "<u>On the edge of paradise</u><br>" +
+            "Her lover gives so much pleasure that it’s almost him rendering paradise to her.<br><br>" +
+            "<u>I''ll let you set the pace</u><br>" +
+            "She feels too overwhelmed by her feelings and doesn’t consider herself able to fully comprehend the development of their relationship and because she fully trusts in her partner she is letting him take the wheel on the direction of the relationship.<br><br>" +
+            "<u>''Cause I''m not thinking straight<br>" +
+            "My head''s spinning around I can''t see clear no more</u><br>" +
+            "She can’t think properly because of how much she’s focused on him and that she only thinks of him.";
+
+    private String explanation_articles_yellow_flicker_beat = "";
 
     //Song explanation for prepositions
     private String explanation_prepositions_royals = "<u>I''ve never seen a diamond in the flesh</u><br>" +
@@ -1017,7 +1279,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     //Insert song values
     private String SQL_INSERT_SONG = "INSERT INTO SONG" +
-            " VALUES ('2.1', 'Passive', 'Demons', 'Imagine Dragons', 'Night Visions', '"+R.drawable.imagine_dragons_night_visions+"', '"+R.raw.imagine_dragons_demons+"', '"+lyrics_passive_demons+"', '"+explanation_passive_demons+"'), ('2.2', 'Passive', 'Someone Like You', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_someone_like_you+"', '"+lyrics_passive_someone_like_you+"', '"+explanation_passive_someone_like_you+"'), ('2.3', 'Passive', 'You Lost Me', 'Christina Aguilera', 'Bionic', '"+R.drawable.christina_aguilera_bionic+"', '"+R.raw.christina_aguilera_you_lost_me+"', '"+lyrics_passive_you_lost_me+"', '"+explanation_passive_you_lost_me+"'), ('3.1', 'Conditionals and if-sentences', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+lyrics_conditionals_happy+"', '"+explanation_conditionals_happy+"'), ('3.2', 'Conditionals and if-sentences', 'If It Hadn''t Been For Love', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_if_it_hadnt_been_for_love+"', '"+lyrics_conditionals_if_it_hadnt_been_for_love+"', '"+explanation_conditionals_if_it_hadnt_been_for_love+"'), ('3.3', 'Conditionals and if-sentences', 'If I Were A Boy', 'Beyoncé', 'I Am... Sasha Fierce', '"+R.drawable.beyonce_i_am_sasha_fierce+"', '"+R.raw.beyonce_if_i_were_a_boy+"', '"+lyrics_conditionals_if_i_were_a_boy+"', '"+explanation_conditionals_if_i_were_a_boy+"'), ('4.1', 'Present / Future Modals', 'Blank Space', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+lyrics_present_future_modals_blank_space+"', '"+explanation_present_future_modals_blank_space+"'), ('4.2', 'Present / Future Modals', 'Elastic Heart', 'Sia', '1000 Forms Of Fear', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_elastic_heart+"', '"+lyrics_present_future_modals_elastic_heart+"', '"+explanation_present_future_modals_elastic_heart+"'), ('4.3', 'Present / Future Modals', 'Make You Feel My Love', 'Adele', '19', '"+R.drawable.adele_19+"', '"+R.raw.adele_make_you_feel_my_love+"', '"+lyrics_present_future_modals_make_you_feel_my_love+"', '"+explanation_present_future_modals_make_you_feel_my_love+"'), ('5.1', 'Past Modals', 'If It Hadn''t Been For Love', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_if_it_hadnt_been_for_love+"', '"+lyrics_past_modals_if_it_hadnt_been_for_love+"', '"+explanation_past_modals_if_it_hadnt_been_for_love+"'), ('5.2', 'Past Modals', 'The One That Got Away', 'Katy Perry', 'Teenage Dream', '"+R.drawable.katy_perry_teenage_dream+"', '"+R.raw.katy_perry_the_one_that_got_away+"', '"+lyrics_past_modals_the_one_that_got_away+"', '"+explanation_past_modals_the_one_that_got_away+"'), ('7.1', 'Prepositions', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_pure_heroine+"', '"+R.raw.lorde_royals+"', '"+lyrics_prepositions_royals+"', '"+explanation_prepositions_royals+"'), ('7.2', 'Prepositions', 'Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"', '"+lyrics_prepositions_summertime_sadness+"', '"+explanation_prepositions_summertime_sadness+"'), ('7.3', 'Prepositions', 'Thinking Out Loud', 'Ed Sheeran', 'x', '"+R.drawable.ed_sheeran_x+"', '"+R.raw.ed_sheeran_thinking_out_loud+"', '"+lyrics_prepositions_thinking_out_loud+"', '"+explanation_prepositions_thinking_out_loud+"')";
+            " VALUES ('1.1', 'Tense Consolidation', 'Counting Stars', 'OneRepublic', 'Native', '"+R.drawable.onerepublic_native+"', '"+R.raw.onerepublic_counting_stars+"', '"+lyrics_tense_counting_stars+"', '"+explanation_tense_counting_starts+"'), ('1.2', 'Tense Consolidation', 'Cool Kids', 'Echosmith', 'Talking Dreams', '"+R.drawable.echosmith_talking_dreams+"', '"+R.raw.echosmith_cool_kids+"', '"+lyrics_tense_cool_kids+"', '"+explanation_tense_cool_kids+"'), ('2.1', 'Passive', 'Demons', 'Imagine Dragons', 'Night Visions', '"+R.drawable.imagine_dragons_night_visions+"', '"+R.raw.imagine_dragons_demons+"', '"+lyrics_passive_demons+"', '"+explanation_passive_demons+"'), ('2.2', 'Passive', 'Someone Like You', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_someone_like_you+"', '"+lyrics_passive_someone_like_you+"', '"+explanation_passive_someone_like_you+"'), ('2.3', 'Passive', 'You Lost Me', 'Christina Aguilera', 'Bionic', '"+R.drawable.christina_aguilera_bionic+"', '"+R.raw.christina_aguilera_you_lost_me+"', '"+lyrics_passive_you_lost_me+"', '"+explanation_passive_you_lost_me+"'), ('3.1', 'Conditionals and if-sentences', 'Happy', 'Pharrell Williams', 'G I R L', '"+R.drawable.pharrell_williams_girl+"', '"+R.raw.pharrell_williams_happy+"', '"+lyrics_conditionals_happy+"', '"+explanation_conditionals_happy+"'), ('3.2', 'Conditionals and if-sentences', 'If It Hadn''t Been For Love', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_if_it_hadnt_been_for_love+"', '"+lyrics_conditionals_if_it_hadnt_been_for_love+"', '"+explanation_conditionals_if_it_hadnt_been_for_love+"'), ('3.3', 'Conditionals and if-sentences', 'If I Were A Boy', 'Beyoncé', 'I Am... Sasha Fierce', '"+R.drawable.beyonce_i_am_sasha_fierce+"', '"+R.raw.beyonce_if_i_were_a_boy+"', '"+lyrics_conditionals_if_i_were_a_boy+"', '"+explanation_conditionals_if_i_were_a_boy+"'), ('4.1', 'Present / Future Modals', 'Blank Space', 'Taylor Swift', '1989', '"+R.drawable.taylor_swift_1989+"', '"+R.raw.taylor_swift_blank_space+"', '"+lyrics_present_future_modals_blank_space+"', '"+explanation_present_future_modals_blank_space+"'), ('4.2', 'Present / Future Modals', 'Elastic Heart', 'Sia', '1000 Forms Of Fear', '"+R.drawable.sia_1000_forms_of_fear+"', '"+R.raw.sia_elastic_heart+"', '"+lyrics_present_future_modals_elastic_heart+"', '"+explanation_present_future_modals_elastic_heart+"'), ('4.3', 'Present / Future Modals', 'Make You Feel My Love', 'Adele', '19', '"+R.drawable.adele_19+"', '"+R.raw.adele_make_you_feel_my_love+"', '"+lyrics_present_future_modals_make_you_feel_my_love+"', '"+explanation_present_future_modals_make_you_feel_my_love+"'), ('5.1', 'Past Modals', 'If It Hadn''t Been For Love', 'Adele', '21', '"+R.drawable.adele_21+"', '"+R.raw.adele_if_it_hadnt_been_for_love+"', '"+lyrics_past_modals_if_it_hadnt_been_for_love+"', '"+explanation_past_modals_if_it_hadnt_been_for_love+"'), ('5.2', 'Past Modals', 'The One That Got Away', 'Katy Perry', 'Teenage Dream', '"+R.drawable.katy_perry_teenage_dream+"', '"+R.raw.katy_perry_the_one_that_got_away+"', '"+lyrics_past_modals_the_one_that_got_away+"', '"+explanation_past_modals_the_one_that_got_away+"'), ('6.1', 'Articles', 'Just Give Me a Reason', 'P!nk ft. Nate Ruess', 'The Truth About Love', '"+R.drawable.pink_the_truth_about_love+"', '"+R.raw.pink_nate_ruess_just_give_me_a_reason+"', '"+lyrics_articles_just_give_me_a_reason+"', '"+explanation_articles_just_give_me_a_reason+"'), ('6.2', 'Articles', 'Love Me Like You Do', 'Ellie Goulding', 'Fifty Shades of Grey', '"+R.drawable.fifty_shades_of_grey+"', '"+R.raw.ellie_goulding_love_me_like_you_do+"', '"+lyrics_articles_love_me_like_you_do+"', '"+explanation_articles_love_me_like_you_do+"'), ('7.1', 'Prepositions', 'Royals', 'Lorde', 'Pure Heroine', '"+R.drawable.lorde_pure_heroine+"', '"+R.raw.lorde_royals+"', '"+lyrics_prepositions_royals+"', '"+explanation_prepositions_royals+"'), ('7.2', 'Prepositions', 'Summertime Sadness', 'Lana Del Rey', 'Born To Die', '"+R.drawable.lana_del_rey_born_to_die+"', '"+R.raw.lana_del_rey_summertime_sadness+"', '"+lyrics_prepositions_summertime_sadness+"', '"+explanation_prepositions_summertime_sadness+"'), ('7.3', 'Prepositions', 'Thinking Out Loud', 'Ed Sheeran', 'x', '"+R.drawable.ed_sheeran_x+"', '"+R.raw.ed_sheeran_thinking_out_loud+"', '"+lyrics_prepositions_thinking_out_loud+"', '"+explanation_prepositions_thinking_out_loud+"')";
 
     //LESSON table ===================================================================================================================================
     private String SQL_CREATE_LESSON = "CREATE TABLE LESSON (" +
@@ -1302,7 +1564,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
     //"VALUES ('1', 'Abstract Nouns','1,2','0,1','2')";
 
     private String SQL_INSERT_QUESTION = "INSERT INTO QUESTION " +
-            "VALUES ('1.1', 'Tense Consolidation', '91% of Malaysian Gen Y _______ the actual population of Malaysia. A shocking survey done on 180 University students, had only 16 who answered correctly within (+/- 1 million).', 'do not know', 'have not known', 'are not known with', 'do not know', 'are not knowing'), ('1.2', 'Tense Consolidation', 'Ed Sheeran _______ his 24th birthday today.', 'celebrates', 'celebrates', 'has been celebrating', 'celebrated', 'is celebrating'), ('1.3', 'Tense Consolidation', 'The _______ Australian naturalist, Steve “Crocodile Hunter” Irwin, was born today in 1962.', 'beloved', 'beloving', 'belove', 'loved', 'beloved'), ('1.4', 'Tense Consolidation', 'Kingsman: The Secret Service _______ the story of a super-secret spy organization that recruits an unrefined but promising street kid into the agency’s ultra-competitive training program.', 'tells', 'tells', 'is telling', 'has told', 'has been telling'), ('1.5', 'Tense Consolidation', 'Pure Heroine _______ young generation and critiques of mainstream culture.', 'discusses', 'discussed', 'is discussing', 'was discussed', 'discusses'), ('1.6', 'Tense Consolidation', 'Living in PJ areas _______ high living expenditure.', 'requires', 'require', 'requires', 'is requiring', 'has been requiring'), ('1.7', 'Tense Consolidation', 'I am driving a Perodua Myvi with 1.5L engine. I _______ petrol at least once a week.', 'pump', 'am pumping', 'pumped', 'pump', 'have pumped'), ('1.8', 'Tense Consolidation', '_______ a road trip to Penang with friends to sightsee, photo-explore and eat good food.', 'Have', 'Having', 'Have', 'Had', 'Has'), ('1.9', 'Tense Consolidation', 'Students from four Japanese universities visited University of Tunku Abdul Rahman (UTAR) Perak for a two-week English Immersion Programme which took place between August to mid September, and _______ with the outcome.', 'were pleased', 'has pleased', 'are pleasing', 'were pleased', 'were pleasing'), ('1.10', 'Tense Consolidation', 'The popular hairstyle for men now _______ around the top with short sides.', 'goes', 'is going', 'goes', 'has gone', 'went'), ('1.11', 'Tense Consolidation', 'Depression _______ from eating disorders is becoming increasingly common amongst students.', 'resulting', 'resulted', 'results', 'result', 'resulting'), ('1.12', 'Tense Consolidation', 'The #1 New York Times bestselling novel Divergent _______ into a movie.', 'has been adapted and made', 'is adapting and making', 'adapts and makes', 'adapted and made', 'has been adapted and made'), ('2.1', 'Passive', 'Oscar-winning movie star Sandra Bullock was the _______ actress in Hollywood over the past year, according to Forbes magazine.', 'best paid', 'best pays', 'best paying', 'best pay', 'best paid'), ('2.2', 'Passive', 'When she _______ a devastating diagnosis, Alice and her family find their bonds tested.', 'receives', 'receives', 'is receiving', 'had received', 'has received'), ('2.3', 'Passive', 'Beloved Hollywood veteran, king of comedy, and Oscar-winning actor Robin Williams _______ at the age of 63.', 'has died', 'has been dead', 'has died', 'died', 'has dead'), ('2.4', 'Passive', 'X is the second studio album released by Ed Sheeran, who _______ in popularity in recent months.', 'has exploded', 'has been exploding', 'has exploded', 'exploded', 'explodes'), ('2.5', 'Passive', 'Aside from being good for the eyes, carrots _______ with disease-fighting nutrients.', 'are packed', 'are packing', 'pack', 'are packed', 'have been packing'), ('2.6', 'Passive', 'Pure Heroine _______ for Best Pop Vocal Album at the 56th Annual Grammy Awards.', 'was nominated', 'was nominated', 'had been nominating', 'nominates', 'is nominating'), ('2.7', 'Passive', 'You know how your mom _______ you to finish the broccoli on your plate because it’s good for you? Well, it turns out that your mom was right all along.', 'used to tell', 'would tell', 'told', 'has been telling', 'used to tell'), ('2.8', 'Passive', 'Each time I pump petrol, it _______ me approximately RM65 to fill up an empty tank.', 'costs', 'cost', 'costs', 'is costing', 'will cost'), ('2.9', 'Passive', '_______ the hottest tropical paradise in Malaysia, Langkawi Island is currently rated as one of the top-notch destinations in Malaysia.', 'Deemed', 'Deem', 'Deeming', 'Deemed', 'Being deemed'), ('2.10', 'Passive', 'The job market _______ since pre-GE13 last year and even after; vacancies are still on a decline.', 'has been slow', 'will be slow', 'is slowing', 'was slow', 'has been slow'), ('2.11', 'Passive', 'Four members of SEAL Team 10 _______ with the mission to capture or kill notorious Taliban leader, Ahmad Shahd.', 'were tasked', 'were tasking', 'were tasked', 'has tasked', 'task'), ('3.1', 'Conditionals and if-sentences', 'If fresh graduates can’t even get past preliminary rounds of interviews, how _______ they expect to secure a job?', 'do', 'would', 'should', 'do', 'should'), ('3.2', 'Conditionals and if-sentences', 'Unless your name is Ebeneezer, surname Scrooge, you _______ guaranteed to leave the store with a smile on your face.', 'will be', 'are', 'must be', 'will be', 'should be'), ('3.3', 'Conditionals and if-sentences', 'If you’re into old school Eminem songs, then “W.T.P” _______ the song for you.', 'is', 'must be', 'was', 'should be', 'is'), ('3.4', 'Conditionals and if-sentences', 'I would not have failed the exam if I _______.', 'had studied', 'had studied', 'have studied', 'studied', 'was studying'), ('3.5', 'Conditionals and if-sentences', 'You could travel around the world if you _______ your job.', 'left', 'leave', 'left', 'are leaving', 'could leave'), ('3.6', 'Conditionals and if-sentences', 'If you had told me there was a problem, I _______.', 'could have helped', 'could have helped', 'would have helped', 'have had helped', 'should have helped'), ('3.7', 'Conditionals and if-sentences', 'I _______ call you if I _______ late.', 'will, am', 'shall, will be', 'will, am', 'will, will be', 'shall, am'), ('3.8', 'Conditionals and if-sentences', 'What _______ if our achievement award entry did not arrive before the closing date?', 'happens', 'happen', 'happens', 'happened', 'will happen'), ('3.9', 'Conditionals and if-sentences', 'I never _______ hitch hiked to Birmingham if it hadn’t been for love.', 'would’ve', 'could’ve', 'might’ve', 'should’ve', 'would’ve'), ('3.10', 'Conditionals and if-sentences', 'If I _______ a boy, I think I _______ understand how it _______ to love a girl.', 'were, could, feels', 'am, would, felt', 'was, could, would be feeling', 'were, could, feels', 'was, would, is feeling'), ('4.1.1', 'Present / Future Modals', '_______ it be weird to see Cristiano Ronaldo dribble the ball wearing cowboy boots?', 'Wouldn''t', 'Wouldn''t', 'Won''t', 'Shouldn''t', 'Can''t'), ('4.1.2', 'Present / Future Modals', 'Only by piecing together fragments of his past with clues he discovers in the maze _______ Thomas hope to uncover his true purpose and a way to escape.', 'can', 'will', 'shall', 'may', 'can'), ('4.1.3', 'Present / Future Modals', 'We _______ help but have these hauntingly beautiful songs stuck in our heads.', 'can''t', 'won''t', 'can''t', 'needn''t', 'mustn''t'), ('4.1.4', 'Present / Future Modals', 'Being able to show that you’ve had work experience _______ gain them the confidence that you’re more prepared than the candidates who haven’t worked a single day in their lives.', 'will', 'could', 'can', 'will', 'might'), ('4.1.5', 'Present / Future Modals', 'I once had the roommate that _______ probably be anyone’s worst nightmare.', 'would', 'would', 'might', 'shall', 'could'), ('4.1.6', 'Present / Future Modals', 'I _______ say the game _______ become rather addictive.', 'must, can', 'should, will', 'must, can', 'need to, should', 'shall, may'), ('4.1.7', 'Present / Future Modals', 'You _______ also like to try soured cream, lemon juice, flaked almonds or ground cloves.', 'might', 'may', 'might', 'ought to', 'would'), ('4.1.8', 'Present / Future Modals', 'You _______ be tired after working for the entire day.', 'must', 'must', 'may', 'could', 'would'), ('4.1.9', 'Present / Future Modals', 'No paper or other materials _______ be derived from high conservation value forests or other illegal sources.', 'shall', 'can', 'shall', 'must', 'need to'), ('4.1.10', 'Present / Future Modals', 'I came here to see if there was something I _______ do to help, but there doesn’t seem to be anything for me to do.', 'could', 'would', 'should', 'could', 'might'), ('4.1.11', 'Present / Future Modals', 'Money _______ be short when you’re a college kid, but remember to budget your spendings and save some for a rainy day.', 'may', 'could', 'should', 'will', 'may'), ('4.2.1', 'Past Modals', 'I’ve been thinking that I _______ been too critical.', 'may have', 'may have', 'might have', 'could have', 'must have'), ('4.2.2', 'Past Modals', 'I had trouble mixing with other students on campus because I’m not from around here. I wish I _______ done more in terms of blending in with the crowd here.', 'would have', 'could have', 'would have', 'should have', 'might have'), ('4.2.3', 'Past Modals', 'I _______ yelled at you. I''m sorry.', 'should not have', 'might not have', 'could not have', 'would not have', 'should not have'), ('4.2.4', 'Past Modals', 'We _______ had it all rolling in the deep.', 'could''ve', 'must''ve', 'ought to have', 'could''ve', 'might''ve'), ('4.2.5', 'Past Modals', 'Jessica is not in the classroom. She _______ left earlier.', 'must have', 'could have', 'must have', 'should have', 'might have'), ('4.2.6', 'Past Modals', 'Where’s my money? You said you _______ pay today.', 'would', 'would', 'could', 'might', 'had to'), ('4.2.7', 'Past Modals', 'I _______ go out last night because I _______ do my homework.', 'couldn’t, had to', 'shouldn’t, should', 'mustn’t, would’ve to', 'needn’t, need to', 'couldn’t, had to'), ('4.2.8', 'Past Modals', 'Tom _______ write by the age of 4.', 'could', 'might', 'would', 'had to', 'could'), ('4.2.9', 'Past Modals', 'They _______ arrived hours ago.', 'may have', 'should have', 'may have', 'must have', 'could have'), ('4.2.10', 'Past Modals', 'I _______ achieved so much if it wasn’t for you.', 'couldn’t have', 'may not have', 'wouldn’t have', 'couldn’t have', 'shouldn’t have'), ('5.1', 'Articles', 'Singapore has fined _______ smoker S$19,800 ($15,000) for throwing _______ cigarette butts out of his flat window.', 'a, -', 'the, -', 'a, the', 'a, -', 'the, the'), ('5.2', 'Articles', 'Dumplings are _______ classic Chinese food, it is _______ traditional dish eaten on Chinese New Year’s Eve among Chinese around the world.', 'a, a', 'a, a', 'a, the', 'the, a', '-, a'), ('5.3', 'Articles', 'Food has always been important; some even declare _______ romantic relationship with _______ food.', 'a, -', '-, -', 'a, -', 'a, the', 'the, -'), ('5.4', 'Articles', 'The Imitation Game is based on _______ real-life story of Alan Turing, who is credited with cracking _______ German Enigma code.', 'the, the', 'the, the', 'a, a', 'a, the', 'the, a'), ('5.5', 'Articles', '_______ team of archaeologists discovers and then explores _______ ancient pyramid buried under _______ Egyptian desert.', 'A, an, the', 'A, an, the', 'A, an, an', 'The, an, the', 'The, the, an'), ('5.6', 'Articles', '_______ Magic Tablet, _______ Egyptian artifact that keeps everything in _______ museum alive is beginning to die out.', 'The, an, the', '-, the, a', '-, an, a', 'The, the, the', 'The, an, the'), ('5.7', 'Articles', 'Technically, oatmeal is _______ form of grass seed, but can be classified as _______ vegetable.', 'a, a', 'a, a', 'the, the', 'a, -', '-, a'), ('5.8', 'Articles', 'Besides _______ locals, _______ foreign students doing their studies in Malaysia also celebrate _______ Malaysia Day together with their local friends and course mates.', 'the, -, -', 'the, -, -', 'the, the, -', '-, -, the', '-, the, the'), ('5.9', 'Articles', 'Bright-eyed fresh grads that haven’t had any working experience often leave their higher education armed with _______ degree and _______ burning drive to accomplish just about _______ million things.', 'a, a, a', 'a, a, -', 'a, a, a', 'a, the, -', '-, -, -'), ('5.10', 'Articles', 'Carrie is _______ story of _______ high school misfit Carrie White, who gradually discovers that she has _______ telekinetic powers.', 'the, a, -', 'a, a, -', 'the, a, -', 'a, the, a', 'the, the, the'), ('6.1', 'Prepositions', 'Malaysia was formed _______ the 16th of September.', 'on', 'in', 'at', 'by', 'on'), ('6.2', 'Prepositions','Spinach is rich _______ lutein and zeaxanthin, which are carotenoids that remove unstable molecules called free radicals from your body before they damage it.', 'in', 'with', 'on', 'in', 'at'), ('6.3', 'Prepositions', 'Consistently ranked _______ the top ten for best island resorts _______ Malaysia, Langkawi boasts of unmatched sun, sand, and sea experience for beach lovers.', 'in, in', 'on, at', 'in, in', 'at, at', 'at, on'), ('6.4', 'Prepositions', 'The cassette tape was popular for decades because it was compact, weight little, and small _______ size.', 'in', 'of', 'on', 'at', 'in'), ('6.5', 'Prepositions', 'MP3 is an intangible file that can be transferred _______ the internet without compromising great quality sound.', 'over','over', 'to', 'across from', 'on'), ('6.6', 'Prepositions', 'Since the l940s, plastic has been _______ a full-on, mass production mode because of its wide range of unique properties.', 'on', 'over', 'under', 'on', 'between'), ('6.7', 'Prepositions', 'Two albums _______ one year is something of a rarity _______ modern music, yet Justin Timberlake’s fans have received this treat with “20/20 Experience Part 2 of 2”.', 'in, in', 'with, on', 'in, in', 'with, in', 'in, on'), ('6.8', 'Prepositions', 'Michael Jackson died _______ the age of 50.', 'at', 'on', 'in', 'at', 'with'), ('6.9', 'Prepositions', 'He denied driving _______ 110 miles per hour.', 'at', 'with', 'until', 'after', 'at'), ('6.10', 'Prepositions', 'I dropped my bags _______ the floor.', 'on', 'on', 'to', 'at', 'over')";
+            "VALUES ('1.1', 'Tense Consolidation', '91% of Malaysian Gen Y _______ the actual population of Malaysia. A shocking survey done on 180 University students, had only 16 who answered correctly within (+/- 1 million).', 'do not know', 'have not known', 'are not known with', 'do not know', 'are not knowing'), ('1.2', 'Tense Consolidation', 'Ed Sheeran _______ his 24th birthday today.', 'celebrates', 'celebrates', 'has been celebrating', 'celebrated', 'is celebrating'), ('1.3', 'Tense Consolidation', 'The _______ Australian naturalist, Steve “Crocodile Hunter” Irwin, was born today in 1962.', 'beloved', 'beloving', 'belove', 'loved', 'beloved'), ('1.4', 'Tense Consolidation', 'Kingsman: The Secret Service _______ the story of a super-secret spy organization that recruits an unrefined but promising street kid into the agency’s ultra-competitive training program.', 'tells', 'tells', 'is telling', 'has told', 'has been telling'), ('1.5', 'Tense Consolidation', 'Pure Heroine _______ young generation and critiques of mainstream culture.', 'discusses', 'discussed', 'is discussing', 'was discussed', 'discusses'), ('1.6', 'Tense Consolidation', 'Living in PJ areas _______ high living expenditure.', 'requires', 'require', 'requires', 'is requiring', 'has been requiring'), ('1.7', 'Tense Consolidation', 'I am driving a Perodua Myvi with 1.5L engine. I _______ petrol at least once a week.', 'pump', 'am pumping', 'pumped', 'pump', 'have pumped'), ('1.8', 'Tense Consolidation', '_______ a road trip to Penang with friends to sightsee, photo-explore and eat good food.', 'Have', 'Having', 'Have', 'Had', 'Has'), ('1.9', 'Tense Consolidation', 'Students from four Japanese universities visited University of Tunku Abdul Rahman (UTAR) Perak for a two-week English Immersion Programme which took place between August to mid September, and _______ with the outcome.', 'were pleased', 'has pleased', 'are pleasing', 'were pleased', 'were pleasing'), ('1.10', 'Tense Consolidation', 'The popular hairstyle for men now _______ around the top with short sides.', 'goes', 'is going', 'goes', 'has gone', 'went'), ('1.11', 'Tense Consolidation', 'Depression _______ from eating disorders is becoming increasingly common amongst students.', 'resulting', 'resulted', 'results', 'result', 'resulting'), ('1.12', 'Tense Consolidation', 'The #1 New York Times bestselling novel Divergent _______ into a movie.', 'has been adapted and made', 'is adapting and making', 'adapts and makes', 'adapted and made', 'has been adapted and made'), ('2.1', 'Passive', 'Oscar-winning movie star Sandra Bullock was the _______ actress in Hollywood over the past year, according to Forbes magazine.', 'best paid', 'best pays', 'best paying', 'best pay', 'best paid'), ('2.2', 'Passive', 'When she _______ a devastating diagnosis, Alice and her family find their bonds tested.', 'receives', 'receives', 'is receiving', 'had received', 'has received'), ('2.3', 'Passive', 'Beloved Hollywood veteran, king of comedy, and Oscar-winning actor Robin Williams _______ at the age of 63.', 'has died', 'has been dead', 'has died', 'died', 'has dead'), ('2.4', 'Passive', 'X is the second studio album released by Ed Sheeran, who _______ in popularity in recent months.', 'has exploded', 'has been exploding', 'has exploded', 'exploded', 'explodes'), ('2.5', 'Passive', 'Aside from being good for the eyes, carrots _______ with disease-fighting nutrients.', 'are packed', 'are packing', 'pack', 'are packed', 'have been packing'), ('2.6', 'Passive', 'Pure Heroine _______ for Best Pop Vocal Album at the 56th Annual Grammy Awards.', 'was nominated', 'was nominated', 'had been nominating', 'nominates', 'is nominating'), ('2.7', 'Passive', 'You know how your mom _______ you to finish the broccoli on your plate because it’s good for you? Well, it turns out that your mom was right all along.', 'used to tell', 'would tell', 'told', 'has been telling', 'used to tell'), ('2.8', 'Passive', 'Each time I pump petrol, it _______ me approximately RM65 to fill up an empty tank.', 'costs', 'cost', 'costs', 'is costing', 'will cost'), ('2.9', 'Passive', '_______ the hottest tropical paradise in Malaysia, Langkawi Island is currently rated as one of the top-notch destinations in Malaysia.', 'Deemed', 'Deem', 'Deeming', 'Deemed', 'Being deemed'), ('2.10', 'Passive', 'The job market _______ since pre-GE13 last year and even after; vacancies are still on a decline.', 'has been slow', 'will be slow', 'is slowing', 'was slow', 'has been slow'), ('2.11', 'Passive', 'Four members of SEAL Team 10 _______ with the mission to capture or kill notorious Taliban leader, Ahmad Shahd.', 'were tasked', 'were tasking', 'were tasked', 'has tasked', 'task'), ('3.1', 'Conditionals and if-sentences', 'If fresh graduates can’t even get past preliminary rounds of interviews, how _______ they expect to secure a job?', 'do', 'would', 'should', 'do', 'could'), ('3.2', 'Conditionals and if-sentences', 'Unless your name is Ebeneezer, surname Scrooge, you _______ guaranteed to leave the store with a smile on your face.', 'will be', 'are', 'must be', 'will be', 'should be'), ('3.3', 'Conditionals and if-sentences', 'If you’re into old school Eminem songs, then “W.T.P” _______ the song for you.', 'is', 'must be', 'was', 'should be', 'is'), ('3.4', 'Conditionals and if-sentences', 'I would not have failed the exam if I _______.', 'had studied', 'had studied', 'have studied', 'studied', 'was studying'), ('3.5', 'Conditionals and if-sentences', 'You could travel around the world if you _______ your job.', 'left', 'leave', 'left', 'are leaving', 'could leave'), ('3.6', 'Conditionals and if-sentences', 'If you had told me there was a problem, I _______.', 'could have helped', 'could have helped', 'would have helped', 'have had helped', 'should have helped'), ('3.7', 'Conditionals and if-sentences', 'I _______ call you if I _______ late.', 'will, am', 'shall, will be', 'will, am', 'will, will be', 'shall, am'), ('3.8', 'Conditionals and if-sentences', 'What _______ if our achievement award entry did not arrive before the closing date?', 'happens', 'happen', 'happens', 'happened', 'will happen'), ('3.9', 'Conditionals and if-sentences', 'I never _______ hitch hiked to Birmingham if it hadn’t been for love.', 'would’ve', 'could’ve', 'might’ve', 'should’ve', 'would’ve'), ('3.10', 'Conditionals and if-sentences', 'If I _______ a boy, I think I _______ understand how it _______ to love a girl.', 'were, could, feels', 'am, would, felt', 'was, could, would be feeling', 'were, could, feels', 'was, would, is feeling'), ('4.1.1', 'Present / Future Modals', '_______ it be weird to see Cristiano Ronaldo dribble the ball wearing cowboy boots?', 'Wouldn''t', 'Wouldn''t', 'Won''t', 'Shouldn''t', 'Can''t'), ('4.1.2', 'Present / Future Modals', 'Only by piecing together fragments of his past with clues he discovers in the maze _______ Thomas hope to uncover his true purpose and a way to escape.', 'can', 'will', 'shall', 'may', 'can'), ('4.1.3', 'Present / Future Modals', 'We _______ help but have these hauntingly beautiful songs stuck in our heads.', 'can''t', 'won''t', 'can''t', 'needn''t', 'mustn''t'), ('4.1.4', 'Present / Future Modals', 'Being able to show that you’ve had work experience _______ gain them the confidence that you’re more prepared than the candidates who haven’t worked a single day in their lives.', 'will', 'could', 'can', 'will', 'might'), ('4.1.5', 'Present / Future Modals', 'I once had the roommate that _______ probably be anyone’s worst nightmare.', 'would', 'would', 'might', 'shall', 'could'), ('4.1.6', 'Present / Future Modals', 'I _______ say the game _______ become rather addictive.', 'must, can', 'should, will', 'must, can', 'need to, should', 'shall, may'), ('4.1.7', 'Present / Future Modals', 'You _______ also like to try soured cream, lemon juice, flaked almonds or ground cloves.', 'might', 'may', 'might', 'ought to', 'would'), ('4.1.8', 'Present / Future Modals', 'You _______ be tired after working for the entire day.', 'must', 'must', 'may', 'could', 'would'), ('4.1.9', 'Present / Future Modals', 'No paper or other materials _______ be derived from high conservation value forests or other illegal sources.', 'shall', 'can', 'shall', 'must', 'need to'), ('4.1.10', 'Present / Future Modals', 'I came here to see if there was something I _______ do to help, but there doesn’t seem to be anything for me to do.', 'could', 'would', 'should', 'could', 'might'), ('4.1.11', 'Present / Future Modals', 'Money _______ be short when you’re a college kid, but remember to budget your spendings and save some for a rainy day.', 'may', 'could', 'should', 'will', 'may'), ('4.2.1', 'Past Modals', 'I’ve been thinking that I _______ been too critical.', 'may have', 'may have', 'might have', 'could have', 'must have'), ('4.2.2', 'Past Modals', 'I had trouble mixing with other students on campus because I’m not from around here. I wish I _______ done more in terms of blending in with the crowd here.', 'would have', 'could have', 'would have', 'should have', 'might have'), ('4.2.3', 'Past Modals', 'I _______ yelled at you. I''m sorry.', 'should not have', 'might not have', 'could not have', 'would not have', 'should not have'), ('4.2.4', 'Past Modals', 'We _______ had it all rolling in the deep.', 'could''ve', 'must''ve', 'ought to have', 'could''ve', 'might''ve'), ('4.2.5', 'Past Modals', 'Jessica is not in the classroom. She _______ left earlier.', 'must have', 'could have', 'must have', 'should have', 'might have'), ('4.2.6', 'Past Modals', 'Where’s my money? You said you _______ pay today.', 'would', 'would', 'could', 'might', 'had to'), ('4.2.7', 'Past Modals', 'I _______ go out last night because I _______ do my homework.', 'couldn’t, had to', 'shouldn’t, should', 'mustn’t, would’ve to', 'needn’t, need to', 'couldn’t, had to'), ('4.2.8', 'Past Modals', 'Tom _______ write by the age of 4.', 'could', 'might', 'would', 'had to', 'could'), ('4.2.9', 'Past Modals', 'They _______ arrived hours ago.', 'may have', 'should have', 'may have', 'must have', 'could have'), ('4.2.10', 'Past Modals', 'I _______ achieved so much if it wasn’t for you.', 'couldn’t have', 'may not have', 'wouldn’t have', 'couldn’t have', 'shouldn’t have'), ('5.1', 'Articles', 'Singapore has fined _______ smoker S$19,800 ($15,000) for throwing _______ cigarette butts out of his flat window.', 'a, -', 'the, -', 'a, the', 'a, -', 'the, the'), ('5.2', 'Articles', 'Dumplings are _______ classic Chinese food, it is _______ traditional dish eaten on Chinese New Year’s Eve among Chinese around the world.', 'a, a', 'a, a', 'a, the', 'the, a', '-, a'), ('5.3', 'Articles', 'Food has always been important; some even declare _______ romantic relationship with _______ food.', 'a, -', '-, -', 'a, -', 'a, the', 'the, -'), ('5.4', 'Articles', 'The Imitation Game is based on _______ real-life story of Alan Turing, who is credited with cracking _______ German Enigma code.', 'the, the', 'the, the', 'a, a', 'a, the', 'the, a'), ('5.5', 'Articles', '_______ team of archaeologists discovers and then explores _______ ancient pyramid buried under _______ Egyptian desert.', 'A, an, the', 'A, an, the', 'A, an, an', 'The, an, the', 'The, the, an'), ('5.6', 'Articles', '_______ Magic Tablet, _______ Egyptian artifact that keeps everything in _______ museum alive is beginning to die out.', 'The, an, the', '-, the, a', '-, an, a', 'The, the, the', 'The, an, the'), ('5.7', 'Articles', 'Technically, oatmeal is _______ form of grass seed, but can be classified as _______ vegetable.', 'a, a', 'a, a', 'the, the', 'a, -', '-, a'), ('5.8', 'Articles', 'Besides _______ locals, _______ foreign students doing their studies in Malaysia also celebrate _______ Malaysia Day together with their local friends and course mates.', 'the, -, -', 'the, -, -', 'the, the, -', '-, -, the', '-, the, the'), ('5.9', 'Articles', 'Bright-eyed fresh grads that haven’t had any working experience often leave their higher education armed with _______ degree and _______ burning drive to accomplish just about _______ million things.', 'a, a, a', 'a, a, -', 'a, a, a', 'a, the, -', '-, -, -'), ('5.10', 'Articles', 'Carrie is _______ story of _______ high school misfit Carrie White, who gradually discovers that she has _______ telekinetic powers.', 'the, a, -', 'a, a, -', 'the, a, -', 'a, the, a', 'the, the, the'), ('6.1', 'Prepositions', 'Malaysia was formed _______ the 16th of September.', 'on', 'in', 'at', 'by', 'on'), ('6.2', 'Prepositions','Spinach is rich _______ lutein and zeaxanthin, which are carotenoids that remove unstable molecules called free radicals from your body before they damage it.', 'in', 'with', 'on', 'in', 'at'), ('6.3', 'Prepositions', 'Consistently ranked _______ the top ten for best island resorts _______ Malaysia, Langkawi boasts of unmatched sun, sand, and sea experience for beach lovers.', 'in, in', 'on, at', 'in, in', 'at, at', 'at, on'), ('6.4', 'Prepositions', 'The cassette tape was popular for decades because it was compact, weight little, and small _______ size.', 'in', 'of', 'on', 'at', 'in'), ('6.5', 'Prepositions', 'MP3 is an intangible file that can be transferred _______ the internet without compromising great quality sound.', 'over','over', 'to', 'across from', 'on'), ('6.6', 'Prepositions', 'Since the l940s, plastic has been _______ a full-on, mass production mode because of its wide range of unique properties.', 'on', 'over', 'under', 'on', 'between'), ('6.7', 'Prepositions', 'Two albums _______ one year is something of a rarity _______ modern music, yet Justin Timberlake’s fans have received this treat with “20/20 Experience Part 2 of 2”.', 'in, in', 'with, on', 'in, in', 'with, in', 'in, on'), ('6.8', 'Prepositions', 'Michael Jackson died _______ the age of 50.', 'at', 'on', 'in', 'at', 'with'), ('6.9', 'Prepositions', 'He denied driving _______ 110 miles per hour.', 'at', 'with', 'until', 'after', 'at'), ('6.10', 'Prepositions', 'I dropped my bags _______ the floor.', 'on', 'on', 'to', 'at', 'over')";
 
     //QUESTION table ===================================================================================================================================
     private String SQL_CREATE_QUESTION = "CREATE TABLE QUESTION (" +
@@ -1324,7 +1586,7 @@ public class ProjectDBHelper extends SQLiteOpenHelper {
 
     //Insert quiz values
     private String SQL_INSERT_HELP = "INSERT INTO HELP " +
-            "VALUES ('1', 'Help', '"+R.drawable.playlist_up+"','After selecting a lesson, you may choose to learn about the lesson.'), ('2', 'Help', '"+R.drawable.playlist_down+"', 'Or you may directly play one of the songs'), ('3', 'Help', '"+R.drawable.audio_tab_row+"', 'At the audio player interface, you may choose to learn the lyrics, explanation, or directly go to the quiz.'), ('4', 'Help', '"+R.drawable.audio_now_playing_row+"', 'You may tap on the Now Playing bar to see the details of the currently playing song.'), ('5', 'Help', '"+R.drawable.audio_lyrics+"', 'For the lyrics, <b>bold</b> indicates the words related to the lesson, <u>underlined</u> indicates the phrases elaborated under the Explanation tab.'), ('6', 'Help', '"+R.drawable.quiz_up+"', 'At the quiz, you may tap on the above 2 areas to see the details of the quiz.')";
+            "VALUES ('1', 'Help', '"+R.drawable.playlist_up+"','After selecting a lesson, you may choose to learn about the lesson.'), ('2', 'Help', '"+R.drawable.playlist_down+"', 'Or you may directly play one of the songs.'), ('3', 'Help', '"+R.drawable.audio_tab_row+"', 'At the audio player interface, you may choose to learn the lyrics, explanation, or directly go to the quiz.'), ('4', 'Help', '"+R.drawable.audio_now_playing_row+"', 'You may tap on the Now Playing bar to see the details of the currently playing song.'), ('5', 'Help', '"+R.drawable.audio_lyrics+"', 'For the lyrics, <b>bold</b> indicates the words related to the lesson, <u>underlined</u> indicates the phrases elaborated under the Explanation tab.'), ('6', 'Help', '"+R.drawable.quiz_up+"', 'At the quiz, you may tap on the above 2 areas to see the details of the quiz.')";
 
     public ProjectDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
